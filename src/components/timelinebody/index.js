@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './styles';
+import '../../assets/styles.scss';
 
 const TimelineBody = () => (
-    <div style={styles.body}>
+    <div className="timeline__container__body">
         content
     </div>
 );

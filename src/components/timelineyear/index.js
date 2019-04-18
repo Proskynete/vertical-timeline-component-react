@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './styles';
+import '../../assets/styles.scss';
 
 const TimelineYear = ({ year }) => (
-    <div style={styles.year}>
-        <div style={styles.item}>
+    <div className="timeline__container__year">
+        <div className="timeline__container__year__item">
             { year }
         </div>
     </div>

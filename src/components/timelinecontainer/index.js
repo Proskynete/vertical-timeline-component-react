@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './styles';
+import '../../assets/styles.scss';
 
 const TimelineContainer = ({ children }) => {
-    return(<section style={styles.timeline}>
-        <section style={styles.container}>
+    return(<section className="timeline">
+        <section className="timeline__container">
             { children }
         </section>
     </section>);
