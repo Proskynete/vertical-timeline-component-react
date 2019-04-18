@@ -6,6 +6,16 @@ let styles = {
     container: {
         display: 'flex',
         lineHeight: '1'
+    },
+    year: {
+        color: '#002a3a',
+        fontSize: '1em',
+        fontWeight: '400',
+        paddingRight: '15px',
+        position: 'relative'
+    },
+    item: {
+        marginBottom: '8px'
     }
 }
 
