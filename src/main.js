@@ -1,9 +1,11 @@
-import TimelineContainer from './components/timelinecontainer/';
-import TimelineYear from './components/timelineyear/';
-import TimelineBody from './components/timelinebody/';
+import Timeline from './components/timeline/';
+import Content from './components/content/';
+import ContentYear from './components/content_year/';
+import ContentBody from './components/content_body/';
 
 export { 
-    TimelineContainer,
-    TimelineYear,
-    TimelineBody
+    Timeline,
+    Content,
+    ContentYear,
+    ContentBody
 };

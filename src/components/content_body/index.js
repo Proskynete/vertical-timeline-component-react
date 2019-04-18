@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../assets/styles.scss';
 
-const TimelineBody = () => (
+const ContentBody = () => (
     <div className="timeline__container__body">
-        content
+        
     </div>
 );
 
-export default TimelineBody;
+export default ContentBody;
