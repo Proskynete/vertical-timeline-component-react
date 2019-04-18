@@ -11,15 +11,16 @@
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch",
-    "build": "webpack"
+    "start": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "peerDependencies": {
     "react": "^16.8.4"
   },
   "dependencies": {
     "react": "^16.8.4",
-    "webpack": "^4.29.6"
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
