@@ -50,6 +50,12 @@
                 top: 10px;
                 width: 2px;
             }
+
+            &__title {
+                font-weight: 600;
+                margin-bottom: 5px;
+                margin-top: 0;
+            }
         }
 
         &:last-child {
