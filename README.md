@@ -1,6 +1,6 @@
 # vertical-timeline-component-react
 
-[![Build Status](https://api.travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react)
+[![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react)
 
 A simple component to generate a responsive vertical timeline
 
