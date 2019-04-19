@@ -16,6 +16,12 @@
     "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix"
   },
+  "keywords": [
+    "React",
+    "Reactjs",
+    "Vertical Timeline Component React",
+    "Vertical Timeline"
+  ],
   "peerDependencies": {
     "react": "^16.8.4"
   },
