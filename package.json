@@ -1,6 +1,6 @@
 {
   "name": "vertical-timeline-component-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple component for create a vertical timeline with Reactjs",
   "main": "build/index.js",
   "repository": "https://github.com/Proskynete/vertical-timeline-component-react",
