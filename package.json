@@ -11,10 +11,11 @@
   "license": "MIT",
   "sasslintConfig": ".sass-lint.yml",
   "scripts": {
-    "start": "webpack --mode development --watch",
     "build": "webpack --mode production",
     "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
-    "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix"
+    "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
+    "start": "webpack --mode development --watch",
+    "travis": "travis-deploy-once"
   },
   "keywords": [
     "React",
@@ -26,8 +27,9 @@
     "react": "^16.8.4"
   },
   "dependencies": {
-    "react": "^16.8.4",
+    "core-js": "3",
     "prop-types": "^15.7.2",
+    "react": "^16.8.4",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
@@ -48,6 +50,7 @@
     "node-sass": "^4.11.0",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "travis-deploy-once": "^5.0.11"
   }
 }
