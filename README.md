@@ -6,8 +6,6 @@ A simple component to generate a responsive vertical timeline
 
 ## Getting started
 
----
-
 To install as npm dependency
 
 ```sh
@@ -20,10 +18,7 @@ Or if you preferred, you can use `yarn`
 yanr add vertical-timeline-component-react
 ```
 
-
 ## API Documentation
-
----
 
 ### Timeline
 
@@ -61,8 +56,6 @@ With this component you describe the events one for one.
 
 ## How to use it
 
----
-
 The following snippet will show you how to use the library:
 
 ```js
@@ -95,5 +88,4 @@ class Main extends Component {
 
 ## license
 
----
 MIT
