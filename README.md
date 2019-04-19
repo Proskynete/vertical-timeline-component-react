@@ -14,6 +14,13 @@ To install as npm dependency
 npm install --save vertical-timeline-component-react
 ```
 
+Or if you preferred, you can use `yarn`
+
+```sh
+yanr add vertical-timeline-component-react
+```
+
+
 ## API Documentation
 
 ---
