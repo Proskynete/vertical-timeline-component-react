@@ -9,17 +9,19 @@
     "email": "eduardo.a1993@gmail.com"
   },
   "license": "MIT",
+  "sasslintConfig": ".sass-lint.yml",
   "scripts": {
     "start": "webpack --mode development --watch",
     "build": "webpack --mode production",
-    "lint:sass": "sass-lint -c .sass-lint.yml './src/assets/styles.scss' -v -q",
-    "lint:js": "eslint ./src/components/ --ignore-path .gitignore"
+    "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
+    "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix"
   },
   "peerDependencies": {
     "react": "^16.8.4"
   },
   "dependencies": {
     "react": "^16.8.4",
+    "prop-types": "^15.7.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
@@ -33,6 +35,7 @@
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",

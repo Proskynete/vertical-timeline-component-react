@@ -1,7 +1,7 @@
 # Default application configuration that all configurations inherit from.
 
-scss_files: "**/*.scss"
-plugin_directories: ['.scss-linters']
+scss_files: "./src/assets/*.scss"
+plugin_directories: ['.sass-linters']
 
 # List of gem names to load custom linters from (make sure they are already
 # installed)
@@ -18,7 +18,7 @@ linters:
 
   BemDepth:
     enabled: false
-    max_elements: 1
+    max_elements: 5
 
   BorderZero:
     enabled: true
@@ -93,7 +93,7 @@ linters:
     enabled: true
     allow_non_nested_indentation: false
     character: tab # or 'tab'
-    width: 2
+    width: 4
 
   LeadingZero:
     enabled: true
@@ -109,8 +109,8 @@ linters:
     convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
-    enabled: true
-    max_depth: 3
+    enabled: false
+    max_depth: 5
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
@@ -160,12 +160,12 @@ linters:
     allow_element_with_id: false
 
   SelectorDepth:
-    enabled: true
-    max_depth: 3
+    enabled: false
+    max_depth: 5
 
   SelectorFormat:
     enabled: true
-    convention: hyphenated_BEM # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    convention: classic_BEM # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true
