@@ -52,13 +52,33 @@
             }
 
             &__title {
-                font-weight: 600;
+                font-weight: bold;
                 margin-bottom: 5px;
                 margin-top: 0;
+                text-align: left;
             }
 
             &__description {
-                font-weight: 300;
+                margin-bottom: 10px;
+                margin-top: 10px;
+                text-align: left;
+
+                &__text {
+                    font-weight: 300;
+                }
+
+                &__optional {
+                    font-style: italic;
+                    color: #818a91;
+
+                    &::before {
+                        content: "- (";
+                        margin-left: 5px;
+                    }
+                    &::after {
+                        content: ")";
+                    }
+                }
             }
         }
 
