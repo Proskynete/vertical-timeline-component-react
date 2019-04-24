@@ -1,19 +1,14 @@
-sudo: false
-
 language: node_js
 
 node_js:
-  - node
-
-cache:
-  yarn: true
+  - 10
 
 install:
-  - npm install
+  - yarn
 
-scripts:
-  - npm run lint
-  - npm run test:coveralls
+script:
+  - yarn lint:sass
+  - yarn lint:js
 
 notifications:
   email: false
