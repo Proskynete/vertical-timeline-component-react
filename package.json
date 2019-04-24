@@ -12,10 +12,11 @@
   "sasslintConfig": ".sass-lint.yml",
   "scripts": {
     "build": "webpack --mode production",
+    "lint": "yarn lint:sass && yarn lint:js",
     "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
-    "travis": "travis-deploy-once"
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "keywords": [
     "React",
@@ -27,6 +28,7 @@
     "react": "^16.8.4"
   },
   "dependencies": {
+    "coveralls": "^3.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "webpack": "^4.29.6",
