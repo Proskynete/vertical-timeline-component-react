@@ -1,8 +1,10 @@
 # vertical-timeline-component-react
 
-[![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react)
+[![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react) [![devDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/dev-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/peer-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=peer)
 
 A simple component to generate a responsive vertical timeline
+
+![Vertical Timeline Component React](https://i.imgur.com/QmqtTJc.png "How to see vertical-timeline-component-react")
 
 ## Getting started
 
@@ -15,7 +17,7 @@ npm install --save vertical-timeline-component-react
 Or if you preferred, you can use `yarn`
 
 ```sh
-yanr add vertical-timeline-component-react
+yarn add vertical-timeline-component-react
 ```
 
 ## API Documentation
