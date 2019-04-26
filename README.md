@@ -1,6 +1,8 @@
 # vertical-timeline-component-react
 
-[![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react) [![devDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/dev-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/peer-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=peer)
+[![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://img.shields.io/npm/v/vertical-timeline-component-react.svg) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react) [![devDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/dev-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/peer-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=peer)
+
+
 
 A simple component to generate a responsive vertical timeline
 
