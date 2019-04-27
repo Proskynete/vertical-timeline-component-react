@@ -15,7 +15,8 @@
     "lint": "yarn lint:sass && yarn lint:js",
     "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
-    "start": "webpack --mode development --watch"
+    "start": "webpack --mode development --watch",
+    "test": "jest"
   },
   "keywords": [
     "React",
@@ -38,6 +39,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -46,6 +48,7 @@
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
+    "jest": "^24.7.1",
     "node-sass": "^4.11.0",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
