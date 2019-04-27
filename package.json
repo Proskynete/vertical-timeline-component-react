@@ -34,11 +34,11 @@
     "webpack-cli": "^3.3.0"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "7",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
