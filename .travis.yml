@@ -4,11 +4,11 @@ node_js:
   - 10
 
 install:
-  - yarn
+  - npm install
 
 script:
-  - yarn lint:sass
-  - yarn lint:js
+  - npm run lint:sass
+  - npm run lint:js
 
 notifications:
   email: false
