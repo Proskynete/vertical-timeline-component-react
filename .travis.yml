@@ -9,6 +9,7 @@ install:
 script:
   - npm run lint:sass
   - npm run lint:js
+  - npm run test:coveralls
 
 notifications:
   email: false

@@ -17,7 +17,8 @@
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
     "test": "jest",
-    "coverage": "jest --coverage",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watchAll"
   },
   "keywords": [
