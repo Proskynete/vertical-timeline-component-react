@@ -15,7 +15,11 @@
     "lint": "yarn lint:sass && yarn lint:js",
     "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
-    "start": "webpack --mode development --watch"
+    "start": "webpack --mode development --watch",
+    "test": "jest",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
   },
   "keywords": [
     "React",
@@ -24,12 +28,19 @@
     "Vertical Timeline"
   ],
   "peerDependencies": {
-    "react": "^16.8.4"
+    "react": "^16.8.6"
   },
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
     "coveralls": "^3.0.3",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jest": "^24.7.1",
+    "path": "^0.12.7",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },
@@ -38,6 +49,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
+    "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
@@ -47,6 +59,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "node-sass": "^4.11.0",
+    "react-test-renderer": "^16.8.6",
     "sass-lint": "^1.12.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
