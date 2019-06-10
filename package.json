@@ -9,12 +9,11 @@
     "email": "eduardo.a1993@gmail.com"
   },
   "license": "MIT",
-  "sasslintConfig": ".sass-lint.yml",
   "scripts": {
     "build": "webpack --mode production",
-    "lint": "yarn lint:sass && yarn lint:js",
-    "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
-    "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
+    "lint": "npm run lint:js",
+    "lint:js": "eslint ./src/components/ --ignore-path .gitignore",
+    "lint:js-fix": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
     "test": "jest",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
@@ -41,6 +40,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "styled-components": "^4.3.1",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   },

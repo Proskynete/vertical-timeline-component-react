@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../assets/styles.scss';
+import styled from 'styled-components';
+
+const ContainerComponent = styled.div`
+  display: flex;
+  line-height: 1;
+
+  &:last-child {
+    .body-component {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+`;
 
 const Content = (props) => {
-  const { children } = props;
+  const {
+    children,
+  } = props;
 
   return (
-    <section className="timeline__container">
+    <ContainerComponent className="content-component">
       { children }
-    </section>
+    </ContainerComponent>
   );
 };
 

@@ -10,6 +10,6 @@ Enzyme.configure({ adapter: new Adapter() });
 describe('Description Component', () => {
   it('should render with text prop and wihtout optional prop', () => {
     const wrapper = shallow(<ContentYear year="hello" />);
-    expect(wrapper.find('.timeline__container__year__item').text()).to.be.equal('hello');
+    expect(wrapper.find('.item-year-component').text()).to.be.equal('hello');
   });
 });

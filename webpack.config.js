@@ -10,15 +10,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sass|scss)$/,
-        exclude: /(node_modules|bower_components)/,
-        loaders: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true, sourceMapContents: true } },
-        ],
-      },
-      {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /(node_modules|bower_components|build)/,
