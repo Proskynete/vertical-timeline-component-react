@@ -1,5 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const DescriptionComponent = styled.div`
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: left;
+`;
+
+const DescriptionComponentText = styled.span`
+  font-weight: 300;
+`;
+
+const DescriptionComponentTextOptional = styled.span`
+  color: #818a91;
+  font-style: italic;
+
+  &::before {
+    content: '- (';
+    margin-left: 5px;
+  }
+
+  &::after {
+    content: ')';
+  }
+`;
 
 const Description = (props) => {
   const {
@@ -8,13 +33,15 @@ const Description = (props) => {
   } = props;
 
   return (
-    <div className="timeline__container__body__description">
-      <span className="timeline__container__body__description__text">{ text }</span>
+    <DescriptionComponent>
+      <DescriptionComponentText>
+        { text }
+      </DescriptionComponentText>
       { optional
-        ? <span className="timeline__container__body__description__optional">{ optional }</span>
+        ? <DescriptionComponentTextOptional>{ optional }</DescriptionComponentTextOptional>
         : ''
       }
-    </div>
+    </DescriptionComponent>
   );
 };
 

@@ -1,5 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const BodyComponent = styled.div`
+  color: #002a3a;
+  font-size: .9em;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  position: relative;
+
+  @media (min-width: 1200px) {
+    font-size: 1em;
+  }
+
+  &::before {
+    background-color: #ccc;
+    content: '';
+    height: 100%;
+    left: -3px;
+    min-height: 95%;
+    position: absolute;
+    top: 10px;
+    width: 2px;
+  }
+`;
+
+const BodyComponentTitle = styled.p`
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 0;
+  text-align: left;
+`;
 
 const ContentBody = (props) => {
   const {
@@ -8,12 +39,12 @@ const ContentBody = (props) => {
   } = props;
 
   return (
-    <div className="timeline__container__body">
-      <p className="timeline__container__body__title">
+    <BodyComponent className="body-content">
+      <BodyComponentTitle>
         { title }
-      </p>
+      </BodyComponentTitle>
       { children }
-    </div>
+    </BodyComponent>
   );
 };
 
