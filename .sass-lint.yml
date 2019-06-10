@@ -1,7 +1,7 @@
 # Default application configuration that all configurations inherit from.
 
 scss_files: "./src/assets/*.scss"
-plugin_directories: ['.sass-linters']
+plugin_directories: [".sass-linters"]
 
 # List of gem names to load custom linters from (make sure they are already
 # installed)
@@ -109,7 +109,7 @@ linters:
     convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
-    enabled: false
+    enabled: true
     max_depth: 5
     ignore_parent_selectors: false
 
@@ -139,15 +139,35 @@ linters:
   PropertyUnits:
     enabled: true
     global: [
-      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
-      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
-      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
-      'fr',                                    # Grid fractional lengths
-      'deg', 'grad', 'rad', 'turn',            # Angle
-      'ms', 's',                               # Duration
-      'Hz', 'kHz',                             # Frequency
-      'dpi', 'dpcm', 'dppx',                   # Resolution
-      '%']                                     # Other
+        "ch",
+        "em",
+        "ex",
+        "rem", # Font-relative lengths
+        "cm",
+        "in",
+        "mm",
+        "pc",
+        "pt",
+        "px",
+        "q", # Absolute lengths
+        "vh",
+        "vw",
+        "vmin",
+        "vmax", # Viewport-percentage lengths
+        "fr", # Grid fractional lengths
+        "deg",
+        "grad",
+        "rad",
+        "turn", # Angle
+        "ms",
+        "s", # Duration
+        "Hz",
+        "kHz", # Frequency
+        "dpi",
+        "dpcm",
+        "dppx", # Resolution
+        "%",
+      ] # Other
     properties: {}
 
   PseudoElement:
@@ -165,7 +185,7 @@ linters:
 
   SelectorFormat:
     enabled: true
-    convention: classic_BEM # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+    convention: hyphenated_BEM # or 'classic_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
     enabled: true

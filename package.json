@@ -13,7 +13,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "lint": "yarn lint:sass && yarn lint:js",
-    "lint:sass": "sass-lint 'src/assets/styles.scss' -v -q",
+    "lint:sass": "sass-lint -c ./.sass-lint.yml 'src/assets/styles.scss' -v -q",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
     "test": "jest",
