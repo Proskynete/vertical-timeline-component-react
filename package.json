@@ -9,11 +9,9 @@
     "email": "eduardo.a1993@gmail.com"
   },
   "license": "MIT",
-  "sasslintConfig": ".sass-lint.yml",
   "scripts": {
     "build": "webpack --mode production",
-    "lint": "yarn lint:sass && yarn lint:js",
-    "lint:sass": "sass-lint -c ./.sass-lint.yml 'src/assets/styles.scss' -v -q",
+    "lint": "npm run lint:js",
     "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
     "test": "jest",

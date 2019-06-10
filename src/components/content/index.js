@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../assets/styles.scss';
 
 const Content = (props) => {
   const { children } = props;
