@@ -32,8 +32,8 @@ const ContentYear = (props) => {
   } = props;
 
   return (
-    <YearComponent>
-      <YearComponentItem>
+    <YearComponent className="year-component">
+      <YearComponentItem className="item-year-component">
         { year }
       </YearComponentItem>
     </YearComponent>

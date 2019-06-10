@@ -34,12 +34,15 @@ const Description = (props) => {
 
   return (
     <DescriptionComponent>
-      <DescriptionComponentText>
+      <DescriptionComponentText className="text-description-component">
         { text }
       </DescriptionComponentText>
       { optional
-        ? <DescriptionComponentTextOptional>{ optional }</DescriptionComponentTextOptional>
-        : ''
+        ? (
+          <DescriptionComponentTextOptional className="optional-description-component">
+            { optional }
+          </DescriptionComponentTextOptional>
+        ) : ''
       }
     </DescriptionComponent>
   );

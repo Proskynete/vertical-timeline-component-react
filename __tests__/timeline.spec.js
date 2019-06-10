@@ -11,6 +11,6 @@ describe('Timeline Component', () => {
   it('should render with children', () => {
     const wrapper = shallow(<Timeline>Hello</Timeline>);
     expect(wrapper.children).to.be.a('function');
-    expect(wrapper.find('.timeline').text()).to.be.equal('Hello');
+    expect(wrapper.find('.timeline-component').text()).to.be.equal('Hello');
   });
 });

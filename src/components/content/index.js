@@ -7,7 +7,7 @@ const ContainerComponent = styled.div`
   line-height: 1;
 
   &:last-child {
-    .body-content {
+    .body-component {
         &::before {
           display: none;
         }
@@ -22,7 +22,7 @@ const Content = (props) => {
   } = props;
 
   return (
-    <ContainerComponent>
+    <ContainerComponent className="content-component">
       { children }
     </ContainerComponent>
   );

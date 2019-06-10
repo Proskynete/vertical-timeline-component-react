@@ -11,6 +11,6 @@ describe('Description Component', () => {
   it('should render with text prop and wihtout optional prop', () => {
     const wrapper = shallow(<ContentBody title="2018">Hello World</ContentBody>);
     expect(wrapper.children).to.be.a('function');
-    expect(wrapper.find('.timeline__container__body__title').text()).to.be.equal('2018');
+    expect(wrapper.find('.title-body-component').text()).to.be.equal('2018');
   });
 });

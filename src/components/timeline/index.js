@@ -13,7 +13,7 @@ const Timeline = (props) => {
   } = props;
 
   return (
-    <TimelineComponent>
+    <TimelineComponent className="timeline-component">
       { children }
     </TimelineComponent>
   );

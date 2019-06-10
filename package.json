@@ -12,7 +12,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "lint": "npm run lint:js",
-    "lint:js": "eslint ./src/components/ --ignore-path .gitignore --fix",
+    "lint:js": "eslint ./src/components/ --ignore-path .gitignore",
+    "lint:js-fix": "eslint ./src/components/ --ignore-path .gitignore --fix",
     "start": "webpack --mode development --watch",
     "test": "jest",
     "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",

@@ -39,8 +39,8 @@ const ContentBody = (props) => {
   } = props;
 
   return (
-    <BodyComponent className="body-content">
-      <BodyComponentTitle>
+    <BodyComponent className="body-component">
+      <BodyComponentTitle className="title-body-component">
         { title }
       </BodyComponentTitle>
       { children }
