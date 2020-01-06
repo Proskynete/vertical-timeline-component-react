@@ -27,31 +27,38 @@ const YearComponentItem = styled.div`
 	margin-bottom: 8px;
 `;
 
-const compare = (a, b) => {
-	if (a < b) return 1;
-	if (b < a) return -1;
-	return 0;
-};
-
-const handleEachYears = years =>
-	years.sort(compare).map(year => (
-		<YearComponentItem key={year} className="item-year-component">
-			{year}
-		</YearComponentItem>
-	));
-
 const ContentYear = props => {
-	const { years } = props;
+	const { startYear, endYear, current } = props;
 
 	return (
 		<YearComponent className="year-component">
-			{handleEachYears(years)}
+			{current ? (
+				<>
+					<YearComponentItem className="item-year-component">
+						{endYear}
+					</YearComponentItem>
+					<YearComponentItem className="item-year-component">
+						{startYear}
+					</YearComponentItem>
+				</>
+			) : (
+				<YearComponentItem className="item-year-component">
+					{startYear}
+				</YearComponentItem>
+			)}
 		</YearComponent>
 	);
 };
 
+ContentYear.defaultProps = {
+	current: false,
+	endYear: 0
+};
+
 ContentYear.propTypes = {
-	years: PropTypes.arrayOf(PropTypes.string).isRequired
+	startYear: PropTypes.number.isRequired,
+	endYear: PropTypes.number,
+	current: PropTypes.bool
 };
 
 export default ContentYear;

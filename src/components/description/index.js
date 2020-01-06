@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const DescriptionComponent = styled.div`
-	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-top: 5px;
 	text-align: left;
 `;
 

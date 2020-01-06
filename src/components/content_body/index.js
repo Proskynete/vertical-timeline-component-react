@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const BodyComponent = styled.div`
-	color: #002a3a;
 	font-size: 0.9em;
-	padding-bottom: 20px;
+	padding-bottom: 30px;
 	padding-left: 15px;
 	position: relative;
 
@@ -14,8 +13,8 @@ const BodyComponent = styled.div`
 	}
 
 	&::before {
-		background-color: #ccc;
 		content: '';
+		background-color: #cccccc;
 		height: 100%;
 		left: -3px;
 		min-height: 95%;
@@ -26,8 +25,10 @@ const BodyComponent = styled.div`
 `;
 
 const BodyComponentTitle = styled.p`
+	color: #002a3a;
 	font-weight: bold;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
+	font-size: 18px;
 	margin-top: 0;
 	text-align: left;
 `;
