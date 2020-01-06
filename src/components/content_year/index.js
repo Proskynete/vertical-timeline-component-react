@@ -27,19 +27,19 @@ const YearComponentItem = styled.div`
 `;
 
 const ContentYear = props => {
-	const { year } = props;
+	const { years } = props;
 
 	return (
 		<YearComponent className="year-component">
 			<YearComponentItem className="item-year-component">
-				{year}
+				{years}
 			</YearComponentItem>
 		</YearComponent>
 	);
 };
 
 ContentYear.propTypes = {
-	year: PropTypes.string.isRequired
+	years: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default ContentYear;
