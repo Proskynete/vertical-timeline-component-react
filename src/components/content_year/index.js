@@ -7,7 +7,7 @@ const YearComponent = styled.div`
 	font-size: 1em;
 	font-weight: 400;
 	padding-right: 15px;
-	padding-bottom: 8px;
+	padding-bottom: 10px;
 	position: relative;
 	width: 40px;
 
