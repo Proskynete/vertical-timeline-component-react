@@ -7,6 +7,7 @@ const YearComponent = styled.div`
 	font-size: 1em;
 	font-weight: 400;
 	padding-right: 15px;
+	padding-bottom: 8px;
 	position: relative;
 	width: 40px;
 
@@ -26,14 +27,25 @@ const YearComponentItem = styled.div`
 	margin-bottom: 8px;
 `;
 
+const compare = (a, b) => {
+	if (a < b) return 1;
+	if (b < a) return -1;
+	return 0;
+};
+
+const handleEachYears = years =>
+	years.sort(compare).map(year => (
+		<YearComponentItem key={year} className="item-year-component">
+			{year}
+		</YearComponentItem>
+	));
+
 const ContentYear = props => {
 	const { years } = props;
 
 	return (
 		<YearComponent className="year-component">
-			<YearComponentItem className="item-year-component">
-				{years}
-			</YearComponentItem>
+			{handleEachYears(years)}
 		</YearComponent>
 	);
 };
