@@ -16,20 +16,18 @@ const ContainerComponent = styled.div`
   }
 `;
 
-const Content = (props) => {
-  const {
-    children,
-  } = props;
+const Content = props => {
+	const { children } = props;
 
-  return (
-    <ContainerComponent className="content-component">
-      { children }
-    </ContainerComponent>
-  );
+	return (
+		<ContainerComponent className="content-component">
+			{children}
+		</ContainerComponent>
+	);
 };
 
 Content.propTypes = {
-  children: PropTypes.node.isRequired,
+	children: PropTypes.node.isRequired
 };
 
 export default Content;
