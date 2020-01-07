@@ -1,6 +1,6 @@
 {
   "name": "vertical-timeline-component-react",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "description": "A simple component for create a vertical timeline with Reactjs",
   "main": "build/index.js",
   "repository": "https://github.com/Proskynete/vertical-timeline-component-react",
@@ -27,7 +27,7 @@
     "Vertical Timeline"
   ],
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.12.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -38,11 +38,11 @@
     "jest": "^24.7.1",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "styled-components": "^4.3.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^4.4.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -51,17 +51,12 @@
     "@babel/preset-env": "^7.0.0",
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.0",
-    "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "^2.17.2",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "node-sass": "^4.11.0",
-    "react-test-renderer": "^16.8.6",
-    "sass-lint": "^1.12.1",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1"
+    "react-test-renderer": "^16.8.6"
   }
 }

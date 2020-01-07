@@ -17,13 +17,11 @@ const ContainerComponent = styled.div`
 `;
 
 const Content = (props) => {
-  const {
-    children,
-  } = props;
+  const { children } = props;
 
   return (
     <ContainerComponent className="content-component">
-      { children }
+      {children}
     </ContainerComponent>
   );
 };
