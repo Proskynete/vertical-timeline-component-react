@@ -28,14 +28,14 @@ const YearComponentItem = styled.div`
 `;
 
 const ContentYear = props => {
-	const { startYear, endYear, current } = props;
+	const { startYear, current } = props;
 
 	return (
 		<YearComponent className="year-component">
 			{current ? (
 				<>
 					<YearComponentItem className="item-year-component">
-						{endYear}
+						{new Date().getFullYear()}
 					</YearComponentItem>
 					<YearComponentItem className="item-year-component">
 						{startYear}
@@ -51,13 +51,11 @@ const ContentYear = props => {
 };
 
 ContentYear.defaultProps = {
-	current: false,
-	endYear: 0
+	current: false
 };
 
 ContentYear.propTypes = {
 	startYear: PropTypes.number.isRequired,
-	endYear: PropTypes.number,
 	current: PropTypes.bool
 };
 
