@@ -25,32 +25,32 @@ const DescriptionComponentTextOptional = styled.span`
 	}
 `;
 
-const Description = props => {
-	const { text, optional } = props;
+const Description = (props) => {
+  const { text, optional } = props;
 
-	return (
-		<DescriptionComponent>
-			<DescriptionComponentText className="text-description-component">
-				{text}
-			</DescriptionComponentText>
-			{optional ? (
-				<DescriptionComponentTextOptional className="optional-description-component">
-					{optional}
-				</DescriptionComponentTextOptional>
-			) : (
-				''
-			)}
-		</DescriptionComponent>
-	);
+  return (
+    <DescriptionComponent>
+      <DescriptionComponentText className="text-description-component">
+        {text}
+      </DescriptionComponentText>
+      {optional ? (
+        <DescriptionComponentTextOptional className="optional-description-component">
+          {optional}
+        </DescriptionComponentTextOptional>
+      ) : (
+			  ''
+      )}
+    </DescriptionComponent>
+  );
 };
 
 Description.propTypes = {
-	text: PropTypes.string.isRequired,
-	optional: PropTypes.string
+  text: PropTypes.string.isRequired,
+  optional: PropTypes.string,
 };
 
 Description.defaultProps = {
-	optional: ''
+  optional: '',
 };
 
 export default Description;

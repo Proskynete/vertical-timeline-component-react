@@ -7,18 +7,18 @@ const TimelineComponent = styled.div`
 	width: 100%;
 `;
 
-const Timeline = props => {
-	const { children } = props;
+const Timeline = (props) => {
+  const { children } = props;
 
-	return (
-		<TimelineComponent className="timeline-component">
-			{children}
-		</TimelineComponent>
-	);
+  return (
+    <TimelineComponent className="timeline-component">
+      {children}
+    </TimelineComponent>
+  );
 };
 
 Timeline.propTypes = {
-	children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Timeline;

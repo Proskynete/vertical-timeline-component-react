@@ -27,36 +27,36 @@ const YearComponentItem = styled.div`
 	margin-bottom: 8px;
 `;
 
-const ContentYear = props => {
-	const { startYear, current } = props;
+const ContentYear = (props) => {
+  const { startYear, current } = props;
 
-	return (
-		<YearComponent className="year-component">
-			{current ? (
-				<>
-					<YearComponentItem className="item-year-component">
-						{new Date().getFullYear()}
-					</YearComponentItem>
-					<YearComponentItem className="item-year-component">
-						{startYear}
-					</YearComponentItem>
-				</>
-			) : (
-				<YearComponentItem className="item-year-component">
-					{startYear}
-				</YearComponentItem>
-			)}
-		</YearComponent>
-	);
+  return (
+    <YearComponent className="year-component">
+      {current ? (
+        <>
+          <YearComponentItem className="item-year-component">
+            {new Date().getFullYear()}
+          </YearComponentItem>
+          <YearComponentItem className="item-year-component">
+            {startYear}
+          </YearComponentItem>
+        </>
+      ) : (
+        <YearComponentItem className="item-year-component">
+          {startYear}
+        </YearComponentItem>
+      )}
+    </YearComponent>
+  );
 };
 
 ContentYear.defaultProps = {
-	current: false
+  current: false,
 };
 
 ContentYear.propTypes = {
-	startYear: PropTypes.number.isRequired,
-	current: PropTypes.bool
+  startYear: PropTypes.number.isRequired,
+  current: PropTypes.bool,
 };
 
 export default ContentYear;
