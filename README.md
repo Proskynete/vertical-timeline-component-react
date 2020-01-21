@@ -1,8 +1,7 @@
 # vertical-timeline-component-react
 
 A simple component to generate a responsive vertical timeline
-
-![Vertical Timeline Component React](https://i.imgur.com/QmqtTJc.png "How to see vertical-timeline-component-react")
+![Vertical Timeline Component React](https://i.imgur.com/JXdOHYV.png 'How to see vertical-timeline-component-react')
 
 ## Status
 
@@ -36,33 +35,37 @@ Each event in the timeline will be represented by the `Content` component. There
 
 For each `Content` you need `ContentYear` since with this component you mark the events in the given year.
 
-| Name | Type | Required | Description |
-| ------ | ------ | ------ | ------ |
-| Year | String | True | The year for each content |
+| Name        | Type             | Required | Values Allowed           | Description                                       |
+| ----------- | ---------------- | -------- | ------------------------ | ------------------------------------------------- |
+| startMonth  | string or number | false    | from 0 to 12             | The month of the start of the content or contents |
+| monthType   | string           | false    | text or number (default) | Type of how to show the month                     |
+| startDay    | string           | false    | from 1 to 31             | The day of the start of the content or contents   |
+| startYear   | string           | true     | any year                 | The year of the start of the content or contents  |
+| currentYear | boolean          | false    | false (default)          | When the content is still being made              |
 
 ### ContentBody
 
 For each `Content` you need `ContentBody`, because with this component you describe the events that occurred in that year using `Description` component.
 
-| Name | Type | Required | Description |
-| ------ | ------ | ------ | ------ |
-| Title | String | True | Show the title for the events |
-| Children | Node | True | It is necessary to use the description component. |
+| Name     | Type   | Required | Description                                       |
+| -------- | ------ | -------- | ------------------------------------------------- |
+| Title    | String | True     | Show the title for the events                     |
+| Children | Node   | True     | It is necessary to use the description component. |
 
 ### Description
 
 With this component you describe the events one for one.
 
-| Name | Type | Required | Description |
-| ------ | ------ | ------ | ------ |
-| Text | String | True | Describe the event |
-| Optional | String | False | You can this props for use a optional text |
+| Name     | Type   | Required | Description                                |
+| -------- | ------ | -------- | ------------------------------------------ |
+| Text     | String | True     | Describe the event                         |
+| Optional | String | False    | You can this props for use a optional text |
 
 ## How to use it
 
 The following snippet will show you how to use the library:
 
-***Using class components:***
+**_Using class components:_**
 
 ```js
 import {
@@ -74,25 +77,37 @@ import {
 } from 'vertical-timeline-component-react';
 
 class Main extends Component {
-    render() {
-        return(
-            <Timeline>
-                <Content>
-                    <ContentYear year="2018" />
-                    <ContentBody title="Amazing Title">
-                        <Description text="I'm an amazing event" optional="I'm an amazing optional text"/>
-                    </ContentBody>
-                </Content>
-                <Content>
-                ...
-                </Content>
-            </Timeline>
-        )
-    }
+  render() {
+    return (
+      <Timeline>
+        <Content>
+          <ContentYear
+            startMonth="12"
+            monthType="text"
+            startDay="24"
+            startYear="2016"
+            currentYear
+          />
+          <ContentBody title="Amazing Title">
+            <Description
+              text="I'm an amazing event"
+              optional="I'm an amazing optional text"
+            />
+            <Description
+              text="I'm an amazing event"
+              optional="I'm another amazing optional text"
+            />
+            <Description text="I'm an amazing event" />
+          </ContentBody>
+        </Content>
+        <Content>...</Content>
+      </Timeline>
+    );
+  }
 }
 ```
 
-***Using function components:***
+**_Using function components:_**
 
 ```js
 import {
@@ -104,17 +119,29 @@ import {
 } from 'vertical-timeline-component-react';
 
 const Main = () => (
-    <Timeline>
-        <Content>
-            <ContentYear year="2018" />
-            <ContentBody title="Amazing Title">
-                <Description text="I'm an amazing event" optional="I'm an amazing optional text"/>
-            </ContentBody>
-        </Content>
-        <Content>
-            ...
-        </Content>
-    </Timeline>
+  <Timeline>
+    <Content>
+      <ContentYear
+        startMonth="12"
+        monthType="text"
+        startDay="24"
+        startYear="2016"
+        currentYear
+      />
+      <ContentBody title="Amazing Title">
+        <Description
+          text="I'm an amazing event"
+          optional="I'm an amazing optional text"
+        />
+        <Description
+          text="I'm an amazing event"
+          optional="I'm another amazing optional text"
+        />
+        <Description text="I'm an amazing event" />
+      </ContentBody>
+    </Content>
+    <Content>...</Content>
+  </Timeline>
 );
 ```
 
