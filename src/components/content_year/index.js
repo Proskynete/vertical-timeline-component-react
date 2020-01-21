@@ -10,7 +10,7 @@ const YearComponent = styled.div`
 	padding-bottom: 10px;
 	position: relative;
 	text-align: right;
-	width: 50px;
+	width: 100px;
 
 	&::after {
 		background: #ccc;
@@ -28,36 +28,62 @@ const YearComponentItem = styled.div`
 	margin-bottom: 8px;
 `;
 
-const ContentYear = props => {
-	const { startYear, currentYear } = props;
+const handleGetDate = (m, d, y) => {
+	if (d !== '' && m !== '') {
+		return `${m}-${d}-${y}`;
+	}
+	if (m !== '') {
+		return `${m}-${y}`;
+	}
+	if (d === '' && m === '') {
+		return y;
+	}
+};
+
+const handlePrintDate = (mounth, day, year, current) => {
 	const _date = new Date();
+	const startDate = handleGetDate(mounth, day, year);
+
+	if (current) {
+		return (
+			<>
+				<YearComponentItem className="item-year-component">
+					{_date.getFullYear()}
+				</YearComponentItem>
+				<YearComponentItem className="item-year-component">
+					{startDate}
+				</YearComponentItem>
+			</>
+		);
+	}
+	return (
+		<YearComponentItem className="item-year-component">
+			{startDate}
+		</YearComponentItem>
+	);
+};
+
+const ContentYear = props => {
+	const { startMonth, startDay, startYear, currentYear } = props;
 
 	return (
 		<YearComponent className="year-component">
-			{currentYear ? (
-				<>
-					<YearComponentItem className="item-year-component">
-						{_date.getFullYear()}
-					</YearComponentItem>
-					<YearComponentItem className="item-year-component">
-						{startYear}
-					</YearComponentItem>
-				</>
-			) : (
-				<YearComponentItem className="item-year-component">
-					{startYear}
-				</YearComponentItem>
-			)}
+			{handlePrintDate(startMonth, startDay, startYear, currentYear)}
 		</YearComponent>
 	);
 };
 
 ContentYear.defaultProps = {
+	startMonth: '',
+	startDay: '',
 	currentYear: false
 };
 
 ContentYear.propTypes = {
-	startYear: PropTypes.number.isRequired,
+	startMonth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	startDay: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	startYear: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+		.isRequired,
 	currentYear: PropTypes.bool
 };
 
