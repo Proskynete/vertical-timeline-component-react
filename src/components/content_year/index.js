@@ -28,21 +28,54 @@ const YearComponentItem = styled.div`
 	margin-bottom: 8px;
 `;
 
-const handleGetDate = (m, d, y) => {
+const mapMonth = [
+	'Jan',
+	'Feb',
+	'Mar',
+	'Apr',
+	'May',
+	'Jun',
+	'Jul',
+	'Aug',
+	'Sept',
+	'Oct',
+	'Nov',
+	'Dec'
+];
+
+const handleTransformMonth = (m, t) => {
+	if (t === 'number') {
+		return m.length === 1 ? `0${m}` : m;
+	}
+	if (t === 'text') {
+		const index = m - 1;
+		return mapMonth[index];
+	}
+};
+
+const handleGetDate = (m, t, d, y) => {
+	const _m = handleTransformMonth(m, t);
+
 	if (d !== '' && m !== '') {
-		return `${m}-${d}-${y}`;
+		if (t === 'text') {
+			return `${_m} ${d}, ${y}`;
+		}
+		return `${_m}-${d}-${y}`;
 	}
 	if (m !== '') {
-		return `${m}-${y}`;
+		if (t === 'text') {
+			return `${_m}, ${y}`;
+		}
+		return `${_m}-${y}`;
 	}
 	if (d === '' && m === '') {
 		return y;
 	}
 };
 
-const handlePrintDate = (mounth, day, year, current) => {
+const handlePrintDate = (mounth, day, year, month_type, current) => {
 	const _date = new Date();
-	const startDate = handleGetDate(mounth, day, year);
+	const startDate = handleGetDate(mounth, month_type, day, year);
 
 	if (current) {
 		return (
@@ -64,23 +97,25 @@ const handlePrintDate = (mounth, day, year, current) => {
 };
 
 const ContentYear = props => {
-	const { startMonth, startDay, startYear, currentYear } = props;
+	const { startMonth, startDay, startYear, monthType, currentYear } = props;
 
 	return (
 		<YearComponent className="year-component">
-			{handlePrintDate(startMonth, startDay, startYear, currentYear)}
+			{handlePrintDate(startMonth, startDay, startYear, monthType, currentYear)}
 		</YearComponent>
 	);
 };
 
 ContentYear.defaultProps = {
 	startMonth: '',
+	monthType: 'number',
 	startDay: '',
 	currentYear: false
 };
 
 ContentYear.propTypes = {
 	startMonth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+	monthType: PropTypes.oneOf(['text', 'number']),
 	startDay: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 	startYear: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 		.isRequired,
