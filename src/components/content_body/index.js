@@ -35,21 +35,21 @@ const BodyComponentTitle = styled.p`
 `;
 
 const ContentBody = (props) => {
-  const { title, children } = props;
+	const { title, children } = props;
 
-  return (
-    <BodyComponent className="body-component">
-      <BodyComponentTitle className="title-body-component">
-        {title}
-      </BodyComponentTitle>
-      {children}
-    </BodyComponent>
-  );
+	return (
+		<BodyComponent className='body-component'>
+			<BodyComponentTitle className='title-body-component'>
+				{title}
+			</BodyComponentTitle>
+			{children}
+		</BodyComponent>
+	);
 };
 
 ContentBody.propTypes = {
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+	title: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
 };
 
 export default ContentBody;

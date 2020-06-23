@@ -12,8 +12,8 @@
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "webpack --mode development --watch",
-		"lint": "eslint ./src/components/ --ignore-path .gitignore",
-		"lint:fix": "eslint --fix ./src/components/ --ignore-path .gitignore",
+		"lint": "eslint ./src --ignore-path .gitignore",
+		"lint:fix": "eslint --fix ./src --ignore-path .gitignore",
 		"prettier:check": "prettier --check ./src/**/*.js",
 		"prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
 		"test": "jest",
