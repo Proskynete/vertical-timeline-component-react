@@ -27,9 +27,6 @@
 		"Vertical Timeline Component React",
 		"Vertical Timeline"
 	],
-	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
-	},
 	"peerDependencies": {
 		"react": "^16.13.1"
 	},
