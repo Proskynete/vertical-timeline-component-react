@@ -1,11 +1,19 @@
 {
   "presets": [
-    [ 
-      "@babel/preset-env", { "targets": { "node": "current" }}
-    ]
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry"
+      }
+    ],
+    "@babel/preset-react"
   ],
   "plugins": [
-    "@babel/plugin-proposal-object-rest-spread",
-    "@babel/plugin-transform-react-jsx"
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ]
 }
