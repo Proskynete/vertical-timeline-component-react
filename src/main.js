@@ -4,10 +4,4 @@ import ContentYear from './components/content_year';
 import ContentBody from './components/content_body';
 import Description from './components/description';
 
-export {
-  Timeline,
-  Content,
-  ContentYear,
-  ContentBody,
-  Description,
-};
+export { Timeline, Content, ContentYear, ContentBody, Description };
