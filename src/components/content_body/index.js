@@ -25,7 +25,6 @@ const BodyComponent = styled.div`
 	}
 `;
 
-
 const ContentBody = (props) => {
 	const { title, children, textColor } = props;
 
@@ -51,7 +50,7 @@ const ContentBody = (props) => {
 ContentBody.propTypes = {
 	title: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
-	textColor: PropTypes.string.isRequired,
+	textColor: PropTypes.string,
 };
 
 export default ContentBody;
