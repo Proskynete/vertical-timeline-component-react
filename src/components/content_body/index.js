@@ -53,4 +53,8 @@ ContentBody.propTypes = {
 	textColor: PropTypes.string,
 };
 
+ContentBody.defaultProps = {
+	textColor: '#002a3a',
+};
+
 export default ContentBody;
