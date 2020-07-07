@@ -47,10 +47,11 @@ For each `Content` you need `ContentYear` since with this component you mark the
 
 For each `Content` you need `ContentBody`, because with this component you describe the events that occurred in that year using `Description` component.
 
-| Name     | Type   | Required | Description                                       |
-| -------- | ------ | -------- | ------------------------------------------------- |
-| Title    | String | True     | Show the title for the events                     |
-| Children | Node   | True     | It is necessary to use the description component. |
+| Name      | Type      | Required  | Description                                       |
+| --------- | --------- | --------- | ------------------------------------------------- |
+| Title     | String    | True      | Show the title for the events                     |
+| Children  | Node      | True      | It is necessary to use the description component. |
+| TextColor | String    | False     | Change the color of the text in the ContentBody.  |
 
 ### Description
 
