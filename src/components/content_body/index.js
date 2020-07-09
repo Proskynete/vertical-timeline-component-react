@@ -25,17 +25,17 @@ const BodyComponent = styled.div`
 	}
 `;
 
-const BodyComponentTitle = styled.p`
-	color: #002a3a;
-	font-weight: bold;
-	margin-bottom: 10px;
-	font-size: 18px;
-	margin-top: 0;
-	text-align: left;
-`;
-
 const ContentBody = (props) => {
-	const { title, children } = props;
+	const { title, children, textColor } = props;
+
+	const BodyComponentTitle = styled.p`
+		color: ${textColor};
+		font-weight: bold;
+		margin-bottom: 10px;
+		font-size: 18px;
+		margin-top: 0;
+		text-align: left;
+	`;
 
 	return (
 		<BodyComponent className='body-component'>
@@ -50,6 +50,11 @@ const ContentBody = (props) => {
 ContentBody.propTypes = {
 	title: PropTypes.string.isRequired,
 	children: PropTypes.node.isRequired,
+	textColor: PropTypes.string,
+};
+
+ContentBody.defaultProps = {
+	textColor: '#002a3a',
 };
 
 export default ContentBody;
