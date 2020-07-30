@@ -1,5 +1,6 @@
 node_modules/
 coverage/
+build/
 
 yarn-error.log
 yarn.lock
