@@ -11,3 +11,45 @@ export const defaultValues = {
 	lang: 'en',
 	dateFormat: 'L',
 };
+
+export const monthArray = {
+	es: [
+		'Ene',
+		'Feb',
+		'Mar',
+		'Abr',
+		'May',
+		'Jun',
+		'Jul',
+		'Ago',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dic',
+	],
+	en: [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec',
+	],
+};
+
+export const mapText = {
+	en: {
+		from: 'From',
+		to: 'To',
+	},
+	es: {
+		from: 'Desde',
+		to: 'Hasta',
+	},
+};
