@@ -22,7 +22,7 @@ export const ContainerWrapper = styled.section`
 
 export const BodyContent = styled.div``;
 
-// Content-Year component
+// YearContent component
 export const YearWrapper = styled.p`
 	align-items: flex-end;
 	color: ${(props) => props.theme.yearColor};

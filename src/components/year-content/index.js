@@ -5,7 +5,7 @@ import { mapDate } from '../../helpers/transform-date.helper';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
 
-const ContentYear = (props) => {
+const YearContent = (props) => {
 	const { startDate, endDate, currentYear } = props;
 	const { lang, dateFormat } = useContext(ConfigContext);
 
@@ -42,15 +42,15 @@ const ContentYear = (props) => {
 	);
 };
 
-ContentYear.defaultProps = {
+YearContent.defaultProps = {
 	endDate: '',
 	currentYear: false,
 };
 
-ContentYear.propTypes = {
+YearContent.propTypes = {
 	startDate: string.isRequired,
 	endDate: string,
 	currentYear: bool,
 };
 
-export default ContentYear;
+export default YearContent;
