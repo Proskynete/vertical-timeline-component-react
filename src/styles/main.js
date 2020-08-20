@@ -106,3 +106,23 @@ export const BodyInner = styled.ul`
 		margin-bottom: 0;
 	}
 `;
+
+// Description component
+export const Subtitle = styled.div`
+	color: ${(props) => props.theme.subtitleColor};
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 400;
+
+	&:not(:first-of-type) {
+		margin-top: 10px;
+	}
+`;
+
+export const DescriptionText = styled.li`
+	color: ${(props) => props.theme.textColor};
+
+	&:not(:first-of-type) {
+		margin-top: 3px;
+	}
+`;
