@@ -3,9 +3,9 @@ import { monthArray } from '../config/index';
 export const completeWith0 = (n) =>
 	n.toLocaleString().length < 2 ? `0${n}` : n;
 
-const transformDate = ({ date, lang, type }) => {
+export const transformDate = ({ date, lang, type }) => {
 	const year = parseInt(date.split('/')[0], 10);
-	const month = parseInt(date.split('/')[1], 10) - 1;
+	const month = parseInt(date.split('/')[1], 10);
 	const day = parseInt(date.split('/')[2], 10);
 
 	switch (type) {
@@ -23,11 +23,11 @@ const transformDate = ({ date, lang, type }) => {
 				: `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`;
 		case 'll':
 			return lang === 'en'
-				? `${month ? `${monthArray[lang][month]}` : ''}${
+				? `${month ? `${monthArray[lang][month - 1]}` : ''}${
 						day ? ` ${completeWith0(day)}` : ''
 				  }${day || month ? ', ' : ''}${year}`
 				: `${day ? `${day} de ` : ''}${
-						month ? `${monthArray[lang][month]}, ` : ''
+						month ? `${monthArray[lang][month - 1]}, ` : ''
 				  }${year}`;
 		default:
 			return false;
