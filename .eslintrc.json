@@ -30,7 +30,7 @@
     "camelcase": [1],
     "no-underscore-dangle": [0, "always"],
     "react/jsx-props-no-spreading": [0, {}],
-    "treatUndefinedAsUnspecified": false,
+    "treatUndefinedAsUnspecified": 0,
     "jsx-a11y/label-has-associated-control": [0, {
       "labelComponents": [],
       "labelAttributes": [],
