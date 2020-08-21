@@ -1,6 +1,7 @@
 import { monthArray } from '../config/index';
 
-const completeWith0 = (n) => (n.toLocaleString().length < 2 ? `0${n}` : n);
+export const completeWith0 = (n) =>
+	n.toLocaleString().length < 2 ? `0${n}` : n;
 
 const transformDate = ({ date, lang, type }) => {
 	const year = parseInt(date.split('/')[0], 10);
