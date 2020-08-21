@@ -1,72 +1,72 @@
 {
-	"name": "vertical-timeline-component-react",
-	"version": "1.2.4",
-	"description": "A simple component for create a vertical timeline with Reactjs",
-	"main": "build/index.js",
-	"repository": "https://github.com/Proskynete/vertical-timeline-component-react",
-	"author": {
-		"name": "Eduardo Alvarez",
-		"email": "eduardo.a1993@gmail.com"
-	},
-	"license": "MIT",
-	"scripts": {
-		"build": "webpack --mode production",
-		"start": "webpack --mode development --watch",
-		"lint": "eslint ./src --ignore-path .gitignore",
-		"lint:fix": "eslint --fix ./src --ignore-path .gitignore",
-		"prettier:check": "prettier --check ./src/**/*.js",
-		"prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
-		"test": "jest",
-		"test:update-snapshots": "jest --updateSnapshot",
-		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
-		"test:coverage": "jest --coverage",
-		"test:watch": "jest --watchAll"
-	},
-	"keywords": [
-		"React",
-		"Reactjs",
-		"Vertical Timeline Component React",
-		"Vertical Timeline"
-	],
-	"peerDependencies": {
-		"react": "^16.13.1"
-	},
-	"dependencies": {
-		"chai": "^4.2.0",
-		"chai-enzyme": "^1.0.0-beta.1",
-		"coveralls": "^3.1.0",
-		"enzyme": "^3.9.0",
-		"enzyme-adapter-react-16": "^1.12.1",
-		"jest": "^26.1.0",
-		"path": "^0.12.7",
-		"prop-types": "^15.7.2",
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1",
-		"styled-components": "^5.1.1",
-		"webpack": "^4.44.0",
-		"webpack-cli": "^3.3.12"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.10.5",
-		"@babel/plugin-transform-runtime": "^7.10.5",
-		"@babel/polyfill": "^7.10.4",
-		"@babel/preset-env": "^7.10.4",
-		"@babel/preset-react": "^7.10.4",
-		"@babel/runtime": "^7.10.5",
-		"babel-eslint": "^10.0.3",
-		"babel-jest": "^26.1.0",
-		"babel-loader": "^8.1.0",
-		"eslint": "7.2.0",
-		"eslint-config-airbnb": "^18.2.0",
-		"eslint-config-airbnb-base": "^14.2.0",
-		"eslint-config-prettier": "^6.11.0",
-		"eslint-import-resolver-alias": "^1.1.2",
-		"eslint-import-resolver-meteor": "^0.4.0",
-		"eslint-plugin-import": "^2.22.0",
-		"eslint-plugin-jsx-a11y": "^6.2.3",
-		"eslint-plugin-prettier": "^3.1.3",
-		"eslint-plugin-react": "^7.20.5",
-		"eslint-plugin-react-hooks": "0.0.0-33c3af284",
-		"react-test-renderer": "^16.8.6"
-	}
+  "name": "vertical-timeline-component-react",
+  "version": "2.0.0",
+  "description": "A simple component for create a vertical timeline with Reactjs",
+  "main": "build/index.js",
+  "repository": "https://github.com/Proskynete/vertical-timeline-component-react",
+  "author": {
+    "name": "Eduardo Alvarez",
+    "email": "eduardo.a1993@gmail.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack --mode development --watch",
+    "lint": "eslint ./src --ignore-path .gitignore",
+    "lint:fix": "eslint --fix ./src --ignore-path .gitignore",
+    "prettier:check": "prettier --check ./src/**/*.js",
+    "prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
+    "test": "jest",
+    "test:update-snapshots": "jest --updateSnapshot",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watchAll"
+  },
+  "keywords": [
+    "React",
+    "Reactjs",
+    "Vertical Timeline Component React",
+    "Vertical Timeline"
+  ],
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "coveralls": "^3.1.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "jest": "^26.1.0",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.10.5",
+    "@babel/polyfill": "^7.10.4",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-meteor": "^0.4.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.5",
+    "eslint-plugin-react-hooks": "0.0.0-33c3af284",
+    "react-test-renderer": "^16.8.6"
+  }
 }
