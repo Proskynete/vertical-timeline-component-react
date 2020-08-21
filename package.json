@@ -68,5 +68,15 @@
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "0.0.0-33c3af284",
     "react-test-renderer": "^16.8.6"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
   }
 }
