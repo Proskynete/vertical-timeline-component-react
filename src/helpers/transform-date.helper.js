@@ -29,8 +29,6 @@ export const transformDate = ({ date, lang, type }) => {
 				: `${day ? `${day} de ` : ''}${
 						month ? `${monthArray[lang][month - 1]}, ` : ''
 				  }${year}`;
-		default:
-			return false;
 	}
 };
 
