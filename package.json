@@ -17,6 +17,7 @@
 		"prettier:check": "prettier --check ./src/**/*.js",
 		"prettier:format": "prettier --config .prettierrc --write ./src/**/*.js",
 		"test": "jest",
+		"test:update-snapshots": "jest --updateSnapshot",
 		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
 		"test:coverage": "jest --coverage",
 		"test:watch": "jest --watchAll"

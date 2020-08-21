@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Timeline /> should create Snapshot 1`] = `
+<div
+  className="sc-AxjAm bXdGBi"
+>
+  <div
+    className="sc-AxirZ lhnuda"
+  >
+    <div>
+      Child
+    </div>
+  </div>
+</div>
+`;
