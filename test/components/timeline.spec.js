@@ -19,8 +19,14 @@ describe('<Timeline />', () => {
 		expect(tree).toMatchSnapshot();
 	});
 
-	it('should render component', () => {
-		const wrapper = shallow(<Timeline>Hello</Timeline>);
-		expect(wrapper.children).toBeInstanceOf(Function);
+	it('should render compontent with children prop', () => {
+		const wrapper = shallow(
+			<Timeline>
+				<div>children</div>
+			</Timeline>,
+		);
+
+		expect(wrapper.find('div')).toHaveLength(1);
+		expect(wrapper.find('div').text()).toEqual('children');
 	});
 });

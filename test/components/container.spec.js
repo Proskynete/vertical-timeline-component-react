@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme from 'enzyme';
+import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import renderer from 'react-test-renderer';
 
@@ -18,5 +18,18 @@ describe('<Container />', () => {
 
 		const tree = component.toJSON();
 		expect(tree).toMatchSnapshot();
+	});
+
+	it('should render compontent with two children props', () => {
+		const wrapper = shallow(
+			<Container>
+				<div>First children</div>
+				<div>Second children</div>
+			</Container>,
+		);
+
+		expect(wrapper.find('div')).toHaveLength(2);
+		expect(wrapper.text().includes('First children')).toBeTruthy();
+		expect(wrapper.text().includes('Second children')).toBeTruthy();
 	});
 });
