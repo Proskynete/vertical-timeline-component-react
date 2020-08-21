@@ -1,6 +1,7 @@
 import {
 	completeWith0,
 	transformDate,
+	mapDate,
 } from '../../src/helpers/transform-date.helper';
 
 describe('Helpers', () => {
@@ -193,6 +194,56 @@ describe('Helpers', () => {
 					expect(result).toEqual('2020');
 				});
 			});
+		});
+	});
+
+	describe('mapDate hashmap', () => {
+		it('LANG=en - TYPE=L', () => {
+			const lang = 'en';
+			const type = 'L';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('08/21/2020');
+		});
+
+		it('LANG=en - TYPE=l', () => {
+			const lang = 'en';
+			const type = 'l';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('8/21/2020');
+		});
+
+		it('LANG=en - TYPE=ll', () => {
+			const lang = 'en';
+			const type = 'll';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('Aug 21, 2020');
+		});
+
+		it('LANG=es - TYPE=L', () => {
+			const lang = 'es';
+			const type = 'L';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('21/08/2020');
+		});
+
+		it('LANG=es - TYPE=l', () => {
+			const lang = 'es';
+			const type = 'l';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('21/8/2020');
+		});
+
+		it('LANG=es - TYPE=ll', () => {
+			const lang = 'es';
+			const type = 'll';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('21 de Ago, 2020');
 		});
 	});
 });
