@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+/* eslint-disable consistent-return */
 import { monthArray } from '../config/index';
 
 export const completeWith0 = (n) =>

@@ -28,9 +28,9 @@
     "import/prefer-default-export": "off",
     "no-shadow": [1],
     "camelcase": [1],
+    "commentPattern": [0],
     "no-underscore-dangle": [0, "always"],
     "react/jsx-props-no-spreading": [0, {}],
-    "treatUndefinedAsUnspecified": 0,
     "jsx-a11y/label-has-associated-control": [0, {
       "labelComponents": [],
       "labelAttributes": [],
