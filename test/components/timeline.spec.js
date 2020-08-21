@@ -9,7 +9,11 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('<Timeline />', () => {
 	it('should create Snapshot', () => {
-		const component = renderer.create(<Timeline>childen</Timeline>);
+		const component = renderer.create(
+			<Timeline>
+				<div>Child</div>
+			</Timeline>,
+		);
 
 		const tree = component.toJSON();
 		expect(tree).toMatchSnapshot();

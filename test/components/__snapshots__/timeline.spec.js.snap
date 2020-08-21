@@ -7,7 +7,9 @@ exports[`<Timeline /> should create Snapshot 1`] = `
   <div
     className="sc-AxirZ lhnuda"
   >
-    childen
+    <div>
+      Child
+    </div>
   </div>
 </div>
 `;
