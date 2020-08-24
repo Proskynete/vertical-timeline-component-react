@@ -1,7 +1,7 @@
 # vertical-timeline-component-react
 
 A simple component to generate a responsive vertical timeline
-![Vertical Timeline Component React](https://i.imgur.com/JXdOHYV.png 'How to see vertical-timeline-component-react')
+![Vertical Timeline Component React](https://i.imgur.com/KBqLIlK.png 'How to see vertical-timeline-component-react')
 
 ## Status
 
@@ -15,52 +15,90 @@ To install as npm dependency
 npm install --save vertical-timeline-component-react
 ```
 
-Or if you preferred, you can use `yarn`
-
-```sh
-yarn add vertical-timeline-component-react
-```
-
 ## API Documentation
 
 ### Timeline
 
 This is the wrapper component that creates the vertical timeline.
 
-### Content
+- Childrens
 
-Each event in the timeline will be represented by the `Content` component. There can be multiple repeating instances of this component inside `Timeline` wrapper.
+| Number of children | Required                                             | Value Allowed               |
+| ------------------ | ---------------------------------------------------- | --------------------------- |
+| Many               | At least the first `Container` component is required | Only `Container` components |
 
-### ContentYear
+- Props
 
-For each `Content` you need `ContentYear` since with this component you mark the events in the given year.
+| name       | Type   | Required | Values Allowed   | default values                                                                                                                                                        | Description                                                                  |
+| ---------- | ------ | -------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| theme      | object | false    | colors           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
+| lang       | node   | false    | `en` or `es`     | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | string | false    | `L`, `l` or `ll` | `L`                                                                                                                                                                   | Change the presentation format of dates                                      |
 
-| Name        | Type             | Required | Values Allowed           | Description                                       |
-| ----------- | ---------------- | -------- | ------------------------ | ------------------------------------------------- |
-| startMonth  | string or number | false    | from 0 to 12             | The month of the start of the content or contents |
-| monthType   | string           | false    | text or number (default) | Type of how to show the month                     |
-| startDay    | string           | false    | from 1 to 31             | The day of the start of the content or contents   |
-| startYear   | string           | true     | any year                 | The year of the start of the content or contents  |
-| currentYear | boolean          | false    | false (default)          | When the content is still being made              |
+`dateFormat`: Receive only one of three options. (The options are same the [moment.js](https://momentjs.com/) using).
 
-### ContentBody
+- The option `L` will return a date like `MM/DD/YYYY` (in english) or `DD/MM/YYYY` (in spanish).
+- The option `l` will return a date like `M/D/YYYY` (in english) or `D/M/YYYY` (in spanish).
+- The option `ll` will return a date like `MMM DD, YYYY` (in english) or `DD de MMM, YYYY` (in spanish).
 
-For each `Content` you need `ContentBody`, because with this component you describe the events that occurred in that year using `Description` component.
+### Container
 
-| Name      | Type      | Required  | Description                                       |
-| --------- | --------- | --------- | ------------------------------------------------- |
-| Title     | String    | True      | Show the title for the events                     |
-| Children  | Node      | True      | It is necessary to use the description component. |
-| TextColor | String    | False     | Change the color of the text in the ContentBody.  |
+Each event in the timeline will be represented by the `Content` component. This component receive only two children's, the first is `YearContent` and the second is `BodyContent`. There can be multiple repeating instances of this component inside `Timeline` wrapper.
+
+- Childrens
+
+| Number of children | Required | Value Allowed                   |
+| ------------------ | -------- | ------------------------------- |
+| 2                  | true     | `YearContent` and `BodyContent` |
+
+### YearContent
+
+For each `Container` you need `YearContent` (like firts children) since with this component you mark the events in the given year.
+
+- Props
+
+| Name        | Type    | Required | Values Allowed                    | default values | Description                                                                      |
+| ----------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
+| startDate   | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
+| endDate     | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
+| currentYear | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
+
+### BodyContent
+
+For each `Container` you need `ContentBody` (like second children). This component will be the container of the one or more `Sections`.
+
+- Childrens
+
+| Number of children | Required                                           | Value Allowed             |
+| ------------------ | -------------------------------------------------- | ------------------------- |
+| Many               | At least the first `Section` component is required | Only `Section` components |
+
+### Section
+
+This component is the container for one or more `Description`.
+
+- Childrens
+
+| Number of children | Required                                               | Value Allowed                 |
+| ------------------ | ------------------------------------------------------ | ----------------------------- |
+| Many               | At least the first `Description` component is required | Only `Description` components |
+
+- Props
+
+| Name  | Type   | Required | Description                   |
+| ----- | ------ | -------- | ----------------------------- |
+| title | string | true     | It's the title of any section |
 
 ### Description
 
-With this component you describe the events one for one.
+This component can be the text of the description or a subtitle
 
-| Name     | Type   | Required | Description                                |
-| -------- | ------ | -------- | ------------------------------------------ |
-| Text     | String | True     | Describe the event                         |
-| Optional | String | False    | You can this props for use a optional text |
+- Props
+
+| Name    | Type   | Required | Values Allowed              | default values | Description                           |
+| ------- | ------ | -------- | --------------------------- | -------------- | ------------------------------------- |
+| variant | string | false    | `subtitle` or `description` | `description`  | Transform the format of the text      |
+| text    | string | true     | Any text                    | does not apply | Show the description of the `Section` |
 
 ## How to use it
 
@@ -70,41 +108,46 @@ The following snippet will show you how to use the library:
 
 ```js
 import {
-  Timeline,
-  Content,
-  ContentYear,
-  ContentBody,
-  Description
+ Timeline,
+ Container,
+ YearContent,
+ BodyContent,
+ Section,
+ Description,
 } from 'vertical-timeline-component-react';
 
+const customTheme = {
+ yearColor: '#405b73',
+ lineColor: '#d0cdc4',
+ dotColor: '#262626',
+ borderDotColor: '#d0cdc4',
+ titleColor: '#405b73',
+ subtitleColor: '#bf9765',
+ textColor: '#262626',
+};
+
 class Main extends Component {
-  render() {
-    return (
-      <Timeline>
-        <Content>
-          <ContentYear
-            startMonth="12"
-            monthType="text"
-            startDay="24"
-            startYear="2016"
-            currentYear
-          />
-          <ContentBody title="Amazing Title">
-            <Description
-              text="I'm an amazing event"
-              optional="I'm an amazing optional text"
-            />
-            <Description
-              text="I'm an amazing event"
-              optional="I'm another amazing optional text"
-            />
-            <Description text="I'm an amazing event" />
-          </ContentBody>
-        </Content>
-        <Content>...</Content>
-      </Timeline>
-    );
-  }
+ render() {
+  retrurn(
+   <Timeline theme={customTheme} dateFormat='ll'>
+    <Container>
+     <YearContent startDate='2020/07/01' currentYear />
+     <BodyContent>
+      <Section title='Title'>
+       <Description variant='subtitle' text='Subtitle' />
+       <Description text='Description' />
+       <Description text='Another description' />
+      </Section>
+
+      <Section title='Another title'>
+       <Description text='Description' />
+       <Description text='Another description' />
+      </Section>
+     </BodyContent>
+    </Container>
+   </Timeline>,
+  );
+ }
 }
 ```
 
@@ -112,38 +155,45 @@ class Main extends Component {
 
 ```js
 import {
-  Timeline,
-  Content,
-  ContentYear,
-  ContentBody,
-  Description
+ Timeline,
+ Container,
+ YearContent,
+ BodyContent,
+ Section,
+ Description,
 } from 'vertical-timeline-component-react';
 
-const Main = () => (
-  <Timeline>
-    <Content>
-      <ContentYear
-        startMonth="12"
-        monthType="text"
-        startDay="24"
-        startYear="2016"
-        currentYear
-      />
-      <ContentBody title="Amazing Title">
-        <Description
-          text="I'm an amazing event"
-          optional="I'm an amazing optional text"
-        />
-        <Description
-          text="I'm an amazing event"
-          optional="I'm another amazing optional text"
-        />
-        <Description text="I'm an amazing event" />
-      </ContentBody>
-    </Content>
-    <Content>...</Content>
+const Main = () => {
+ const customTheme = {
+  yearColor: '#405b73',
+  lineColor: '#d0cdc4',
+  dotColor: '#262626',
+  borderDotColor: '#d0cdc4',
+  titleColor: '#405b73',
+  subtitleColor: '#bf9765',
+  textColor: '#262626',
+ };
+
+ return (
+  <Timeline theme={customTheme} dateFormat='ll'>
+   <Container>
+    <YearContent startDate='2020/07/01' currentYear />
+    <BodyContent>
+     <Section title='Title'>
+      <Description variant='subtitle' text='Subtitle' />
+      <Description text='Description' />
+      <Description text='Another description' />
+     </Section>
+
+     <Section title='Another title'>
+      <Description text='Description' />
+      <Description text='Another description' />
+     </Section>
+    </BodyContent>
+   </Container>
   </Timeline>
-);
+ );
+};
 ```
 
 ## License
