@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Container /> should create Snapshot 1`] = `
+<section
+  className="sc-AxiKw eozVxv"
+>
+  <div>
+    First child
+  </div>
+  <div
+    className="sc-AxhCb ccMvAG"
+  >
+    <div>
+      Second child
+    </div>
+  </div>
+</section>
+`;

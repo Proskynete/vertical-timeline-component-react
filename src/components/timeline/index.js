@@ -1,25 +1,43 @@
-/* eslint-disable no-tabs */
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
-const TimelineComponent = styled.div`
-	padding: 10px 20px 20px;
-	width: 100%;
-`;
+import { shape, node, oneOf, oneOfType, arrayOf } from 'prop-types';
+import { ThemeProvider } from 'styled-components';
+import { defaultValues } from '../../config';
+import { ConfigContext } from '../../context/config.context';
+import { TimelineWrapper, TimelineWrapperInner } from '../../styles/main';
 
 const Timeline = (props) => {
-	const { children } = props;
+	const { theme, lang, children, dateFormat } = props;
 
 	return (
-		<TimelineComponent className='timeline-component'>
-			{children}
-		</TimelineComponent>
+		<TimelineWrapper>
+			<TimelineWrapperInner>
+				<ConfigContext.Provider value={{ lang, dateFormat }}>
+					<ThemeProvider theme={theme}>{children}</ThemeProvider>
+				</ConfigContext.Provider>
+			</TimelineWrapperInner>
+		</TimelineWrapper>
 	);
 };
 
+Timeline.defaultProps = {
+	theme: {
+		yearColor: defaultValues.theme.yearColor,
+		lineColor: defaultValues.theme.lineColor,
+		dotColor: defaultValues.theme.dotColor,
+		borderDotColor: defaultValues.theme.borderDotColor,
+		titleColor: defaultValues.theme.titleColor,
+		subtitleColor: defaultValues.theme.subtitleColor,
+		textColor: defaultValues.theme.textColor,
+	},
+	lang: defaultValues.lang,
+	dateFormat: defaultValues.dateFormat,
+};
+
 Timeline.propTypes = {
-	children: PropTypes.node.isRequired,
+	theme: shape({}),
+	lang: oneOf(['es', 'en']),
+	dateFormat: oneOf(['L', 'l', 'll']),
+	children: oneOfType([arrayOf(node), node]).isRequired,
 };
 
 export default Timeline;

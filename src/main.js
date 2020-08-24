@@ -1,7 +1,8 @@
 import Timeline from './components/timeline';
-import Content from './components/content';
-import ContentYear from './components/content_year';
-import ContentBody from './components/content_body';
+import Container from './components/container';
+import YearContent from './components/year-content';
+import BodyContent from './components/body-content';
+import Section from './components/section';
 import Description from './components/description';
 
-export { Timeline, Content, ContentYear, ContentBody, Description };
+export { Timeline, Container, YearContent, BodyContent, Section, Description };
