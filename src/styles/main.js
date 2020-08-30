@@ -62,6 +62,7 @@ export const BodyWrapper = styled.article`
 	${ContainerWrapper}:last-of-type &:last-of-type:after {
 		background-color: ${(props) => props.theme.lineColor};
 		bottom: 0;
+		box-sizing: content-box;
 		content: '';
 		height: 100%;
 		left: 10px;
@@ -72,6 +73,7 @@ export const BodyWrapper = styled.article`
 	}
 
 	${ContainerWrapper}:last-of-type &:last-of-type:after {
+		box-sizing: content-box;
 		display: none;
 	}
 `;
@@ -85,6 +87,7 @@ export const Title = styled.p`
 		background-color: ${(props) => props.theme.dotColor};
 		border: 2px solid ${(props) => props.theme.borderDotColor};
 		border-radius: 50%;
+		box-sizing: content-box;
 		content: '';
 		height: 6px;
 		left: 6px;
