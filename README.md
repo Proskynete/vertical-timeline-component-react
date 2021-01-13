@@ -128,7 +128,7 @@ const customTheme = {
 
 class Main extends Component {
  render() {
-  retrurn(
+  return(
    <Timeline theme={customTheme} dateFormat='ll'>
     <Container>
      <YearContent startDate='2020/07/01' currentYear />
