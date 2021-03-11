@@ -16,20 +16,41 @@ export const transformDate = ({ date, lang, type }) => {
 				? `${month ? `${completeWith0(month)}/` : ''}${
 						day ? `${completeWith0(day)}/` : ''
 				  }${year}`
-				: `${day ? `${completeWith0(day)}/` : ''}${
+				: lang === 'es'
+				? `${day ? `${completeWith0(day)}/` : ''}${
 						month ? `${completeWith0(month)}/` : ''
-				  }${year}`;
+				  }${year}`
+				: /* lang === 'de' */
+				  `${
+						day
+							? `${completeWith0(day)}.${
+									month ? `${completeWith0(month)}.` : ''
+							  }${year}`
+							: `${month ? `${completeWith0(month)}/` : ''}${year}`
+				  }`;
 		case 'l':
 			return lang === 'en'
 				? `${month ? `${month}/` : ''}${day ? `${day}/` : ''}${year}`
-				: `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`;
+				: lang === 'es'
+				? `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`
+				: /* lang === 'de' */
+				  `${
+						day
+							? `${day}.${month ? `${month}.` : ''}${year}`
+							: `${month ? `${month}/` : ''}${year}`
+				  }`;
 		case 'll':
 			return lang === 'en'
 				? `${month ? `${monthArray[lang][month - 1]}` : ''}${
 						day ? ` ${completeWith0(day)}` : ''
 				  }${day || month ? ', ' : ''}${year}`
-				: `${day ? `${day} de ` : ''}${
+				: lang === 'es'
+				? `${day ? `${day} de ` : ''}${
 						month ? `${monthArray[lang][month - 1]}, ` : ''
+				  }${year}`
+				: /* lang === 'de' */
+				  `${day ? `${day}. ` : ''}${
+						month ? `${monthArray[lang][month - 1]} ` : ''
 				  }${year}`;
 	}
 };
@@ -44,5 +65,10 @@ export const mapDate = {
 		L: (date) => transformDate({ date, lang: 'es', type: 'L' }),
 		l: (date) => transformDate({ date, lang: 'es', type: 'l' }),
 		ll: (date) => transformDate({ date, lang: 'es', type: 'll' }),
+	},
+	de: {
+		L: (date) => transformDate({ date, lang: 'de', type: 'L' }),
+		l: (date) => transformDate({ date, lang: 'de', type: 'l' }),
+		ll: (date) => transformDate({ date, lang: 'de', type: 'll' }),
 	},
 };
