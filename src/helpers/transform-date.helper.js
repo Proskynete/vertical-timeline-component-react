@@ -22,10 +22,8 @@ export const transformDate = ({ date, lang, type }) => {
 				  }${year}`
 				: /* lang === 'de' */
 				  `${
-						day
-							? `${completeWith0(day)}.${
-									month ? `${completeWith0(month)}.` : ''
-							  }${year}`
+						day && month
+							? `${completeWith0(day)}.${completeWith0(month)}.${year}`
 							: `${month ? `${completeWith0(month)}/` : ''}${year}`
 				  }`;
 		case 'l':
@@ -35,8 +33,8 @@ export const transformDate = ({ date, lang, type }) => {
 				? `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`
 				: /* lang === 'de' */
 				  `${
-						day
-							? `${day}.${month ? `${month}.` : ''}${year}`
+						day && month
+							? `${day}.${month}.${year}`
 							: `${month ? `${month}/` : ''}${year}`
 				  }`;
 		case 'll':
