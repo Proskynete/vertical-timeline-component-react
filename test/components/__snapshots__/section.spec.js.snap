@@ -2,15 +2,15 @@
 
 exports[`<Section /> should create Snapshot 1`] = `
 <article
-  className="sc-AxheI kdvXAR"
+  className="sc-gKsewC eXtzIU"
 >
   <p
-    className="sc-Axmtr kHDhOq"
+    className="sc-iBPRYJ eQfaEM"
   >
     title
   </p>
   <ul
-    className="sc-AxmLO chzFoG"
+    className="sc-fubCfw eTAXIs"
   >
     <div>
       children
