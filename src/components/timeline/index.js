@@ -35,7 +35,7 @@ Timeline.defaultProps = {
 
 Timeline.propTypes = {
 	theme: shape({}),
-	lang: oneOf(['es', 'en']),
+	lang: oneOf(['es', 'en', 'de']),
 	dateFormat: oneOf(['L', 'l', 'll']),
 	children: oneOfType([arrayOf(node), node]).isRequired,
 };
