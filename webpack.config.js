@@ -5,7 +5,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: 'index.js',
-		libraryTarget: 'commonjs2'
+		libraryTarget: 'commonjs2',
 	},
 	module: {
 		rules: [
@@ -14,13 +14,10 @@ module.exports = {
 				include: path.resolve(__dirname, 'src'),
 				exclude: /(node_modules|build)/,
 				loader: 'babel-loader',
-				query: {
-					presets: ['@babel/preset-env']
-				}
-			}
-		]
+			},
+		],
 	},
 	externals: {
-		react: 'commonjs react'
-	}
+		react: 'commonjs react',
+	},
 };

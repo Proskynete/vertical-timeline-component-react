@@ -1,6 +1,6 @@
 {
 	"name": "vertical-timeline-component-react",
-	"version": "2.1.1",
+	"version": "2.1.2",
 	"description": "A simple component for create a vertical timeline with Reactjs",
 	"main": "build/index.js",
 	"repository": "https://github.com/Proskynete/vertical-timeline-component-react",
@@ -59,7 +59,7 @@
 		"eslint": "^7.12.1",
 		"eslint-config-airbnb": "^18.2.0",
 		"eslint-config-airbnb-base": "^14.2.0",
-		"eslint-config-prettier": "^6.15.0",
+		"eslint-config-prettier": "^8.1.0",
 		"eslint-import-resolver-alias": "^1.1.2",
 		"eslint-import-resolver-meteor": "^0.4.0",
 		"eslint-plugin-import": "^2.22.1",
