@@ -42,7 +42,7 @@ describe('<YearContent />', () => {
 		expect(wrapper.find('span').text()).toEqual('From');
 
 		expect(wrapper.find('time')).toHaveLength(2);
-		expect(wrapper.find('time').text().includes('2020')).toBeTruthy();
+		expect(wrapper.find('time').text().includes('2021')).toBeTruthy();
 		expect(wrapper.find('time').text().includes('08/21/2019')).toBeTruthy();
 	});
 
