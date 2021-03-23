@@ -18,13 +18,13 @@ export interface SectionInterface extends ChildrenInterface {
 }
 
 export interface ThemeInterface {
-	yearColor: string;
-	lineColor: string;
-	dotColor: string;
-	borderDotColor: string;
-	titleColor: string;
-	subtitleColor: string;
-	textColor: string;
+	yearColor?: string;
+	lineColor?: string;
+	dotColor?: string;
+	borderDotColor?: string;
+	titleColor?: string;
+	subtitleColor?: string;
+	textColor?: string;
 }
 
 export interface TimelineInterface extends ChildrenInterface {
