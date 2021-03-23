@@ -1,5 +1,22 @@
 import { monthArray } from '../config/index';
-import { MapDateInterface, TansformDateInterface } from '../types';
+import { DateFormatType, LangType } from '../types';
+
+export interface HandlerTransformTextInterface {
+	L: (date: string) => string;
+	l: (date: string) => string;
+	ll: (date: string) => string;
+}
+export interface TansformDateInterface {
+	date: string;
+	type: DateFormatType;
+	lang: LangType;
+}
+
+export interface MapDateInterface {
+	en: HandlerTransformTextInterface;
+	es: HandlerTransformTextInterface;
+	de: HandlerTransformTextInterface;
+}
 
 export const completeWith0 = (n: number) =>
 	n.toLocaleString().length < 2 ? `0${n}` : n;

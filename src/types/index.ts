@@ -1,19 +1,20 @@
-type DescriptionVariantType = 'subtitle' | 'description';
-type LangType = 'en' | 'es' | 'de';
-type DateFormatType = 'L' | 'l' | 'll';
+export type DescriptionVariantType = 'subtitle' | 'description';
+export type LangType = 'en' | 'es' | 'de';
+export type DateFormatType = 'L' | 'l' | 'll';
 
-export interface ContainerInterface {
+interface ChildrenInterface {
 	children: JSX.Element | JSX.Element[];
 }
+
+export interface ContainerInterface extends ChildrenInterface {}
 
 export interface DescriptionInterface {
 	text: string;
 	variant?: DescriptionVariantType;
 }
 
-export interface SectionInterface {
+export interface SectionInterface extends ChildrenInterface {
 	title: string;
-	children: JSX.Element | JSX.Element[];
 }
 
 export interface ThemeInterface {
@@ -26,11 +27,10 @@ export interface ThemeInterface {
 	textColor: string;
 }
 
-export interface TimelineInterface {
+export interface TimelineInterface extends ChildrenInterface {
 	theme?: ThemeInterface;
 	lang?: LangType;
 	dateFormat?: DateFormatType;
-	children: JSX.Element | JSX.Element[];
 }
 
 export interface DefaultValuesInterface {
@@ -60,44 +60,4 @@ export interface YearContentInterface {
 	startDate: string;
 	endDate?: string;
 	currentYear?: boolean;
-}
-
-export interface TansformDateInterface {
-	date: string;
-	type: DateFormatType;
-	lang: LangType;
-}
-
-export interface HandlerTransformTextInterface {
-	L: (date: string) => string;
-	l: (date: string) => string;
-	ll: (date: string) => string;
-}
-
-export interface MapDateInterface {
-	en: HandlerTransformTextInterface;
-	es: HandlerTransformTextInterface;
-	de: HandlerTransformTextInterface;
-}
-
-export interface YearWrapperProps {
-	format: DateFormatType;
-	lang: LangType;
-	theme: ThemeInterface;
-}
-
-export interface BodyWrapperProps {
-	theme: ThemeInterface;
-}
-
-export interface TitleProps {
-	theme: ThemeInterface;
-}
-
-export interface SubtitleProps {
-	theme: ThemeInterface;
-}
-
-export interface DescriptionTextProps {
-	theme: ThemeInterface;
 }
