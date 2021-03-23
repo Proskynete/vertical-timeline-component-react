@@ -2,6 +2,7 @@
 	"extends": "tslint:recommended",
 	"rulesDirectory": ["src/"],
 	"rules": {
+		"no-empty-interface": false,
 		"max-line-length": {
 			"options": [120]
 		},
