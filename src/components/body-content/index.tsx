@@ -1,14 +1,5 @@
-import React from 'react';
-import { node, oneOfType, arrayOf } from 'prop-types';
+import React, { FC } from 'react';
 
-const BodyContent = (props) => {
-	const { children } = props;
-
-	return <>{children}</>;
-};
-
-BodyContent.propTypes = {
-	children: oneOfType([arrayOf(node), node]).isRequired,
-};
+const BodyContent: FC = ({ children }) => <>{children}</>;
 
 export default BodyContent;

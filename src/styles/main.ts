@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+import {
+	BodyWrapperProps,
+	DescriptionTextProps,
+	SubtitleProps,
+	TitleProps,
+	YearWrapperProps,
+} from '../types';
+
 // Timeline Component
 export const TimelineWrapper = styled.div`
 	display: flex;
@@ -23,7 +31,7 @@ export const ContainerWrapper = styled.section`
 export const BodyContent = styled.div``;
 
 // YearContent component
-export const YearWrapper = styled.p`
+export const YearWrapper = styled.p<YearWrapperProps>`
 	align-items: flex-end;
 	color: ${(props) => props.theme.yearColor};
 	display: flex;
@@ -49,7 +57,7 @@ export const YearSpan = styled.span`
 `;
 
 // Section component
-export const BodyWrapper = styled.article`
+export const BodyWrapper = styled.article<BodyWrapperProps>`
 	padding-bottom: 20px;
 	padding-left: 25px;
 	position: relative;
@@ -78,7 +86,7 @@ export const BodyWrapper = styled.article`
 	}
 `;
 
-export const Title = styled.p`
+export const Title = styled.p<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
 	font-weight: 500;
 	margin: 0;
@@ -111,7 +119,7 @@ export const BodyInner = styled.ul`
 `;
 
 // Description component
-export const Subtitle = styled.div`
+export const Subtitle = styled.div<SubtitleProps>`
 	color: ${(props) => props.theme.subtitleColor};
 	font-size: 14px;
 	font-style: italic;
@@ -122,7 +130,7 @@ export const Subtitle = styled.div`
 	}
 `;
 
-export const DescriptionText = styled.li`
+export const DescriptionText = styled.li<DescriptionTextProps>`
 	color: ${(props) => props.theme.textColor};
 
 	&:not(:first-of-type) {

@@ -1,4 +1,10 @@
-export const defaultValues = {
+import {
+	DefaultValuesInterface,
+	MonthInterface,
+	TraductionInterface,
+} from '../types';
+
+export const defaultValues: DefaultValuesInterface = {
 	theme: {
 		yearColor: '#888888',
 		lineColor: '#c5c5c5',
@@ -12,7 +18,7 @@ export const defaultValues = {
 	dateFormat: 'L',
 };
 
-export const monthArray = {
+export const monthArray: MonthInterface = {
 	es: [
 		'Ene',
 		'Feb',
@@ -57,7 +63,7 @@ export const monthArray = {
 	],
 };
 
-export const mapText = {
+export const mapText: TraductionInterface = {
 	en: {
 		from: 'From',
 		to: 'To',

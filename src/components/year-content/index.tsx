@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
-import { string, bool } from 'prop-types';
 import { ConfigContext } from '../../context/config.context';
 import { mapDate } from '../../helpers/transform-date.helper';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
+import { YearContentInterface } from '../../types';
 
-const YearContent = (props) => {
-	const { startDate, endDate, currentYear } = props;
+const YearContent = ({
+	startDate,
+	endDate = '',
+	currentYear = false,
+}: YearContentInterface) => {
 	const { lang, dateFormat } = useContext(ConfigContext);
 
 	const d = new Date();
@@ -14,7 +17,7 @@ const YearContent = (props) => {
 
 	const _currentYear = currentYear ? (
 		<>
-			<time dateTime={_year}>{_year}</time>
+			<time dateTime={_year.toString()}>{_year}</time>
 		</>
 	) : null;
 
@@ -40,17 +43,6 @@ const YearContent = (props) => {
 			{_startDate}
 		</YearWrapper>
 	);
-};
-
-YearContent.defaultProps = {
-	endDate: '',
-	currentYear: false,
-};
-
-YearContent.propTypes = {
-	startDate: string.isRequired,
-	endDate: string,
-	currentYear: bool,
 };
 
 export default YearContent;

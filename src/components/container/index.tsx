@@ -1,20 +1,12 @@
 import React from 'react';
-import { node, oneOfType, arrayOf } from 'prop-types';
 import { ContainerWrapper, BodyContent } from '../../styles/main';
+import { ContainerInterface } from '../../types';
 
-const Container = (props) => {
-	const { children } = props;
-
-	return (
-		<ContainerWrapper>
-			{children[0]}
-			<BodyContent>{children[1]}</BodyContent>
-		</ContainerWrapper>
-	);
-};
-
-Container.propTypes = {
-	children: oneOfType([arrayOf(node), node]).isRequired,
-};
+const Container = ({ children }: ContainerInterface) => (
+	<ContainerWrapper>
+		{children[0]}
+		<BodyContent>{children[1]}</BodyContent>
+	</ContainerWrapper>
+);
 
 export default Container;
