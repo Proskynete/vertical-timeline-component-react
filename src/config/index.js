@@ -55,6 +55,20 @@ export const monthArray = {
 		'Nov.',
 		'Dez.',
 	],
+	tr: [
+		'Ocak',
+		'Şubat',
+		'Mart',
+		'Nisan',
+		'Mayıs',
+		'Haziran',
+		'Temmuz',
+		'Ağustos',
+		'Eylül',
+		'Ekim',
+		'Kasım',
+		'Aralık'
+	]
 };
 
 export const mapText = {
@@ -70,4 +84,9 @@ export const mapText = {
 		from: 'Von',
 		to: 'Bis',
 	},
+	tr: {
+		from: 'Başlangıç',
+		to: 'Bitiş'
+		
+	}
 };
