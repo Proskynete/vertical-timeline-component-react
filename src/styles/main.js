@@ -129,3 +129,14 @@ export const DescriptionText = styled.li`
 		margin-top: 3px;
 	}
 `;
+
+export const DescriptionSubtitle = styled.li`
+	color: ${(props) => props.theme.subtitleColor};
+	font-size: 14px;
+	font-style: italic;
+	font-weight: 400;
+
+	&:not(:first-of-type) {
+		margin-top: 10px;
+	}
+`;
