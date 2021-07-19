@@ -1,15 +1,22 @@
 import React from 'react';
 import { string, oneOf } from 'prop-types';
-import { Subtitle, DescriptionText } from '../../styles/main';
+import {
+	Subtitle,
+	DescriptionText,
+	DescriptionSubtitle,
+} from '../../styles/main';
 
 const Description = (props) => {
 	const { variant, text } = props;
 
-	return variant === 'subtitle' ? (
-		<Subtitle>{text}</Subtitle>
-	) : (
-		<DescriptionText>{text}</DescriptionText>
-	);
+	switch (variant) {
+		case 'subtitle':
+			return <Subtitle>{text}</Subtitle>;
+		case 'descriptionSubtitle':
+			return <DescriptionSubtitle>{text}</DescriptionSubtitle>;
+		default:
+			return <DescriptionText>{text}</DescriptionText>;
+	}
 };
 
 Description.defaultProps = {
@@ -18,7 +25,7 @@ Description.defaultProps = {
 
 Description.propTypes = {
 	text: string.isRequired,
-	variant: oneOf(['subtitle', 'description']),
+	variant: oneOf(['subtitle', 'description', 'descriptionSubtitle']),
 };
 
 export default Description;
