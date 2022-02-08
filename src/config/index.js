@@ -104,6 +104,6 @@ export const mapText = {
 	},
 	zh_CN: {
 		from: '从',
-		to: '至'
+		to: '到'
 	}
 };
