@@ -282,6 +282,93 @@ describe('Helpers', () => {
 				});
 			});
 		});
+
+		describe('[lang = zh_CN]', () => {
+			const lang = 'zh_CN';
+
+			describe('[type = L]', () => {
+				const type = 'L';
+
+				it('should transform date with a format like YYYY 年 MM 月 DD 日', () => {
+					const date = '2020/10/31';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年 10 月 31 日');
+				});
+
+				it('should transform date with a format like YYYY 年 MM 月', () => {
+					const date = '2020/10';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年 10 月');
+				});
+
+				it('should transform date with a format like YYYY 年', () => {
+					const date = '2020';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年');
+				});
+			});
+
+			describe('[type = l]', () => {
+				const type = 'l';
+
+				it('should transform date with a format like YYYY 年 M 月 D 日', () => {
+					const dateOne = '2020/09/09';
+					const dateTwo = '2020/12/31';
+
+					const result = transformDate({ date: dateOne, lang, type });
+					expect(result).toEqual('2020 年 9 月 9 日');
+
+					const resultTwo = transformDate({ date: dateTwo, lang, type });
+					expect(resultTwo).toEqual('2020 年 12 月 31 日');
+				});
+
+				it('should transform date with a format like YYYY 年 M 月', () => {
+					const dateOne = '2020/09';
+					const dateTwo = '2020/12';
+
+					const result = transformDate({ date: dateOne, lang, type });
+					expect(result).toEqual('2020 年 9 月');
+
+					const resultTwo = transformDate({ date: dateTwo, lang, type });
+					expect(resultTwo).toEqual('2020 年 12 月');
+				});
+
+				it('should transform date with a format like YYYY 年', () => {
+					const date = '2020';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年');
+				});
+			});
+
+			describe('[type = ll]', () => {
+				const type = 'll';
+
+				it('should transform date with a format like YYYY 年 MMM DD 日', () => {
+					const date = '2020/08/20';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年八月 20 日');
+				});
+
+				it('should transform date with a format like YYYY 年 MMM', () => {
+					const date = '2020/08';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年八月');
+				});
+
+				it('should transform date with a format like YYYY 年', () => {
+					const date = '2020';
+
+					const result = transformDate({ date, lang, type });
+					expect(result).toEqual('2020 年');
+				});
+			});
+		});
 	});
 
 	describe('mapDate hashmap', () => {
@@ -355,6 +442,54 @@ describe('Helpers', () => {
 			const date = '2020/08/21';
 
 			expect(mapDate[lang][type](date)).toEqual('21. Aug. 2020');
+		});
+
+		it('LANG=zh_CN - TYPE=L', () => {
+			const lang = 'zh_CN';
+			const type = 'L';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年 08 月 21 日');
+		});
+
+		it('LANG=zh_CN - TYPE=l', () => {
+			const lang = 'zh_CN';
+			const type = 'l';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年 8 月 21 日');
+		});
+
+		it('LANG=zh_CN - TYPE=ll', () => {
+			const lang = 'zh_CN';
+			const type = 'll';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年八月 21 日');
+		});
+
+		it('LANG=zh_CN - TYPE=L', () => {
+			const lang = 'zh_CN';
+			const type = 'L';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年 08 月 21 日');
+		});
+
+		it('LANG=zh_CN - TYPE=l', () => {
+			const lang = 'zh_CN';
+			const type = 'l';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年 8 月 21 日');
+		});
+
+		it('LANG=zh_CN - TYPE=ll', () => {
+			const lang = 'zh_CN';
+			const type = 'll';
+			const date = '2020/08/21';
+
+			expect(mapDate[lang][type](date)).toEqual('2020 年八月 21 日');
 		});
 	});
 });
