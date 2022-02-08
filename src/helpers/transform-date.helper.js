@@ -20,23 +20,29 @@ export const transformDate = ({ date, lang, type }) => {
 				? `${day ? `${completeWith0(day)}/` : ''}${
 						month ? `${completeWith0(month)}/` : ''
 				  }${year}`
-				: /* lang === 'de' */
-				  `${
+				: lang === 'de'
+				? `${
 						day && month
 							? `${completeWith0(day)}.${completeWith0(month)}.${year}`
 							: `${month ? `${completeWith0(month)}/` : ''}${year}`
+				  }`
+				: /* lang === 'zh_CN' */
+				  `${year} 年${month ? ` ${completeWith0(month)} 月` : ''}${
+						day ? ` ${completeWith0(day)} 日` : ''
 				  }`;
 		case 'l':
 			return lang === 'en'
 				? `${month ? `${month}/` : ''}${day ? `${day}/` : ''}${year}`
 				: lang === 'es'
 				? `${day ? `${day}/` : ''}${month ? `${month}/` : ''}${year}`
-				: /* lang === 'de' */
-				  `${
+				: lang === 'de'
+				? `${
 						day && month
 							? `${day}.${month}.${year}`
 							: `${month ? `${month}/` : ''}${year}`
-				  }`;
+				  }`
+				: /* lang === 'zh_CN' */
+				  `${year} 年${month ? ` ${month} 月` : ''}${day ? ` ${day} 日` : ''}`;
 		case 'll':
 			return lang === 'en'
 				? `${month ? `${monthArray[lang][month - 1]}` : ''}${
@@ -46,10 +52,12 @@ export const transformDate = ({ date, lang, type }) => {
 				? `${day ? `${day} de ` : ''}${
 						month ? `${monthArray[lang][month - 1]}, ` : ''
 				  }${year}`
-				: /* lang === 'de' */
-				  `${day ? `${day}. ` : ''}${
+				:  lang === 'de'
+				? `${day ? `${day}. ` : ''}${
 						month ? `${monthArray[lang][month - 1]} ` : ''
-				  }${year}`;
+				  }${year}`
+				: /* lang === 'zh_CN' */
+				  `${year} 年${month ? `${monthArray[lang][month - 1]}` : ''}${day ? ` ${day} 日` : ''}`;
 	}
 };
 
@@ -68,5 +76,10 @@ export const mapDate = {
 		L: (date) => transformDate({ date, lang: 'de', type: 'L' }),
 		l: (date) => transformDate({ date, lang: 'de', type: 'l' }),
 		ll: (date) => transformDate({ date, lang: 'de', type: 'll' }),
+	},
+	zh_CN: {
+		L: (date) => transformDate({ date, lang: 'zh_CN', type: 'L' }),
+		l: (date) => transformDate({ date, lang: 'zh_CN', type: 'l' }),
+		ll: (date) => transformDate({ date, lang: 'zh_CN', type: 'll' }),
 	},
 };

@@ -32,14 +32,17 @@ This is the wrapper component that creates the vertical timeline.
 | name       | Type   | Required | Values Allowed     | default values                                                                                                                                                        | Description                                                                  |
 | ---------- | ------ | -------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
 | theme      | object | false    | colors             | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
-| lang       | node   | false    | `en`, `es` or `de` | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
+| lang       | node   | false    | `en`, `es`, `de` or `zh_CN` | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
 | dateFormat | string | false    | `L`, `l` or `ll`   | `L`                                                                                                                                                                   | Change the presentation format of dates                                      |
 
 `dateFormat`: Receive only one of three options. (The options are same the [moment.js](https://momentjs.com/) using).
 
-- The option `L` will return a date like `MM/DD/YYYY` (in English), `DD/MM/YYYY` (in Spanish) `DD.MM.YYYY` (in German).
-- The option `l` will return a date like `M/D/YYYY` (in English), `D/M/YYYY` (in Spanish) `D.M.YYYY` (in German).
-- The option `ll` will return a date like `MMM DD, YYYY` (in English), `DD de MMM, YYYY` (in Spanish) `DD. MMM YYYY` (in German).
+| | `L` | `l` | `ll` |
+|:---:|---|---|---|
+|English(`en`)| `MM/DD/YYYY` | `M/D/YYYY` | `MMM DD, YYYY` |
+|Spanish(`es`)| `DD/MM/YYYY` | `D/M/YYYY` | `DD de MMM, YYYY` |
+|German(`de`) | `DD.MM.YYYY` | `D.M.YYYY` | `DD. MMM YYYY` |
+|Simplified Chinese(`zh_CN`)| `YYYY 年 MM 月 DD 日` | `YYYY 年 M 月 D 日` | `YYYY 年MMM DD 日` |
 
 ### Container
 
