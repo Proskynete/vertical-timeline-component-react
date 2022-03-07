@@ -1,23 +1,54 @@
-# vertical-timeline-component-react
+<div id="top">
+  <h1>vertical-timeline-component-react
+   <img src="https://cdn.iconscout.com/icon/free/png-256/typescript-1174965.png" width="25" height="25" />
+ </h1>
 
-A simple component to generate a responsive vertical timeline
+ <p>A simple component to generate a responsive vertical timeline</p>
+</div>
+
 ![Vertical Timeline Component React](https://i.imgur.com/KBqLIlK.png 'How to see vertical-timeline-component-react')
 
 ## Status
 
-[![Coverage Status](https://coveralls.io/repos/github/Proskynete/vertical-timeline-component-react/badge.svg?branch=unit-tests)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=unit-tests) [![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://www.npmjs.com/package/vertical-timeline-component-react) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Dependencies](https://david-dm.org/proskynete/vertical-timeline-component-react.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react) [![devDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/dev-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=dev) [![peerDependencies Status](https://david-dm.org/proskynete/vertical-timeline-component-react/peer-status.svg)](https://david-dm.org/proskynete/vertical-timeline-component-react?type=peer)
+![PRs welcome](https://img.shields.io/badge/PRs-welcome-green) [![Coverage Status](https://coveralls.io/repos/github/Proskynete/vertical-timeline-component-react/badge.svg?branch=unit-tests)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=unit-tests) [![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://www.npmjs.com/package/vertical-timeline-component-react) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Package Quality](https://packagequality.com/shield/vertical-timeline-component-react.svg)](https://packagequality.com/#?package=vertical-timeline-component-react)
 
-## Getting started
+<br />
+<br />
 
+<details>
+  <summary>Table of contents</summary>
+  <ol>
+    <li>
+      <a href="#getting-started">Getting started</a>
+    </li>
+    <li>
+      <a href="#api-documentation">API Documentation</a>
+      <ul>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#container">Container</a></li>
+        <li><a href="#year-content">YearContent</a></li>
+        <li><a href="#body-content">BodyContent</a></li>
+        <li><a href="#section">Section</a></li>
+        <li><a href="#description">Description</a></li>
+      </ul>
+    </li>
+    <li><a href="#how-to-use">How to use it</a></li>
+    <li><a href="#contributors">Contributors</a></li>
+  </ol>
+</details>
+
+<h2 id="getting-started">Getting started</h2>
 To install as npm dependency
 
 ```sh
 npm install --save vertical-timeline-component-react
 ```
 
-## API Documentation
+<p align="right"><a href="#top">🔝</a></p>
 
-### Timeline
+<h2 id="api-documentation">API Documentation</h2>
+
+<h3 id="timeline">Timeline</h3>
 
 This is the wrapper component that creates the vertical timeline.
 
@@ -29,22 +60,23 @@ This is the wrapper component that creates the vertical timeline.
 
 - Props
 
-| name       | Type   | Required | Values Allowed     | default values                                                                                                                                                        | Description                                                                  |
-| ---------- | ------ | -------- | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| theme      | object | false    | colors             | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
-| lang       | node   | false    | `en`, `es`, `de` or `zh_CN` | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
-| dateFormat | string | false    | `L`, `l` or `ll`   | `L`                                                                                                                                                                   | Change the presentation format of dates                                      |
+| name       | Type   | Required | Values Allowed                                   | default values                                                                                                                                                        | Description                                                                  |
+| ---------- | ------ | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| theme      | object | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
+| lang       | string | false    | `en`, `es`, `de`, `tr` or `zh_CN`                | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | string | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
 
-`dateFormat`: Receive only one of three options. (The options are same the [moment.js](https://momentjs.com/) using).
+`dateFormat`: Receive only one of four options (The options are same the [moment.js](https://momentjs.com/) using)
 
-| | `L` | `l` | `ll` |
-|:---:|---|---|---|
-|English(`en`)| `MM/DD/YYYY` | `M/D/YYYY` | `MMM DD, YYYY` |
-|Spanish(`es`)| `DD/MM/YYYY` | `D/M/YYYY` | `DD de MMM, YYYY` |
-|German(`de`) | `DD.MM.YYYY` | `D.M.YYYY` | `DD. MMM YYYY` |
-|Simplified Chinese(`zh_CN`)| `YYYY 年 MM 月 DD 日` | `YYYY 年 M 月 D 日` | `YYYY 年MMM DD 日` |
+|                              | `only-number` | `short`          | `with-weekday`          | `full`                         |
+| :--------------------------: | ------------- | ---------------- | ----------------------- | ------------------------------ |
+|        English (`en`)        | `MM/D/YYYY`   | `MMM DD, YYYY`   | `ddd, MMM DD, YYYY`     | `dddd, MMMM DD, YYYY`          |
+|        Spanish (`es`)        | `D/MM/YYYY`   | `DD MMM YYYY`    | `ddd, DD [de] MMM YYYY` | `dddd, DD [de] MMMM [de] YYYY` |
+|        German (`de`)         | `D.MM.YYYY`   | `DD.MMM.YYYY`    | `ddd., DD. MMM. YYYY`   | `dddd, DD. MMMM YYYY`          |
+|         Turk (`tr`)          | `DD.MM.YYYY`  | `DD MMM YYYY`    | `DD MMM YYYY ddd`       | `DD MMMM YYYY dddd`            |
+| Simplified Chinese (`zh_CN`) | `YYYY/MM/D`   | `YYYY年MM月DD日` | `YYYY年MMM月DD日`       | `YYYY年MM月DD日dddd`           |
 
-### Container
+<h3 id="container">Container</h3>
 
 Each event in the timeline will be represented by the `Content` component. This component receive only two children's, the first is `YearContent` and the second is `BodyContent`. There can be multiple repeating instances of this component inside `Timeline` wrapper.
 
@@ -54,9 +86,9 @@ Each event in the timeline will be represented by the `Content` component. This 
 | ------------------ | -------- | ------------------------------- |
 | 2                  | true     | `YearContent` and `BodyContent` |
 
-### YearContent
+<h3 id="year-content">YearContent</h3>
 
-For each `Container` you need `YearContent` (like firts children) since with this component you mark the events in the given year.
+For each `Container` you need `YearContent` (like first children) since with this component you mark the events in the given year.
 
 - Props
 
@@ -66,7 +98,7 @@ For each `Container` you need `YearContent` (like firts children) since with thi
 | endDate     | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
 | currentYear | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
 
-### BodyContent
+<h3 id="body-content">BodyContent</h3>
 
 For each `Container` you need `ContentBody` (like second children). This component will be the container of the one or more `Sections`.
 
@@ -76,7 +108,7 @@ For each `Container` you need `ContentBody` (like second children). This compone
 | ------------------ | -------------------------------------------------- | ------------------------- |
 | Many               | At least the first `Section` component is required | Only `Section` components |
 
-### Section
+<h3 id="section">Section</h3>
 
 This component is the container for one or more `Description`.
 
@@ -92,7 +124,7 @@ This component is the container for one or more `Description`.
 | ----- | ------ | -------- | ----------------------------- |
 | title | string | true     | It's the title of any section |
 
-### Description
+<h3 id="description">Description</h3>
 
 This component can be the text of the description or a subtitle
 
@@ -103,7 +135,9 @@ This component can be the text of the description or a subtitle
 | variant | string | false    | `subtitle` or `description` | `description`  | Transform the format of the text      |
 | text    | string | true     | Any text                    | does not apply | Show the description of the `Section` |
 
-## How to use it
+<p align="right"><a href="#top">🔝</a></p>
+
+<h2 id="how-to-use">How to use it</h2>
 
 The following snippet will show you how to use the library:
 
@@ -132,7 +166,7 @@ const customTheme = {
 class Main extends Component {
  render() {
   return(
-   <Timeline theme={customTheme} dateFormat='ll'>
+   <Timeline theme={customTheme} dateFormat='full'>
     <Container>
      <YearContent startDate='2020/07/01' currentYear />
      <BodyContent>
@@ -158,47 +192,59 @@ class Main extends Component {
 
 ```js
 import {
- Timeline,
- Container,
- YearContent,
- BodyContent,
- Section,
- Description,
+	Timeline,
+	Container,
+	YearContent,
+	BodyContent,
+	Section,
+	Description,
 } from 'vertical-timeline-component-react';
 
 const Main = () => {
- const customTheme = {
-  yearColor: '#405b73',
-  lineColor: '#d0cdc4',
-  dotColor: '#262626',
-  borderDotColor: '#d0cdc4',
-  titleColor: '#405b73',
-  subtitleColor: '#bf9765',
-  textColor: '#262626',
- };
+	const customTheme = {
+		yearColor: '#405b73',
+		lineColor: '#d0cdc4',
+		dotColor: '#262626',
+		borderDotColor: '#d0cdc4',
+		titleColor: '#405b73',
+		subtitleColor: '#bf9765',
+		textColor: '#262626',
+	};
 
- return (
-  <Timeline theme={customTheme} dateFormat='ll'>
-   <Container>
-    <YearContent startDate='2020/07/01' currentYear />
-    <BodyContent>
-     <Section title='Title'>
-      <Description variant='subtitle' text='Subtitle' />
-      <Description text='Description' />
-      <Description text='Another description' />
-     </Section>
+	return (
+		<Timeline theme={customTheme} dateFormat='full'>
+			<Container>
+				<YearContent startDate='2020/07/01' currentYear />
+				<BodyContent>
+					<Section title='Title'>
+						<Description variant='subtitle' text='Subtitle' />
+						<Description text='Description' />
+						<Description text='Another description' />
+					</Section>
 
-     <Section title='Another title'>
-      <Description text='Description' />
-      <Description text='Another description' />
-     </Section>
-    </BodyContent>
-   </Container>
-  </Timeline>
- );
+					<Section title='Another title'>
+						<Description text='Description' />
+						<Description text='Another description' />
+					</Section>
+				</BodyContent>
+			</Container>
+		</Timeline>
+	);
 };
 ```
 
-## License
+<p align="right"><a href="#top">🔝</a></p>
+
+<h2 id="contributors">Contributors</h2>
+
+<a href="https://github.com/Proskynete/vertical-timeline-component-react/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Proskynete/vertical-timeline-component-react"/>
+</a>
+
+<p align="right"><a href="#top">🔝</a></p>
+
+<h2 id="license">License</h2>
 
 MIT
+
+<p align="right"><a href="#top">🔝</a></p>
