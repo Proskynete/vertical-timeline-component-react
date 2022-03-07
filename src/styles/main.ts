@@ -36,12 +36,12 @@ const minWidth = () => ({
 	short_zh: '115',
 	'with-weekday_es': '125',
 	'with-weekday_en': '125',
-	'with-weekday_de': '120',
-	'with-weekday_zh': '120',
-	full_es: '135',
-	full_en: '135',
-	full_de: '135',
-	full_zh: '135',
+	'with-weekday_de': '130',
+	'with-weekday_zh': '140',
+	full_es: '125',
+	full_en: '125',
+	full_de: '125',
+	full_zh: '125',
 });
 
 export const YearWrapper = styled.p<YearContentProps>`
@@ -53,7 +53,7 @@ export const YearWrapper = styled.p<YearContentProps>`
 	font-weight: 400;
 	height: max-content;
 	margin: 0;
-	max-width: 35%;
+	max-width: ${({ format, lang }) => `${minWidth()[`${format}_${lang}`]}px`};
 	min-width: ${({ format, lang }) => `${minWidth()[`${format}_${lang}`]}px`};
 	text-align: end;
 `;

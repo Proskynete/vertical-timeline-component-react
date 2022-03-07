@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { DateFormat, Theme } from '../../config';
+import { DateFormat, Theme } from '../../interfaces';
 interface TimelineProps {
     theme?: Theme;
     lang?: string;

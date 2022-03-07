@@ -1,4 +1,4 @@
-import { DateFormat } from '../config/index';
+import { DateFormat } from '../interfaces';
 interface ITransformDate {
     date: string;
     lang: string;

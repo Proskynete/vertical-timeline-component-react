@@ -60,20 +60,20 @@ This is the wrapper component that creates the vertical timeline.
 
 - Props
 
-| name       | Type   | Required | Values Allowed              | default values                                                                                                                                                        | Description                                                                  |
-| ---------- | ------ | -------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| theme      | object | false    | colors                      | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
-| lang       | node   | false    | `en`, `es`, `de` or `zh_CN` | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
-| dateFormat | string | false    | `L`, `l` or `ll`            | `L`                                                                                                                                                                   | Change the presentation format of dates                                      |
+| name       | Type   | Required | Values Allowed                                   | default values                                                                                                                                                        | Description                                                                  |
+| ---------- | ------ | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| theme      | object | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
+| lang       | string | false    | `en`, `es`, `de` or `zh_CN`                      | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | string | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
 
-`dateFormat`: Receive only one of three options. (The options are same the [moment.js](https://momentjs.com/) using).
+`dateFormat`: Receive only one of four options (The options are same the [moment.js](https://momentjs.com/) using)
 
-|                             | `L`                   | `l`                 | `ll`               |
-| :-------------------------: | --------------------- | ------------------- | ------------------ |
-|        English(`en`)        | `MM/DD/YYYY`          | `M/D/YYYY`          | `MMM DD, YYYY`     |
-|        Spanish(`es`)        | `DD/MM/YYYY`          | `D/M/YYYY`          | `DD de MMM, YYYY`  |
-|        German(`de`)         | `DD.MM.YYYY`          | `D.M.YYYY`          | `DD. MMM YYYY`     |
-| Simplified Chinese(`zh_CN`) | `YYYY 年 MM 月 DD 日` | `YYYY 年 M 月 D 日` | `YYYY 年MMM DD 日` |
+|                             | `only-number` | `short`          | `with-weekday`          | `full`                         |
+| :-------------------------: | ------------- | ---------------- | ----------------------- | ------------------------------ |
+|        English(`en`)        | `MM/D/YYYY`   | `MMM DD, YYYY`   | `ddd, MMM DD, YYYY`     | `dddd, MMMM DD, YYYY`          |
+|        Spanish(`es`)        | `D/MM/YYYY`   | `DD MMM YYYY`    | `ddd, DD [de] MMM YYYY` | `dddd, DD [de] MMMM [de] YYYY` |
+|        German(`de`)         | `D.MM.YYYY`   | `DD.MMM.YYYY`    | `ddd., DD. MMM. YYYY`   | `dddd, DD. MMMM YYYY`          |
+| Simplified Chinese(`zh_CN`) | `YYYY/MM/D`   | `YYYY年MM月DD日` | `YYYY年MMM月DD日`       | `YYYY年MM月DD日dddd`           |
 
 <h3 id="container">Container</h3>
 
@@ -87,7 +87,7 @@ Each event in the timeline will be represented by the `Content` component. This 
 
 <h3 id="year-content">YearContent</h3>
 
-For each `Container` you need `YearContent` (like firts children) since with this component you mark the events in the given year.
+For each `Container` you need `YearContent` (like first children) since with this component you mark the events in the given year.
 
 - Props
 
@@ -165,7 +165,7 @@ const customTheme = {
 class Main extends Component {
  render() {
   return(
-   <Timeline theme={customTheme} dateFormat='ll'>
+   <Timeline theme={customTheme} dateFormat='full'>
     <Container>
      <YearContent startDate='2020/07/01' currentYear />
      <BodyContent>
@@ -211,7 +211,7 @@ const Main = () => {
 	};
 
 	return (
-		<Timeline theme={customTheme} dateFormat='ll'>
+		<Timeline theme={customTheme} dateFormat='full'>
 			<Container>
 				<YearContent startDate='2020/07/01' currentYear />
 				<BodyContent>
