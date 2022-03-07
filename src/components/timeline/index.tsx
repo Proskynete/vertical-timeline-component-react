@@ -1,7 +1,8 @@
 import React, { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { DateFormat, defaultValues, Theme } from '../../config';
+import { defaultValues } from '../../config';
 import { ConfigContext } from '../../context/config.context';
+import { DateFormat, Theme } from '../../interfaces';
 import { TimelineWrapper, TimelineWrapperInner } from '../../styles/main';
 
 interface TimelineProps {

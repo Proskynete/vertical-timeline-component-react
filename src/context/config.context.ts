@@ -1,4 +1,5 @@
 import { createContext } from 'react';
-import { DefaultValues, defaultValues } from '../config';
+import { defaultValues } from '../config';
+import { DefaultValues } from '../interfaces';
 
 export const ConfigContext = createContext<DefaultValues>(defaultValues);

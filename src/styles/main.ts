@@ -1,7 +1,6 @@
 import styled from 'styled-components';
-import { DateFormat } from '../config';
+import { DateFormat } from '../interfaces';
 
-// Timeline Component
 export const TimelineWrapper = styled.div`
 	display: flex;
 	height: 100%;
@@ -14,7 +13,6 @@ export const TimelineWrapperInner = styled.div`
 	width: 100%;
 `;
 
-// Container component
 export const ContainerWrapper = styled.section`
 	align-items: baseline;
 	display: flex;
@@ -27,24 +25,37 @@ interface YearContentProps {
 	readonly format: DateFormat;
 }
 
-// YearContent component
+const minWidth = () => ({
+	'only-number_es': '85',
+	'only-number_en': '85',
+	'only-number_de': '85',
+	'only-number_zh': '85',
+	short_es: '85',
+	short_en: '90',
+	short_de: '95',
+	short_zh: '115',
+	'with-weekday_es': '125',
+	'with-weekday_en': '125',
+	'with-weekday_de': '120',
+	'with-weekday_zh': '120',
+	full_es: '135',
+	full_en: '135',
+	full_de: '135',
+	full_zh: '135',
+});
+
 export const YearWrapper = styled.p<YearContentProps>`
 	align-items: flex-end;
-	color: ${(props) => props.theme.yearColor};
+	color: ${({ theme }) => theme.yearColor};
 	display: flex;
 	flex-direction: column;
 	font-size: 14px;
 	font-weight: 400;
 	height: max-content;
 	margin: 0;
-	min-width: ${(props) =>
-		props.format === 'only-number'
-			? '85px'
-			: props.format === 'short'
-			? '85px'
-			: props.format === 'with-weekday'
-			? '125px'
-			: '230px'};
+	max-width: 35%;
+	min-width: ${({ format, lang }) => `${minWidth()[`${format}_${lang}`]}px`};
+	text-align: end;
 `;
 
 export const YearSpan = styled.span`
@@ -53,7 +64,6 @@ export const YearSpan = styled.span`
 	padding: 0;
 `;
 
-// Section component
 export const BodyWrapper = styled.article`
 	padding-bottom: 20px;
 	padding-left: 25px;
@@ -115,7 +125,6 @@ export const BodyInner = styled.ul`
 	}
 `;
 
-// Description component
 export const Subtitle = styled.div`
 	color: ${(props) => props.theme.subtitleColor};
 	font-size: 14px;
