@@ -1,8 +1,9 @@
 import React, { PropsWithChildren, useContext } from 'react';
 import { ConfigContext } from '../../context/config.context';
-import { mapDate } from '../../helpers/transform-date.helper';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
+import { transformDate } from '../../helpers/transform-date.helper';
+import { clearString } from '../../helpers/text.helper';
 
 interface YearContentProps {
 	startDate: string;
@@ -16,27 +17,30 @@ const YearContent = ({
 	currentYear = false,
 }: PropsWithChildren<YearContentProps>) => {
 	const { lang, dateFormat } = useContext(ConfigContext);
+	const _lang = clearString(lang).split(' ')[0];
 
 	const d = new Date();
 	const _year = d.getFullYear();
 
 	const _currentYear = currentYear && (
-		<>
-			<time dateTime={_year.toString()}>{_year}</time>
-		</>
+		<time dateTime={_year.toString()}>{_year}</time>
 	);
 
 	const _endDate = endDate && (
 		<>
-			<YearSpan>{mapText[lang].to}</YearSpan>
-			<time dateTime={endDate}>{mapDate[lang][dateFormat](endDate)}</time>
+			<YearSpan>{mapText[_lang].to}</YearSpan>
+			<time dateTime={endDate}>
+				{transformDate({ date: endDate, lang: _lang, type: dateFormat })}
+			</time>
 		</>
 	);
 
 	const _startDate = (
 		<>
-			<YearSpan>{mapText[lang].from}</YearSpan>
-			<time dateTime={startDate}>{mapDate[lang][dateFormat](startDate)}</time>
+			<YearSpan>{mapText[_lang].from}</YearSpan>
+			<time dateTime={startDate}>
+				{transformDate({ date: startDate, lang: _lang, type: dateFormat })}
+			</time>
 		</>
 	);
 

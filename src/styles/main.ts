@@ -38,13 +38,13 @@ export const YearWrapper = styled.p<YearContentProps>`
 	height: max-content;
 	margin: 0;
 	min-width: ${(props) =>
-		props.format === 'L'
-			? '80px'
-			: props.format === 'l'
-			? '80px'
-			: props.lang === 'en'
-			? '90px'
-			: '105px'};
+		props.format === 'only-number'
+			? '85px'
+			: props.format === 'short'
+			? '85px'
+			: props.format === 'with-weekday'
+			? '125px'
+			: '230px'};
 `;
 
 export const YearSpan = styled.span`

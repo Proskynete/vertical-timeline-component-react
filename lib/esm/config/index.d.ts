@@ -7,20 +7,13 @@ export interface Theme {
     subtitleColor: string;
     textColor: string;
 }
-export declare type DateFormat = 'L' | 'l' | 'll';
+export declare type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
 export interface DefaultValues {
     theme?: Theme;
     lang: string;
     dateFormat: DateFormat;
 }
 export declare const defaultValues: DefaultValues;
-export declare const monthArray: {
-    es: string[];
-    en: string[];
-    de: string[];
-    tr: string[];
-    zh_CN: string[];
-};
 export declare const mapText: {
     en: {
         from: string;
@@ -38,7 +31,7 @@ export declare const mapText: {
         from: string;
         to: string;
     };
-    zh_CN: {
+    zh: {
         from: string;
         to: string;
     };
