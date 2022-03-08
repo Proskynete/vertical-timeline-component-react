@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { clearString } from '../helpers/text.helper';
 import { DateFormat } from '../interfaces';
 
 export const TimelineWrapper = styled.div`
@@ -25,7 +26,7 @@ interface YearContentProps {
 	readonly format: DateFormat;
 }
 
-const minWidth = () => ({
+const enumWidth = () => ({
 	'only-number_es': '85',
 	'only-number_en': '85',
 	'only-number_de': '85',
@@ -57,8 +58,14 @@ export const YearWrapper = styled.p<YearContentProps>`
 	font-weight: 400;
 	height: max-content;
 	margin: 0;
-	max-width: ${({ format, lang }) => `${minWidth()[`${format}_${lang}`]}px`};
-	min-width: ${({ format, lang }) => `${minWidth()[`${format}_${lang}`]}px`};
+	max-width: ${({ format, lang }) =>
+		`${
+			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
+		}px`};
+	min-width: ${({ format, lang }) =>
+		`${
+			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
+		}px`};
 	text-align: end;
 `;
 
