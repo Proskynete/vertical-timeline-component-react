@@ -1,2 +1,2 @@
 export const clearString = (str: string) =>
-	str.replaceAll('-', ' ').replaceAll('_', ' ');
+	str.replace(/-/g, ' ').replace(/_/g, ' ');
