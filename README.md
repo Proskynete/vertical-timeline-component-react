@@ -10,7 +10,7 @@
 
 ## Status
 
-![PRs welcome](https://img.shields.io/badge/PRs-welcome-green) [![Coverage Status](https://coveralls.io/repos/github/Proskynete/vertical-timeline-component-react/badge.svg?branch=unit-tests)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=unit-tests) [![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://www.npmjs.com/package/vertical-timeline-component-react) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![Package Quality](https://packagequality.com/shield/vertical-timeline-component-react.svg)](https://packagequality.com/#?package=vertical-timeline-component-react)
+[![Coverage Status](https://coveralls.io/repos/github/Proskynete/vertical-timeline-component-react/badge.svg?branch=unit-tests)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=unit-tests) [![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://www.npmjs.com/package/vertical-timeline-component-react) [![Build Status](https://travis-ci.org/Proskynete/vertical-timeline-component-react.svg?branch=master)](https://travis-ci.org/Proskynete/vertical-timeline-component-react) [![GitHub issues](https://img.shields.io/github/issues/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/issues) [![GitHub forks](https://img.shields.io/github/forks/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/network) [![GitHub stars](https://img.shields.io/github/stars/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/stargazers) [![GitHub license](https://img.shields.io/github/license/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react) [![Package Quality](https://packagequality.com/shield/vertical-timeline-component-react.svg)](https://packagequality.com/#?package=vertical-timeline-component-react) ![PRs welcome](https://img.shields.io/badge/PRs-welcome-green) [![CodeSandbox](https://img.shields.io/badge/-CodeSandbox-blue?style=flat&logo=CodeSandbox)](https://codesandbox.io/s/awesome-paper-16sgk?fontsize=14)
 
 <br />
 <br />
@@ -76,6 +76,8 @@ This is the wrapper component that creates the vertical timeline.
 |         Turk (`tr`)          | `DD.MM.YYYY`  | `DD MMM YYYY`    | `DD MMM YYYY ddd`       | `DD MMMM YYYY dddd`            |
 | Simplified Chinese (`zh_CN`) | `YYYY/MM/D`   | `YYYY年MM月DD日` | `YYYY年MMM月DD日`       | `YYYY年MM月DD日dddd`           |
 
+<p align="right"><a href="#top">🔝</a></p>
+
 <h3 id="container">Container</h3>
 
 Each event in the timeline will be represented by the `Content` component. This component receive only two children's, the first is `YearContent` and the second is `BodyContent`. There can be multiple repeating instances of this component inside `Timeline` wrapper.
@@ -85,6 +87,8 @@ Each event in the timeline will be represented by the `Content` component. This 
 | Number of children | Required | Value Allowed                   |
 | ------------------ | -------- | ------------------------------- |
 | 2                  | true     | `YearContent` and `BodyContent` |
+
+<p align="right"><a href="#top">🔝</a></p>
 
 <h3 id="year-content">YearContent</h3>
 
@@ -98,6 +102,8 @@ For each `Container` you need `YearContent` (like first children) since with thi
 | endDate     | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
 | currentYear | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
 
+<p align="right"><a href="#top">🔝</a></p>
+
 <h3 id="body-content">BodyContent</h3>
 
 For each `Container` you need `ContentBody` (like second children). This component will be the container of the one or more `Sections`.
@@ -107,6 +113,8 @@ For each `Container` you need `ContentBody` (like second children). This compone
 | Number of children | Required                                           | Value Allowed             |
 | ------------------ | -------------------------------------------------- | ------------------------- |
 | Many               | At least the first `Section` component is required | Only `Section` components |
+
+<p align="right"><a href="#top">🔝</a></p>
 
 <h3 id="section">Section</h3>
 
@@ -123,6 +131,8 @@ This component is the container for one or more `Description`.
 | Name  | Type   | Required | Description                   |
 | ----- | ------ | -------- | ----------------------------- |
 | title | string | true     | It's the title of any section |
+
+<p align="right"><a href="#top">🔝</a></p>
 
 <h3 id="description">Description</h3>
 
