@@ -3,7 +3,6 @@ import { ConfigContext } from '../../context/config.context';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
 import { transformDate } from '../../helpers/transform-date.helper';
-import { clearString } from '../../helpers/text.helper';
 
 interface YearContentProps {
 	startDate: string;
@@ -17,7 +16,6 @@ const YearContent = ({
 	currentYear = false,
 }: PropsWithChildren<YearContentProps>) => {
 	const { lang, dateFormat } = useContext(ConfigContext);
-	const _lang = clearString(lang).split(' ')[0];
 
 	const d = new Date();
 	const _year = d.getFullYear();
@@ -28,18 +26,18 @@ const YearContent = ({
 
 	const _endDate = endDate && (
 		<>
-			<YearSpan>{mapText[_lang].to}</YearSpan>
+			<YearSpan>{mapText[lang].to}</YearSpan>
 			<time dateTime={endDate}>
-				{transformDate({ date: endDate, lang: _lang, type: dateFormat })}
+				{transformDate({ date: endDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
 	);
 
 	const _startDate = (
 		<>
-			<YearSpan>{mapText[_lang].from}</YearSpan>
+			<YearSpan>{mapText[lang].from}</YearSpan>
 			<time dateTime={startDate}>
-				{transformDate({ date: startDate, lang: _lang, type: dateFormat })}
+				{transformDate({ date: startDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
 	);

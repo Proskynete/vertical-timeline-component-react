@@ -1,5 +1,5 @@
-import { DefaultValues } from '../interfaces';
-export declare const defaultValues: DefaultValues;
+import { DefaultTimelineProps } from '../interfaces';
+export declare const defaultValues: DefaultTimelineProps;
 export declare const mapText: {
     en: {
         from: string;

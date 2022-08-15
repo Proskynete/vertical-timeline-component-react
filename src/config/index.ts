@@ -1,6 +1,6 @@
-import { DefaultValues } from '../interfaces';
+import { DefaultTimelineProps } from '../interfaces';
 
-export const defaultValues: DefaultValues = {
+export const defaultValues: DefaultTimelineProps = {
 	theme: {
 		yearColor: '#888',
 		lineColor: '#c5c5c5',

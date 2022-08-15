@@ -1,5 +1,5 @@
 import { createContext } from 'react';
 import { defaultValues } from '../config';
-import { DefaultValues } from '../interfaces';
+import { DefaultTimelineProps } from '../interfaces';
 
-export const ConfigContext = createContext<DefaultValues>(defaultValues);
+export const ConfigContext = createContext<DefaultTimelineProps>(defaultValues);

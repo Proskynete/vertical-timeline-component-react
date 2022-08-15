@@ -1,2 +1,2 @@
-import { DefaultValues } from '../interfaces';
-export declare const ConfigContext: import("react").Context<DefaultValues>;
+import { DefaultTimelineProps } from '../interfaces';
+export declare const ConfigContext: import("react").Context<DefaultTimelineProps>;

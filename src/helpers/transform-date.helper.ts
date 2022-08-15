@@ -1,8 +1,8 @@
-import { DateFormat } from '../interfaces';
+import { DateFormat, LangAllowed } from '../interfaces';
 
 interface ITransformDate {
 	date: string;
-	lang: string;
+	lang: LangAllowed;
 	type: DateFormat;
 }
 

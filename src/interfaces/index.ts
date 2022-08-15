@@ -10,8 +10,16 @@ export interface Theme {
 
 export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
 
-export interface DefaultValues {
+export type LangAllowed = 'en' | 'es' | 'de' | 'tr' | 'zh';
+
+export interface TimelineProps {
 	theme?: Theme;
-	lang: string;
+	lang?: LangAllowed;
+	dateFormat?: DateFormat;
+}
+
+export interface DefaultTimelineProps {
+	theme?: Theme;
+	lang: LangAllowed;
 	dateFormat: DateFormat;
 }
