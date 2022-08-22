@@ -2,7 +2,11 @@ import React, { PropsWithChildren, useContext } from 'react';
 import { ConfigContext } from '../../context/config.context';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
-import { transformDate } from '../../helpers/transform-date.helper';
+import {
+	getAccessibilityDate,
+	transformDate,
+} from '../../helpers/transform-date.helper';
+import { getAriaText } from '../../helpers/text.helper';
 
 interface YearContentProps {
 	startDate: string;
@@ -17,17 +21,25 @@ const YearContent = ({
 }: PropsWithChildren<YearContentProps>) => {
 	const { lang, dateFormat } = useContext(ConfigContext);
 
-	const d = new Date();
-	const _year = d.getFullYear();
-
 	const _currentYear = currentYear && (
-		<time dateTime={_year.toString()}>{_year}</time>
+		<time
+			aria-hidden={true}
+			dateTime={getAccessibilityDate({
+				date: new Date().toISOString(),
+				lang: lang,
+			})}
+		>
+			{new Date().getFullYear()}
+		</time>
 	);
 
 	const _endDate = endDate && (
 		<>
-			<YearSpan>{mapText[lang].to}</YearSpan>
-			<time dateTime={endDate}>
+			<YearSpan aria-hidden={true}>{mapText[lang].to}</YearSpan>
+			<time
+				aria-hidden={true}
+				dateTime={getAccessibilityDate({ date: endDate, lang: lang })}
+			>
 				{transformDate({ date: endDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
@@ -35,15 +47,31 @@ const YearContent = ({
 
 	const _startDate = (
 		<>
-			<YearSpan>{mapText[lang].from}</YearSpan>
-			<time dateTime={startDate}>
+			<YearSpan aria-hidden={true}>{mapText[lang].from}</YearSpan>
+			<time
+				aria-hidden={true}
+				dateTime={getAccessibilityDate({ date: startDate, lang: lang })}
+			>
 				{transformDate({ date: startDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
 	);
 
 	return (
-		<YearWrapper format={dateFormat} lang={lang}>
+		<YearWrapper
+			format={dateFormat}
+			lang={lang}
+			aria-label={getAriaText({
+				from: transformDate({ date: startDate, lang: lang, type: 'full' }),
+				to: transformDate({
+					date: endDate || new Date().toISOString(),
+					lang: lang,
+					type: 'full',
+				}),
+				currentYear,
+				lang,
+			})}
+		>
 			{_currentYear}
 			{_endDate}
 			{_startDate}

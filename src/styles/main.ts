@@ -49,7 +49,7 @@ const enumWidth = () => ({
 	full_zh: '125',
 });
 
-export const YearWrapper = styled.p<YearContentProps>`
+export const YearWrapper = styled.div<YearContentProps>`
 	align-items: flex-end;
 	color: ${({ theme }) => theme.yearColor};
 	display: flex;

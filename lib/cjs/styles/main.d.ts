@@ -6,7 +6,7 @@ export declare const BodyContent: import("styled-components").StyledComponent<"d
 interface YearContentProps {
     readonly format: DateFormat;
 }
-export declare const YearWrapper: import("styled-components").StyledComponent<"p", any, YearContentProps, never>;
+export declare const YearWrapper: import("styled-components").StyledComponent<"div", any, YearContentProps, never>;
 export declare const YearSpan: import("styled-components").StyledComponent<"span", any, {}, never>;
 export declare const BodyWrapper: import("styled-components").StyledComponent<"article", any, {}, never>;
 export declare const Title: import("styled-components").StyledComponent<"p", any, {}, never>;
