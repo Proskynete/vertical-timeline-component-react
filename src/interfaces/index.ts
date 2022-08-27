@@ -16,10 +16,12 @@ export interface TimelineProps {
 	theme?: Theme;
 	lang?: LangAllowed;
 	dateFormat?: DateFormat;
+	collapse?: boolean;
 }
 
 export interface DefaultTimelineProps {
 	theme?: Theme;
 	lang: LangAllowed;
 	dateFormat: DateFormat;
+	collapse?: boolean;
 }

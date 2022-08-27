@@ -9,12 +9,13 @@ const Timeline = ({
 	theme = defaultValues.theme,
 	lang = defaultValues.lang,
 	dateFormat = defaultValues.dateFormat,
+	collapse = defaultValues.collapse,
 	children,
 }: PropsWithChildren<TimelineProps>) => {
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
-				<ConfigContext.Provider value={{ lang, dateFormat }}>
+				<ConfigContext.Provider value={{ lang, dateFormat, collapse }}>
 					<ThemeProvider theme={theme}>{children}</ThemeProvider>
 				</ConfigContext.Provider>
 			</TimelineWrapperInner>
