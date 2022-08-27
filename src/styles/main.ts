@@ -80,10 +80,6 @@ export const BodyWrapper = styled.article`
 	padding-left: 25px;
 	position: relative;
 
-	&:first-of-type {
-		margin-top: -20px;
-	}
-
 	&:after,
 	${ContainerWrapper}:last-of-type &:last-of-type:after {
 		background-color: ${(props) => props.theme.lineColor};
