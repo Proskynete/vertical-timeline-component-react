@@ -1,5 +1,4 @@
-import React, { PropsWithChildren, useContext } from 'react';
-import { ConfigContext } from '../../context/config.context';
+import React, { PropsWithChildren } from 'react';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
 import {
@@ -7,6 +6,7 @@ import {
 	transformDate,
 } from '../../helpers/transform-date.helper';
 import { getAriaText } from '../../helpers/text.helper';
+import { useConfig } from '../../hooks/useConfig';
 
 interface YearContentProps {
 	startDate: string;
@@ -19,7 +19,9 @@ const YearContent = ({
 	endDate,
 	currentYear = false,
 }: PropsWithChildren<YearContentProps>) => {
-	const { lang, dateFormat } = useContext(ConfigContext);
+	const {
+		config: { lang, dateFormat },
+	} = useConfig();
 
 	const _currentYear = currentYear && (
 		<time

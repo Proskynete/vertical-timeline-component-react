@@ -5,7 +5,6 @@
 		"target": "es5",
 		"lib": ["es6", "dom", "dom.iterable", "esnext", "es2016", "es2017"],
 		"jsx": "react",
-		"declaration": true,
 		"typeRoots": ["node_modules/@types"],
 		"types": ["node", "jest"],
 		"moduleResolution": "node",

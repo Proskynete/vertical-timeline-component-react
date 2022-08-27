@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultValues } from '../../config';
-import { ConfigContext } from '../../context/config.context';
+import { ConfigProvider } from '../../context/config.context';
 import { TimelineProps } from '../../interfaces';
 import { TimelineWrapper, TimelineWrapperInner } from '../../styles/main';
 
@@ -15,9 +15,9 @@ const Timeline = ({
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
-				<ConfigContext.Provider value={{ lang, dateFormat, collapse }}>
+				<ConfigProvider config={{ theme, lang, dateFormat, collapse }}>
 					<ThemeProvider theme={theme}>{children}</ThemeProvider>
-				</ConfigContext.Provider>
+				</ConfigProvider>
 			</TimelineWrapperInner>
 		</TimelineWrapper>
 	);

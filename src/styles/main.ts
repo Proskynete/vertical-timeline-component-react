@@ -104,8 +104,14 @@ export const BodyWrapper = styled.article`
 	}
 `;
 
-export const Title = styled.p`
+interface TitleProps {
+	readonly collapse?: boolean;
+}
+
+export const Title = styled.h2<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
+	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
+	font-size: 16px;
 	font-weight: 500;
 	margin: 0;
 
