@@ -78,6 +78,7 @@ export const YearSpan = styled.span`
 export const BodyWrapper = styled.article`
 	padding-bottom: 20px;
 	padding-left: 25px;
+	min-height: 65px;
 	position: relative;
 
 	&:after,

@@ -5,9 +5,10 @@ import { Subtitle, DescriptionText } from '../../styles/main';
 interface ContentProps {
 	title: string;
 	description: string[];
+	collapse?: boolean;
 }
 
-const Content = ({ title, description }: ContentProps) => {
+const Content = ({ title, description, collapse }: ContentProps) => {
 	const { config } = useConfig();
 	const [show, setShow] = useState(true);
 
@@ -17,7 +18,12 @@ const Content = ({ title, description }: ContentProps) => {
 
 	return (
 		<>
-			<Subtitle onClick={handleSetShow} collapse={config.collapse}>
+			<Subtitle
+				collapse={config.collapse}
+				onClick={() => {
+					if (collapse || config.collapse) handleSetShow();
+				}}
+			>
 				{title}
 			</Subtitle>
 
