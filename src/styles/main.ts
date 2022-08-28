@@ -138,11 +138,17 @@ export const BodyInner = styled.ul`
 	}
 `;
 
-export const Subtitle = styled.div`
+interface SubtitleProps {
+	readonly collapse?: boolean;
+}
+
+export const Subtitle = styled.p<SubtitleProps>`
 	color: ${(props) => props.theme.subtitleColor};
 	font-size: 14px;
 	font-style: italic;
 	font-weight: 400;
+	margin: 0;
+	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 
 	&:not(:first-of-type) {
 		margin-top: 10px;
