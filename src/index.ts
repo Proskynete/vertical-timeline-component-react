@@ -1,6 +1,6 @@
-import Timeline from './components/timeline';
-import Container from './components/container';
-import Content from './components/content';
+import { Timeline } from './components/timeline';
+import { Container } from './components/container';
+import { Content } from './components/content';
 import { Theme, DateFormat, LangAllowed, TimelineProps } from './interfaces';
 
 export { Timeline, Container, Content };

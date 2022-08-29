@@ -55,7 +55,7 @@ export const YearWrapper = styled.div<YearContentProps>`
 	display: flex;
 	flex-direction: column;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: normal;
 	height: max-content;
 	margin: 0;
 	max-width: ${({ format, lang }) =>
@@ -76,7 +76,7 @@ export const YearSpan = styled.span`
 `;
 
 export const BodyWrapper = styled.article`
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	padding-left: 25px;
 	min-height: 65px;
 	position: relative;
@@ -109,13 +109,13 @@ export const Title = styled.h2<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: bold;
 	margin: 0;
 
 	&:after {
 		background-color: ${(props) => props.theme.dotColor};
-		border: 2px solid ${(props) => props.theme.borderDotColor};
 		border-radius: 50%;
+		border: 2px solid ${(props) => props.theme.borderDotColor};
 		box-sizing: content-box;
 		content: '';
 		height: 6px;
@@ -139,38 +139,30 @@ export const BodyInner = styled.ul`
 	}
 `;
 
+export const ContentWrapper = styled.div`
+	&:last-of-type {
+		margin-top: 5px;
+	}
+`;
+
 interface SubtitleProps {
 	readonly collapse?: boolean;
 }
 
-export const Subtitle = styled.p<SubtitleProps>`
+export const Subtitle = styled.h3<SubtitleProps>`
+	align-content: center;
+	align-items: center;
 	color: ${(props) => props.theme.subtitleColor};
-	font-size: 14px;
-	font-style: italic;
-	font-weight: 400;
-	margin: 0;
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
-
-	&:not(:first-of-type) {
-		margin-top: 10px;
-	}
+	display: flex;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 0;
+	width: max-content;
 `;
 
 export const DescriptionText = styled.li`
 	color: ${(props) => props.theme.textColor};
-
-	&:not(:first-of-type) {
-		margin-top: 3px;
-	}
-`;
-
-export const DescriptionSubtitle = styled.li`
-	color: ${(props) => props.theme.subtitleColor};
 	font-size: 14px;
-	font-style: italic;
-	font-weight: 400;
-
-	&:not(:first-of-type) {
-		margin-top: 10px;
-	}
+	margin-top: 3px;
 `;

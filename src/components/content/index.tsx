@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useConfig } from '../../hooks/useConfig';
-import { Subtitle, DescriptionText } from '../../styles/main';
+import { Subtitle, DescriptionText, ContentWrapper } from '../../styles/main';
 
 interface ContentProps {
 	title: string;
@@ -17,22 +17,37 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 	};
 
 	return (
-		<>
+		<ContentWrapper>
 			<Subtitle
-				collapse={config.collapse}
+				collapse={collapse || config.collapse}
 				onClick={() => {
 					if (collapse || config.collapse) handleSetShow();
 				}}
 			>
+				{(collapse || config.collapse) && (
+					<i
+						style={{
+							marginRight: '3px',
+							fontStyle: 'normal',
+							transform: show ? 'rotate(90deg)' : 'rotate(0deg)',
+							transition: 'transform .2s ease-in-out',
+						}}
+					>
+						&#8250;
+					</i>
+				)}
 				{title}
 			</Subtitle>
 
-			{show &&
-				description.map((text, index) => (
-					<DescriptionText key={index}>{text}</DescriptionText>
-				))}
-		</>
+			{show && (
+				<div style={{ paddingLeft: '10px' }}>
+					{description.map((text, index) => (
+						<DescriptionText key={index}>{text}</DescriptionText>
+					))}
+				</div>
+			)}
+		</ContentWrapper>
 	);
 };
 
-export default Content;
+export { Content };
