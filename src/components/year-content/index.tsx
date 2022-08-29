@@ -20,7 +20,7 @@ const YearContent = ({
 	currentYear = false,
 }: PropsWithChildren<YearContentProps>) => {
 	const {
-		config: { lang, dateFormat },
+		config: { lang, dateFormat, customStyles },
 	} = useConfig();
 
 	const _currentYear = currentYear && (
@@ -73,6 +73,7 @@ const YearContent = ({
 				currentYear,
 				lang,
 			})}
+			style={customStyles?.date}
 		>
 			{_currentYear}
 			{_endDate}

@@ -153,7 +153,10 @@ export const Icon = styled.i<IconProps>`
 	font-style: normal;
 	margin-right: 3px;
 	transform: rotate(${(props) => (props.isShowing ? '90deg' : '0deg')});
-	transition: transform 0.2s ease-in-out;
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: transform 0.2s ease-in-out;
+	}
 `;
 
 interface EventTitleProps {

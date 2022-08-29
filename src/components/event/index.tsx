@@ -14,7 +14,7 @@ interface ContentProps {
 	collapse?: boolean;
 }
 
-const Content = ({ title, description, collapse }: ContentProps) => {
+const Event = ({ title, description, collapse }: ContentProps) => {
 	const { config } = useConfig();
 	const [show, setShow] = useState(true);
 
@@ -29,6 +29,7 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 				onClick={() => {
 					if (collapse || config.collapse) handleSetShow();
 				}}
+				style={config.customStyles?.event}
 			>
 				{(collapse || config.collapse) && <Icon isShowing={show}>&#8250;</Icon>}
 				{title}
@@ -36,8 +37,10 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 
 			{show && (
 				<DescriptionWrapper>
-					{description.map((text, index) => (
-						<Description key={index}>{text}</Description>
+					{description.map((text, i) => (
+						<Description key={i} style={config.customStyles?.description}>
+							{text}
+						</Description>
 					))}
 				</DescriptionWrapper>
 			)}
@@ -45,4 +48,4 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 	);
 };
 
-export { Content };
+export { Event };

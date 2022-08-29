@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import { useConfig } from '../../hooks/useConfig';
 import {
 	ContainerWrapper,
 	BodyContent,
@@ -22,6 +23,8 @@ const Container = ({
 	currentYear,
 	children,
 }: PropsWithChildren<ContainerProps>) => {
+	const { config } = useConfig();
+
 	return (
 		<ContainerWrapper>
 			<YearContent
@@ -32,7 +35,7 @@ const Container = ({
 
 			<BodyContent>
 				<BodyWrapper>
-					<Title>{title}</Title>
+					<Title style={config.customStyles?.title}>{title}</Title>
 					<BodyInner>{children}</BodyInner>
 				</BodyWrapper>
 			</BodyContent>

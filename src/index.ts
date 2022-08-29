@@ -1,7 +1,7 @@
 import { Timeline } from './components/timeline';
 import { Container } from './components/container';
-import { Content } from './components/content';
+import { Event } from './components/event';
 import { Theme, DateFormat, LangAllowed, TimelineProps } from './interfaces';
 
-export { Timeline, Container, Content };
+export { Timeline, Container, Event };
 export type { Theme, DateFormat, LangAllowed, TimelineProps };
