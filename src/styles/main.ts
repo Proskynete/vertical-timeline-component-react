@@ -145,11 +145,22 @@ export const ContentWrapper = styled.div`
 	}
 `;
 
-interface SubtitleProps {
+interface IconProps {
+	readonly isShowing?: boolean;
+}
+
+export const Icon = styled.i<IconProps>`
+	font-style: normal;
+	margin-right: 3px;
+	transform: rotate(${(props) => (props.isShowing ? '90deg' : '0deg')});
+	transition: transform 0.2s ease-in-out;
+`;
+
+interface EventTitleProps {
 	readonly collapse?: boolean;
 }
 
-export const Subtitle = styled.h3<SubtitleProps>`
+export const EventTitle = styled.h3<EventTitleProps>`
 	align-content: center;
 	align-items: center;
 	color: ${(props) => props.theme.subtitleColor};
@@ -161,8 +172,12 @@ export const Subtitle = styled.h3<SubtitleProps>`
 	width: max-content;
 `;
 
-export const DescriptionText = styled.li`
+export const DescriptionWrapper = styled.div`
+	padding-left: 10px;
+`;
+
+export const Description = styled.p`
 	color: ${(props) => props.theme.textColor};
 	font-size: 14px;
-	margin-top: 3px;
+	margin: 3px 0 0 0;
 `;
