@@ -3,10 +3,11 @@ import { defaults } from 'jest-config';
 
 const config: Config = {
 	moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
-	modulePathIgnorePatterns: ['<rootDir>/lib/'],
+	modulePathIgnorePatterns: ['<rootDir>/build/'],
 	preset: 'ts-jest',
 	testEnvironment: 'jsdom',
-	collectCoverageFrom: ['./src/**/*.{tsx,ts}'],
+	collectCoverageFrom: ['./src/**/*.{ts,tsx}'],
+	setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
 	coverageThreshold: {
 		global: {
 			branches: 90,

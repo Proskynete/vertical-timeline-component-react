@@ -9,9 +9,10 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:prettier/recommended',
+		'plugin:jest/recommended',
 	],
 	ignorePatterns: ['./lib'],
-	plugins: ['@typescript-eslint'],
+	plugins: ['@typescript-eslint', 'jest', 'testing-library'],
 	parser: '@typescript-eslint/parser',
 	rules: {
 		'no-console': 0,
