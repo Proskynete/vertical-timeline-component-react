@@ -40,10 +40,7 @@ interface GetAccessibilityDateParams {
 	lang: Languages;
 }
 
-export const getAccessibilityDate = ({
-	date,
-	lang,
-}: GetAccessibilityDateParams) => {
+export const getAccessibilityDate = ({ date, lang }: GetAccessibilityDateParams) => {
 	const _date = new Date(date);
 	return _date.toLocaleDateString(lang);
 };

@@ -1,8 +1,7 @@
 import { mapText } from '../config';
 import { Languages } from '../interfaces';
 
-export const clearString = (str: string) =>
-	str.replace(/-/g, ' ').replace(/_/g, ' ');
+export const clearString = (str: string) => str.replace(/-/g, ' ').replace(/_/g, ' ');
 
 interface GetAriaTextParams {
 	from: string;

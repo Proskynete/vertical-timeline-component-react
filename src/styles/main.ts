@@ -57,13 +57,9 @@ export const YearWrapper = styled.div<YearContentProps>`
 	height: max-content;
 	margin: 0;
 	max-width: ${({ format, lang }) =>
-		`${
-			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
-		}px`};
+		`${enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]}px`};
 	min-width: ${({ format, lang }) =>
-		`${
-			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
-		}px`};
+		`${enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]}px`};
 `;
 
 export const YearSpan = styled.span`
