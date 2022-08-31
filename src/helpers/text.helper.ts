@@ -3,7 +3,7 @@ import { Languages } from '../interfaces';
 
 export const clearString = (str: string) => str.replace(/-/g, ' ').replace(/_/g, ' ');
 
-interface GetAriaTextParams {
+export interface GetAriaTextParams {
 	from: string;
 	to: string;
 	today: boolean;

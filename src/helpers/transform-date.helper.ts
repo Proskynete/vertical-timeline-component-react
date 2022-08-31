@@ -1,6 +1,6 @@
 import { DateFormat, Languages } from '../interfaces';
 
-interface ITransformDate {
+export interface ITransformDate {
 	date: string;
 	lang: Languages;
 	type: DateFormat;
@@ -35,7 +35,7 @@ export const transformDate = ({ date, lang, type }: ITransformDate) => {
 	}
 };
 
-interface GetAccessibilityDateParams {
+export interface GetAccessibilityDateParams {
 	date: string;
 	lang: Languages;
 }
