@@ -255,6 +255,6 @@ const Main = () => {
 
 <h2 id="license">License</h2>
 
-MIT
+Code and documentation copyright 2020–2022 the [Vertical Timeline Component React Authors](https://github.com/Proskynete/vertical-timeline-component-react/graphs/contributors) and [Me](https://github.com/Proskynete/Proskynete). Code released under the MIT [License](https://github.com/Proskynete/vertical-timeline-component-react/blob/master/LICENSE).
 
 <p align="right"><a href="#top">🔝</a></p>
