@@ -10,6 +10,7 @@ module.exports = {
 		'plugin:@typescript-eslint/recommended',
 		'plugin:prettier/recommended',
 		'plugin:jest/recommended',
+		'plugin:testing-library/dom',
 	],
 	ignorePatterns: ['./lib'],
 	plugins: ['@typescript-eslint', 'jest', 'testing-library'],

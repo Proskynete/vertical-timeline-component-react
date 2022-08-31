@@ -6,7 +6,7 @@ const config: Config = {
 	modulePathIgnorePatterns: ['<rootDir>/build/'],
 	preset: 'ts-jest',
 	testEnvironment: 'jsdom',
-	collectCoverageFrom: ['./src/**/*.{ts,tsx}'],
+	collectCoverageFrom: ['./src/**/*.{ts,tsx}', '!./src/index.ts'],
 	setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
 	coverageThreshold: {
 		global: {

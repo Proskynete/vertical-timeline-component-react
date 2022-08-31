@@ -39,7 +39,6 @@
 		"react-dom": "^18.2.0"
 	},
 	"dependencies": {
-		"eslint": "^8.23.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"styled-components": "^5.3.5"
@@ -47,7 +46,9 @@
 	"devDependencies": {
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.3.0",
+		"@testing-library/user-event": "^14.4.3",
 		"@types/jest": "^29.0.0",
+		"@types/node": "^18.7.14",
 		"@types/prettier": "^2.4.2",
 		"@types/react": "^18.0.18",
 		"@types/react-dom": "^18.0.6",
@@ -55,6 +56,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.4.0",
 		"@typescript-eslint/parser": "^5.4.0",
 		"coveralls": "^3.1.1",
+		"eslint": "^8.23.0",
 		"eslint-config-airbnb-typescript": "^16.0.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-jest": "^27.0.1",

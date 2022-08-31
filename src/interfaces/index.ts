@@ -15,10 +15,10 @@ export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
 export type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
 
 interface CustomStyles {
-	date: CSSProperties;
-	title: CSSProperties;
-	event: CSSProperties;
-	description: CSSProperties;
+	date?: CSSProperties;
+	title?: CSSProperties;
+	event?: CSSProperties;
+	description?: CSSProperties;
 }
 
 export interface TimelineProps {

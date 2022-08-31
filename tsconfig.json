@@ -7,7 +7,7 @@
 		"jsx": "react",
 		"declaration": true,
 		"typeRoots": ["node_modules/@types"],
-		"types": ["jest", "node", "@testing-library/jest-dom"],
+		"types": ["node", "jest", "@testing-library/jest-dom"],
 		"moduleResolution": "node",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
