@@ -21,13 +21,10 @@
 		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
 		"lint": "eslint . --ext .ts ./src",
 		"lint:fix": "eslint . --ext .ts ./src --fix",
-		"prettier:check": "prettier --check ./src/**/*",
-		"prettier:format": "prettier --config .prettierrc --write ./src/**/*",
 		"test": "jest && npm run test:coverage",
 		"test:update-snapshots": "jest --updateSnapshot",
-		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
 		"test:coverage": "jest --coverage",
-		"test:watch": "jest --watchAll",
+		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
 		"prepare": "husky install"
 	},
 	"keywords": [
