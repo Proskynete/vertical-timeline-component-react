@@ -9,5 +9,5 @@ interface GetAccessibilityDateParams {
     date: string;
     lang: Languages;
 }
-export declare const getAccessibilityDate: ({ date, lang, }: GetAccessibilityDateParams) => string;
+export declare const getAccessibilityDate: ({ date, lang }: GetAccessibilityDateParams) => string;
 export {};
