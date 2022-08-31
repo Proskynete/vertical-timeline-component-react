@@ -31,9 +31,10 @@
 	},
 	"keywords": [
 		"React",
-		"Reactjs",
-		"Vertical Timeline Component React",
-		"Vertical Timeline"
+		"React.js",
+		"TypeScript",
+		"Vertical Timeline",
+		"Vertical Timeline Component React"
 	],
 	"peerDependencies": {
 		"react": "^17.0.2",
