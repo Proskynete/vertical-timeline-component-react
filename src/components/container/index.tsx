@@ -2,7 +2,6 @@ import React, { PropsWithChildren } from 'react';
 import { useConfig } from '../../hooks/useConfig';
 import {
 	ContainerWrapper,
-	BodyContent,
 	BodyWrapper,
 	Title,
 	BodyInner,
@@ -13,32 +12,26 @@ interface ContainerProps {
 	title: string;
 	startDate: string;
 	endDate?: string;
-	currentYear?: boolean;
+	today?: boolean;
 }
 
 const Container = ({
 	title,
 	startDate,
 	endDate,
-	currentYear,
+	today,
 	children,
 }: PropsWithChildren<ContainerProps>) => {
 	const { config } = useConfig();
 
 	return (
 		<ContainerWrapper>
-			<YearContent
-				startDate={startDate}
-				endDate={endDate}
-				currentYear={currentYear}
-			/>
+			<YearContent startDate={startDate} endDate={endDate} today={today} />
 
-			<BodyContent>
-				<BodyWrapper>
-					<Title style={config.customStyles?.title}>{title}</Title>
-					<BodyInner>{children}</BodyInner>
-				</BodyWrapper>
-			</BodyContent>
+			<BodyWrapper>
+				<Title style={config.customStyles?.title}>{title}</Title>
+				<BodyInner>{children}</BodyInner>
+			</BodyWrapper>
 		</ContainerWrapper>
 	);
 };

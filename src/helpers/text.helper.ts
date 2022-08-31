@@ -1,5 +1,5 @@
 import { mapText } from '../config';
-import { LangAllowed } from '../interfaces';
+import { Languages } from '../interfaces';
 
 export const clearString = (str: string) =>
 	str.replace(/-/g, ' ').replace(/_/g, ' ');
@@ -7,8 +7,8 @@ export const clearString = (str: string) =>
 interface GetAriaTextParams {
 	from: string;
 	to: string;
-	currentYear: boolean;
-	lang: LangAllowed;
+	today: boolean;
+	lang: Languages;
 }
 
 export const getAriaText = ({ from, to, lang }: GetAriaTextParams) =>

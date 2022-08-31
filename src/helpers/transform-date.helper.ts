@@ -1,8 +1,8 @@
-import { DateFormat, LangAllowed } from '../interfaces';
+import { DateFormat, Languages } from '../interfaces';
 
 interface ITransformDate {
 	date: string;
-	lang: LangAllowed;
+	lang: Languages;
 	type: DateFormat;
 }
 
@@ -37,7 +37,7 @@ export const transformDate = ({ date, lang, type }: ITransformDate) => {
 
 interface GetAccessibilityDateParams {
 	date: string;
-	lang: LangAllowed;
+	lang: Languages;
 }
 
 export const getAccessibilityDate = ({

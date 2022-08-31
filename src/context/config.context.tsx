@@ -2,7 +2,7 @@ import React, { createContext, PropsWithChildren } from 'react';
 import { defaultValues } from '../config';
 import { DefaultTimelineProps } from '../interfaces';
 
-interface ConfigProviderProps {
+export interface ConfigProviderProps {
 	config: DefaultTimelineProps;
 }
 
@@ -21,4 +21,5 @@ export const ConfigProvider = ({
 	);
 };
 
+export const ConfigCustomer = ConfigContext.Consumer;
 export { ConfigContext };

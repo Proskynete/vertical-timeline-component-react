@@ -12,7 +12,7 @@ export interface Theme {
 
 export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
 
-export type LangAllowed = 'en' | 'es' | 'de' | 'tr' | 'zh';
+export type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
 
 interface CustomStyles {
 	date: CSSProperties;
@@ -23,7 +23,7 @@ interface CustomStyles {
 
 export interface TimelineProps {
 	theme?: Theme;
-	lang?: LangAllowed;
+	lang?: Languages;
 	dateFormat?: DateFormat;
 	collapse?: boolean;
 	customStyles?: CustomStyles;
@@ -31,7 +31,7 @@ export interface TimelineProps {
 
 export interface DefaultTimelineProps {
 	theme: Theme;
-	lang: LangAllowed;
+	lang: Languages;
 	dateFormat: DateFormat;
 	collapse: boolean;
 	customStyles?: CustomStyles;

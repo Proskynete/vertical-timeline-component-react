@@ -20,8 +20,6 @@ export const ContainerWrapper = styled.section`
 	position: relative;
 `;
 
-export const BodyContent = styled.div``;
-
 interface YearContentProps {
 	readonly format: DateFormat;
 }
@@ -54,7 +52,7 @@ export const YearWrapper = styled.div<YearContentProps>`
 	color: ${({ theme }) => theme.yearColor};
 	display: flex;
 	flex-direction: column;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: normal;
 	height: max-content;
 	margin: 0;
@@ -66,11 +64,10 @@ export const YearWrapper = styled.div<YearContentProps>`
 		`${
 			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
 		}px`};
-	text-align: end;
 `;
 
 export const YearSpan = styled.span`
-	font-size: 10px;
+	font-size: 0.625rem;
 	margin: 3px 0 0 0;
 	padding: 0;
 `;
@@ -108,7 +105,7 @@ interface TitleProps {
 export const Title = styled.h2<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	margin: 0;
 
@@ -127,8 +124,8 @@ export const Title = styled.h2<TitleProps>`
 	}
 `;
 
-export const BodyInner = styled.ul`
-	font-size: 16px;
+export const BodyInner = styled.div`
+	font-size: 1rem;
 	list-style-type: none;
 	margin: 5px 0 16px;
 	max-width: 100%;
@@ -169,7 +166,7 @@ export const EventTitle = styled.h3<EventTitleProps>`
 	color: ${(props) => props.theme.subtitleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	display: flex;
-	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: bold;
 	margin: 0;
 	width: max-content;
@@ -181,6 +178,6 @@ export const DescriptionWrapper = styled.div`
 
 export const Description = styled.p`
 	color: ${(props) => props.theme.textColor};
-	font-size: 14px;
+	font-size: 0.875rem;
 	margin: 3px 0 0 0;
 `;

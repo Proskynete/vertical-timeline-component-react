@@ -11,19 +11,19 @@ import { useConfig } from '../../hooks/useConfig';
 interface YearContentProps {
 	startDate: string;
 	endDate?: string;
-	currentYear?: boolean;
+	today?: boolean;
 }
 
 const YearContent = ({
 	startDate,
 	endDate,
-	currentYear = false,
+	today = false,
 }: PropsWithChildren<YearContentProps>) => {
 	const {
 		config: { lang, dateFormat, customStyles },
 	} = useConfig();
 
-	const _currentYear = currentYear && (
+	const _today = today && (
 		<time
 			aria-hidden={true}
 			dateTime={getAccessibilityDate({
@@ -70,12 +70,12 @@ const YearContent = ({
 					lang: lang,
 					type: 'full',
 				}),
-				currentYear,
+				today,
 				lang,
 			})}
 			style={customStyles?.date}
 		>
-			{_currentYear}
+			{_today}
 			{_endDate}
 			{_startDate}
 		</YearWrapper>
