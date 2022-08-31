@@ -1,11 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { useConfig } from '../../hooks/useConfig';
-import {
-	ContainerWrapper,
-	BodyWrapper,
-	Title,
-	BodyInner,
-} from '../../styles/main';
+import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
 import YearContent from '../year-content';
 
 interface ContainerProps {

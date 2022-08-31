@@ -10,15 +10,8 @@ const ConfigContext = createContext<ConfigProviderProps>({
 	config: defaultValues,
 });
 
-export const ConfigProvider = ({
-	children,
-	config,
-}: PropsWithChildren<ConfigProviderProps>) => {
-	return (
-		<ConfigContext.Provider value={{ config }}>
-			{children}
-		</ConfigContext.Provider>
-	);
+export const ConfigProvider = ({ children, config }: PropsWithChildren<ConfigProviderProps>) => {
+	return <ConfigContext.Provider value={{ config }}>{children}</ConfigContext.Provider>;
 };
 
 export const ConfigCustomer = ConfigContext.Consumer;

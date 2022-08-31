@@ -16,9 +16,7 @@ const Timeline = ({
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
-				<ConfigProvider
-					config={{ theme, lang, dateFormat, collapse, customStyles }}
-				>
+				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles }}>
 					<ThemeProvider theme={theme}>{children}</ThemeProvider>
 				</ConfigProvider>
 			</TimelineWrapperInner>

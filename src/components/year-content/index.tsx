@@ -1,10 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
-import {
-	getAccessibilityDate,
-	transformDate,
-} from '../../helpers/transform-date.helper';
+import { getAccessibilityDate, transformDate } from '../../helpers/transform-date.helper';
 import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
 
@@ -38,10 +35,7 @@ const YearContent = ({
 	const _endDate = endDate && (
 		<>
 			<YearSpan aria-hidden={true}>{mapText[lang].to}</YearSpan>
-			<time
-				aria-hidden={true}
-				dateTime={getAccessibilityDate({ date: endDate, lang: lang })}
-			>
+			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: endDate, lang: lang })}>
 				{transformDate({ date: endDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
@@ -50,10 +44,7 @@ const YearContent = ({
 	const _startDate = (
 		<>
 			<YearSpan aria-hidden={true}>{mapText[lang].from}</YearSpan>
-			<time
-				aria-hidden={true}
-				dateTime={getAccessibilityDate({ date: startDate, lang: lang })}
-			>
+			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: startDate, lang: lang })}>
 				{transformDate({ date: startDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
