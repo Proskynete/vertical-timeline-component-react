@@ -11,7 +11,7 @@ jobs:
     name: '🚀 Publish'
     runs-on: ubuntu-latest
     steps:
-      - name: 📚 Check out Git repository
+      - name: 📚 Checkout git repository
         uses: actions/checkout@v2
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v1
