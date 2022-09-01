@@ -21,7 +21,7 @@ jobs:
         run: npm install
       - name: ⚙️ Create coverage 
         run: npm run test:coveralls
-        with:
+        env:
           COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
       - name: 📨 Send report to Coveralls
         uses: coverallsapp/github-action@master
