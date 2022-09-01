@@ -18,7 +18,7 @@ jobs:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
       - name: 🛠 Install Node.js dependencies
-        run: npm install --production
+        run: npm install --omit=dev
       - name: 📦 Publish package to NPM
         run: npm publish
         env:
