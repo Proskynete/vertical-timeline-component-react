@@ -1,6 +1,6 @@
 {
 	"name": "vertical-timeline-component-react",
-	"version": "4.0.0",
+	"version": "4.0.1",
 	"description": "A simple component for create a vertical timeline with React",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
@@ -8,6 +8,9 @@
 	"files": [
 		"/lib"
 	],
+	"publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
 	"repository": "https://github.com/Proskynete/vertical-timeline-component-react",
 	"author": {
 		"name": "Eduardo Esteban Álvarez Castañeda",

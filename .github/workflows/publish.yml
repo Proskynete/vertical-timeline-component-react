@@ -16,9 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16'
-      - name: Install Node.js dependencies
+      - name: 🛠 Install Node.js dependencies
         run: npm install
-      - name: '🚀 Publish'
+      - name: 🚀 Publish 
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
