@@ -24,9 +24,10 @@ jobs:
       - name: 🛠 Install Node.js dependencies
         run: npm install
       - name: 🤖 Run tests
-        run: npm run test
+        run: |
+          npm run test
+          npm run test:coveralls
       - name: 🎯 Coverage
         uses: coverallsapp/github-action@master
-        run: npm run test:coveralls
         with:
           github-token: ${{secrets.TOKEN}}
