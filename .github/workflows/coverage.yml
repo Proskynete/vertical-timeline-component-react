@@ -9,30 +9,24 @@ env:
   CI: true
 
 jobs:
-  test:
-    name: '🚀 Publish'
+  build:
+    name: Build
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
 
-      - name: Set Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14'
+    - uses: actions/checkout@v1
 
-      - name: Install npm dependencies
-        run: npm install
+    - name: Use Node.js 14
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
 
-      - name: Run lint
-        run: npm run lint
+    - name: npm install, make test-coverage
+      run: |
+        npm install
+        npm run test:coveralls
 
-      - name: Run tests
-        run: npm run test:coveralls
-
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel: true
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}

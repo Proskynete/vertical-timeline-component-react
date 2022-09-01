@@ -24,7 +24,7 @@
 		"test": "jest",
 		"test:update-snapshots": "jest --updateSnapshot",
 		"test:coverage": "jest --coverage",
-		"test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
 		"prepare": "husky install"
 	},
 	"keywords": [
