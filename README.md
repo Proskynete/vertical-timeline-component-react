@@ -6,7 +6,7 @@
  <p>A simple component to generate a responsive vertical timeline</p>
 </div>
 
-![Vertical Timeline Component React](https://i.imgur.com/KBqLIlK.png 'How to see vertical-timeline-component-react')
+![Vertical Timeline Component React](<https://dsc.cloud/83db8c/Captura%20de%20Pantalla%202022-08-31%20a%20la(s)%2020.12.38.png> 'How to see vertical-timeline-component-react')
 
 ## Status
 
@@ -26,10 +26,7 @@
       <ul>
         <li><a href="#timeline">Timeline</a></li>
         <li><a href="#container">Container</a></li>
-        <li><a href="#year-content">YearContent</a></li>
-        <li><a href="#body-content">BodyContent</a></li>
-        <li><a href="#section">Section</a></li>
-        <li><a href="#description">Description</a></li>
+        <li><a href="#content">Content</a></li>
       </ul>
     </li>
     <li><a href="#how-to-use">How to use it</a></li>
@@ -41,7 +38,7 @@
 To install as npm dependency
 
 ```sh
-npm install --save vertical-timeline-component-react
+npm install --save vertical-timeline-component-react@latest
 ```
 
 <p align="right"><a href="#top">🔝</a></p>
@@ -60,90 +57,50 @@ This is the wrapper component that creates the vertical timeline.
 
 - Props
 
-| name       | Type   | Required | Values Allowed                                   | default values                                                                                                                                                        | Description                                                                  |
-| ---------- | ------ | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| theme      | object | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
-| lang       | string | false    | `en`, `es`, `de`, `tr` or `zh_CN`                | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
-| dateFormat | string | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
+| name       | Type    | Required | Values Allowed                                   | default values                                                                                                                                                        | Description                                                                  |
+| ---------- | ------- | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| theme      | object  | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
+| lang       | string  | false    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | string  | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
+| collapse   | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapse the description of Content component                          |
 
-`dateFormat`: Receive only one of four options (The options are same the [moment.js](https://momentjs.com/) using)
+`dateFormat`: The next table shows the different formats that can be used in the `dateFormat` prop and the result that will be displayed.
 
-|                              | `only-number` | `short`          | `with-weekday`          | `full`                         |
-| :--------------------------: | ------------- | ---------------- | ----------------------- | ------------------------------ |
-|        English (`en`)        | `MM/D/YYYY`   | `MMM DD, YYYY`   | `ddd, MMM DD, YYYY`     | `dddd, MMMM DD, YYYY`          |
-|        Spanish (`es`)        | `D/MM/YYYY`   | `DD MMM YYYY`    | `ddd, DD [de] MMM YYYY` | `dddd, DD [de] MMMM [de] YYYY` |
-|        German (`de`)         | `D.MM.YYYY`   | `DD.MMM.YYYY`    | `ddd., DD. MMM. YYYY`   | `dddd, DD. MMMM YYYY`          |
-|         Turk (`tr`)          | `DD.MM.YYYY`  | `DD MMM YYYY`    | `DD MMM YYYY ddd`       | `DD MMMM YYYY dddd`            |
-| Simplified Chinese (`zh_CN`) | `YYYY/MM/D`   | `YYYY年MM月DD日` | `YYYY年MMM月DD日`       | `YYYY年MM月DD日dddd`           |
+|                           | `only-number` | `short`          | `with-weekday`          | `full`                         |
+| :-----------------------: | ------------- | ---------------- | ----------------------- | ------------------------------ |
+|      English (`en`)       | `MM/D/YYYY`   | `MMM DD, YYYY`   | `ddd, MMM DD, YYYY`     | `dddd, MMMM DD, YYYY`          |
+|      Spanish (`es`)       | `D/MM/YYYY`   | `DD MMM YYYY`    | `ddd, DD [de] MMM YYYY` | `dddd, DD [de] MMMM [de] YYYY` |
+|       German (`de`)       | `D.MM.YYYY`   | `DD.MMM.YYYY`    | `ddd., DD. MMM. YYYY`   | `dddd, DD. MMMM YYYY`          |
+|        Turk (`tr`)        | `DD.MM.YYYY`  | `DD MMM YYYY`    | `DD MMM YYYY ddd`       | `DD MMMM YYYY dddd`            |
+| Simplified Chinese (`zh`) | `YYYY/MM/D`   | `YYYY年MM月DD日` | `YYYY年MMM月DD日`       | `YYYY年MM月DD日dddd`           |
 
 <p align="right"><a href="#top">🔝</a></p>
 
 <h3 id="container">Container</h3>
 
-Each event in the timeline will be represented by the `Content` component. This component receive only two children's, the first is `YearContent` and the second is `BodyContent`. There can be multiple repeating instances of this component inside `Timeline` wrapper.
-
-- Childrens
-
-| Number of children | Required | Value Allowed                   |
-| ------------------ | -------- | ------------------------------- |
-| 2                  | true     | `YearContent` and `BodyContent` |
-
-<p align="right"><a href="#top">🔝</a></p>
-
-<h3 id="year-content">YearContent</h3>
-
-For each `Container` you need `YearContent` (like first children) since with this component you mark the events in the given year.
+This component is the container of the content of each year. It is required to have at least one `Container` component as a child of the `Timeline` component. It can have as many `Container` components as you want.
 
 - Props
 
-| Name        | Type    | Required | Values Allowed                    | default values | Description                                                                      |
-| ----------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
-| startDate   | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
-| endDate     | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
-| currentYear | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
+| Name      | Type    | Required | Values Allowed                    | default values | Description                                                                      |
+| --------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
+| title     | string  | true     | any string                        | does not apply | The title of this block time                                                     |
+| startDate | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
+| endDate   | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
+| today     | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
 
 <p align="right"><a href="#top">🔝</a></p>
 
-<h3 id="body-content">BodyContent</h3>
+<h3 id="content">Content</h3>
 
-For each `Container` you need `ContentBody` (like second children). This component will be the container of the one or more `Sections`.
-
-- Childrens
-
-| Number of children | Required                                           | Value Allowed             |
-| ------------------ | -------------------------------------------------- | ------------------------- |
-| Many               | At least the first `Section` component is required | Only `Section` components |
-
-<p align="right"><a href="#top">🔝</a></p>
-
-<h3 id="section">Section</h3>
-
-This component is the container for one or more `Description`.
-
-- Childrens
-
-| Number of children | Required                                               | Value Allowed                 |
-| ------------------ | ------------------------------------------------------ | ----------------------------- |
-| Many               | At least the first `Description` component is required | Only `Description` components |
+For each `Container` you need one or more `Content` component. This component will be the container of the one or more `Sections`.
 
 - Props
 
-| Name  | Type   | Required | Description                   |
-| ----- | ------ | -------- | ----------------------------- |
-| title | string | true     | It's the title of any section |
-
-<p align="right"><a href="#top">🔝</a></p>
-
-<h3 id="description">Description</h3>
-
-This component can be the text of the description or a subtitle
-
-- Props
-
-| Name    | Type   | Required | Values Allowed              | default values | Description                           |
-| ------- | ------ | -------- | --------------------------- | -------------- | ------------------------------------- |
-| variant | string | false    | `subtitle` or `description` | `description`  | Transform the format of the text      |
-| text    | string | true     | Any text                    | does not apply | Show the description of the `Section` |
+| Name        | Type             | Required | Description                                                                        |
+| ----------- | ---------------- | -------- | ---------------------------------------------------------------------------------- |
+| title       | string           | true     | It's the title of one or many descriptions                                         |
+| description | Array of strings | true     | You can write anything you want, but remember that it is consistent with the title |
 
 <p align="right"><a href="#top">🔝</a></p>
 
@@ -154,14 +111,7 @@ The following snippet will show you how to use the library:
 **_Using class components:_**
 
 ```js
-import {
- Timeline,
- Container,
- YearContent,
- BodyContent,
- Section,
- Description,
-} from 'vertical-timeline-component-react';
+import { Timeline, Container, Content } from 'vertical-timeline-component-react';
 
 const customTheme = {
  yearColor: '#405b73',
@@ -175,24 +125,18 @@ const customTheme = {
 
 class Main extends Component {
  render() {
-  return(
-   <Timeline theme={customTheme} dateFormat='full'>
-    <Container>
-     <YearContent startDate='2020/07/01' currentYear />
-     <BodyContent>
-      <Section title='Title'>
-       <Description variant='subtitle' text='Subtitle' />
-       <Description text='Description' />
-       <Description text='Another description' />
-      </Section>
-
-      <Section title='Another title'>
-       <Description text='Description' />
-       <Description text='Another description' />
-      </Section>
-     </BodyContent>
+  return (
+   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse>
+    <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
+     <Content
+      title="Lorem Ipsum"
+      description={[
+       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+       'Is simply dummy text of the printing and typesetting industry.',
+      ]}
+     />
     </Container>
-   </Timeline>,
+   </Timeline>
   );
  }
 }
@@ -202,44 +146,38 @@ class Main extends Component {
 
 ```js
 import {
-	Timeline,
-	Container,
-	YearContent,
-	BodyContent,
-	Section,
-	Description,
+ Timeline,
+ Container,
+ YearContent,
+ BodyContent,
+ Section,
+ Description,
 } from 'vertical-timeline-component-react';
 
 const Main = () => {
-	const customTheme = {
-		yearColor: '#405b73',
-		lineColor: '#d0cdc4',
-		dotColor: '#262626',
-		borderDotColor: '#d0cdc4',
-		titleColor: '#405b73',
-		subtitleColor: '#bf9765',
-		textColor: '#262626',
-	};
+ const customTheme = {
+  yearColor: '#405b73',
+  lineColor: '#d0cdc4',
+  dotColor: '#262626',
+  borderDotColor: '#d0cdc4',
+  titleColor: '#405b73',
+  subtitleColor: '#bf9765',
+  textColor: '#262626',
+ };
 
-	return (
-		<Timeline theme={customTheme} dateFormat='full'>
-			<Container>
-				<YearContent startDate='2020/07/01' currentYear />
-				<BodyContent>
-					<Section title='Title'>
-						<Description variant='subtitle' text='Subtitle' />
-						<Description text='Description' />
-						<Description text='Another description' />
-					</Section>
-
-					<Section title='Another title'>
-						<Description text='Description' />
-						<Description text='Another description' />
-					</Section>
-				</BodyContent>
-			</Container>
-		</Timeline>
-	);
+ return (
+  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse>
+    <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
+     <Content
+      title="Lorem Ipsum"
+      description={[
+       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+       'Is simply dummy text of the printing and typesetting industry.',
+      ]}
+     />
+    </Container>
+   </Timeline>
+ );
 };
 ```
 
