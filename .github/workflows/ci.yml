@@ -1,4 +1,4 @@
-name: '👀 CI'
+name: CI
 
 on:
   push:
@@ -25,3 +25,7 @@ jobs:
         run: npm install
       - name: 🤖 Run tests
         run: npm run test
+      - name: 🎯 Coverage
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{secrets.TOKEN}}
