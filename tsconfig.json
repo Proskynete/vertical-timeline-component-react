@@ -7,7 +7,7 @@
 		"jsx": "react",
 		"declaration": true,
 		"typeRoots": ["node_modules/@types"],
-		"types": ["node", "jest"],
+		"types": ["node", "jest", "@testing-library/jest-dom"],
 		"moduleResolution": "node",
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
@@ -19,6 +19,6 @@
 		"suppressImplicitAnyIndexErrors": true,
 		"allowSyntheticDefaultImports": true
 	},
-	"include": ["./src/**/*.ts", "./src/**/*.tsx"],
-	"exclude": ["./node_modules/", "./lib/"]
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["./node_modules/", "./lib/", "./tests/"]
 }

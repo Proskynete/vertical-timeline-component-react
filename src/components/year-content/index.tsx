@@ -1,33 +1,41 @@
-import React, { PropsWithChildren, useContext } from 'react';
-import { ConfigContext } from '../../context/config.context';
+import React, { PropsWithChildren } from 'react';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
-import { transformDate } from '../../helpers/transform-date.helper';
+import { getAccessibilityDate, transformDate } from '../../helpers/transform-date.helper';
+import { getAriaText } from '../../helpers/text.helper';
+import { useConfig } from '../../hooks/useConfig';
 
 interface YearContentProps {
 	startDate: string;
 	endDate?: string;
-	currentYear?: boolean;
+	today?: boolean;
 }
 
 const YearContent = ({
 	startDate,
 	endDate,
-	currentYear = false,
+	today = false,
 }: PropsWithChildren<YearContentProps>) => {
-	const { lang, dateFormat } = useContext(ConfigContext);
+	const {
+		config: { lang, dateFormat, customStyles },
+	} = useConfig();
 
-	const d = new Date();
-	const _year = d.getFullYear();
-
-	const _currentYear = currentYear && (
-		<time dateTime={_year.toString()}>{_year}</time>
+	const _today = today && (
+		<time
+			aria-hidden={true}
+			dateTime={getAccessibilityDate({
+				date: new Date().toISOString(),
+				lang: lang,
+			})}
+		>
+			{new Date().getFullYear()}
+		</time>
 	);
 
 	const _endDate = endDate && (
 		<>
-			<YearSpan>{mapText[lang].to}</YearSpan>
-			<time dateTime={endDate}>
+			<YearSpan aria-hidden={true}>{mapText[lang].to}</YearSpan>
+			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: endDate, lang: lang })}>
 				{transformDate({ date: endDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
@@ -35,16 +43,30 @@ const YearContent = ({
 
 	const _startDate = (
 		<>
-			<YearSpan>{mapText[lang].from}</YearSpan>
-			<time dateTime={startDate}>
+			<YearSpan aria-hidden={true}>{mapText[lang].from}</YearSpan>
+			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: startDate, lang: lang })}>
 				{transformDate({ date: startDate, lang: lang, type: dateFormat })}
 			</time>
 		</>
 	);
 
 	return (
-		<YearWrapper format={dateFormat} lang={lang}>
-			{_currentYear}
+		<YearWrapper
+			format={dateFormat}
+			lang={lang}
+			aria-label={getAriaText({
+				from: transformDate({ date: startDate, lang: lang, type: 'full' }),
+				to: transformDate({
+					date: endDate || new Date().toISOString(),
+					lang: lang,
+					type: 'full',
+				}),
+				today,
+				lang,
+			})}
+			style={customStyles?.date}
+		>
+			{_today}
 			{_endDate}
 			{_startDate}
 		</YearWrapper>

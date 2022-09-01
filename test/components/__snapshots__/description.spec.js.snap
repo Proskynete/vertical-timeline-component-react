@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<Description /> should create Snapshot 1`] = `
-<li
-  className="sc-jrAGrp erWYBT"
->
-  text
-</li>
-`;
