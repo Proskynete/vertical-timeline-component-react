@@ -2,8 +2,9 @@ name: '🚀 Publish new release'
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   publish:
