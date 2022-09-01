@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<BodyContent /> should create Snapshot 1`] = `
-<div>
-  Child
-</div>
-`;

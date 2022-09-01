@@ -20,8 +20,6 @@ export const ContainerWrapper = styled.section`
 	position: relative;
 `;
 
-export const BodyContent = styled.div``;
-
 interface YearContentProps {
 	readonly format: DateFormat;
 }
@@ -49,40 +47,32 @@ const enumWidth = () => ({
 	full_zh: '125',
 });
 
-export const YearWrapper = styled.p<YearContentProps>`
+export const YearWrapper = styled.div<YearContentProps>`
 	align-items: flex-end;
 	color: ${({ theme }) => theme.yearColor};
 	display: flex;
 	flex-direction: column;
-	font-size: 14px;
-	font-weight: 400;
+	font-size: 0.875rem;
+	font-weight: normal;
 	height: max-content;
 	margin: 0;
 	max-width: ${({ format, lang }) =>
-		`${
-			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
-		}px`};
+		`${enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]}px`};
 	min-width: ${({ format, lang }) =>
-		`${
-			enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]
-		}px`};
-	text-align: end;
+		`${enumWidth()[`${format}_${clearString(lang as string).split(' ')[0]}`]}px`};
 `;
 
 export const YearSpan = styled.span`
-	font-size: 10px;
+	font-size: 0.625rem;
 	margin: 3px 0 0 0;
 	padding: 0;
 `;
 
 export const BodyWrapper = styled.article`
-	padding-bottom: 20px;
+	padding-bottom: 15px;
 	padding-left: 25px;
+	min-height: 65px;
 	position: relative;
-
-	&:first-of-type {
-		margin-top: -20px;
-	}
 
 	&:after,
 	${ContainerWrapper}:last-of-type &:last-of-type:after {
@@ -104,15 +94,21 @@ export const BodyWrapper = styled.article`
 	}
 `;
 
-export const Title = styled.p`
+interface TitleProps {
+	readonly collapse?: boolean;
+}
+
+export const Title = styled.h2<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
-	font-weight: 500;
+	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
+	font-size: 1rem;
+	font-weight: bold;
 	margin: 0;
 
 	&:after {
 		background-color: ${(props) => props.theme.dotColor};
-		border: 2px solid ${(props) => props.theme.borderDotColor};
 		border-radius: 50%;
+		border: 2px solid ${(props) => props.theme.borderDotColor};
 		box-sizing: content-box;
 		content: '';
 		height: 6px;
@@ -124,8 +120,8 @@ export const Title = styled.p`
 	}
 `;
 
-export const BodyInner = styled.ul`
-	font-size: 16px;
+export const BodyInner = styled.div`
+	font-size: 1rem;
 	list-style-type: none;
 	margin: 5px 0 16px;
 	max-width: 100%;
@@ -136,32 +132,48 @@ export const BodyInner = styled.ul`
 	}
 `;
 
-export const Subtitle = styled.div`
-	color: ${(props) => props.theme.subtitleColor};
-	font-size: 14px;
-	font-style: italic;
-	font-weight: 400;
-
-	&:not(:first-of-type) {
-		margin-top: 10px;
+export const ContentWrapper = styled.div`
+	&:last-of-type {
+		margin-top: 5px;
 	}
 `;
 
-export const DescriptionText = styled.li`
+interface IconProps {
+	readonly isShowing?: boolean;
+}
+
+export const Icon = styled.i<IconProps>`
+	font-style: normal;
+	margin-right: 3px;
+	transform: rotate(${(props) => (props.isShowing ? '90deg' : '0deg')});
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition: transform 0.2s ease-in-out;
+	}
+`;
+
+interface EventTitleProps {
+	readonly collapse?: boolean;
+}
+
+export const EventTitle = styled.h3<EventTitleProps>`
+	align-content: center;
+	align-items: center;
+	color: ${(props) => props.theme.subtitleColor};
+	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
+	display: flex;
+	font-size: 0.875rem;
+	font-weight: bold;
+	margin: 0;
+	width: max-content;
+`;
+
+export const DescriptionWrapper = styled.div`
+	padding-left: 10px;
+`;
+
+export const Description = styled.p`
 	color: ${(props) => props.theme.textColor};
-
-	&:not(:first-of-type) {
-		margin-top: 3px;
-	}
-`;
-
-export const DescriptionSubtitle = styled.li`
-	color: ${(props) => props.theme.subtitleColor};
-	font-size: 14px;
-	font-style: italic;
-	font-weight: 400;
-
-	&:not(:first-of-type) {
-		margin-top: 10px;
-	}
+	font-size: 0.875rem;
+	margin: 3px 0 0 0;
 `;

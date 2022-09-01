@@ -1,15 +1,34 @@
-import React, { FC } from 'react';
-import { ContainerWrapper, BodyContent } from '../../styles/main';
+import React, { PropsWithChildren } from 'react';
+import { useConfig } from '../../hooks/useConfig';
+import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
+import YearContent from '../year-content';
 
-const Container: FC = ({ children }): JSX.Element => {
-	return children ? (
+interface ContainerProps {
+	title: string;
+	startDate: string;
+	endDate?: string;
+	today?: boolean;
+}
+
+const Container = ({
+	title,
+	startDate,
+	endDate,
+	today,
+	children,
+}: PropsWithChildren<ContainerProps>) => {
+	const { config } = useConfig();
+
+	return (
 		<ContainerWrapper>
-			{children[0]}
-			<BodyContent>{children[1]}</BodyContent>
+			<YearContent startDate={startDate} endDate={endDate} today={today} />
+
+			<BodyWrapper>
+				<Title style={config.customStyles?.title}>{title}</Title>
+				<BodyInner>{children}</BodyInner>
+			</BodyWrapper>
 		</ContainerWrapper>
-	) : (
-		<></>
 	);
 };
 
-export default Container;
+export { Container };

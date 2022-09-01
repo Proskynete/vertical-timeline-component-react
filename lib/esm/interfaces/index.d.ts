@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react';
 export interface Theme {
     yearColor: string;
     lineColor: string;
@@ -8,14 +9,25 @@ export interface Theme {
     textColor: string;
 }
 export declare type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
-export declare type LangAllowed = 'en' | 'es' | 'de' | 'tr' | 'zh';
+export declare type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
+interface CustomStyles {
+    date?: CSSProperties;
+    title?: CSSProperties;
+    event?: CSSProperties;
+    description?: CSSProperties;
+}
 export interface TimelineProps {
     theme?: Theme;
-    lang?: LangAllowed;
+    lang?: Languages;
     dateFormat?: DateFormat;
+    collapse?: boolean;
+    customStyles?: CustomStyles;
 }
 export interface DefaultTimelineProps {
-    theme?: Theme;
-    lang: LangAllowed;
+    theme: Theme;
+    lang: Languages;
     dateFormat: DateFormat;
+    collapse: boolean;
+    customStyles?: CustomStyles;
 }
+export {};

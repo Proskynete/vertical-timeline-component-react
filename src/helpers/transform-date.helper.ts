@@ -1,8 +1,8 @@
-import { DateFormat, LangAllowed } from '../interfaces';
+import { DateFormat, Languages } from '../interfaces';
 
-interface ITransformDate {
+export interface ITransformDate {
 	date: string;
-	lang: LangAllowed;
+	lang: Languages;
 	type: DateFormat;
 }
 
@@ -33,4 +33,14 @@ export const transformDate = ({ date, lang, type }: ITransformDate) => {
 				day: '2-digit',
 			});
 	}
+};
+
+export interface GetAccessibilityDateParams {
+	date: string;
+	lang: Languages;
+}
+
+export const getAccessibilityDate = ({ date, lang }: GetAccessibilityDateParams) => {
+	const _date = new Date(date);
+	return _date.toLocaleDateString(lang);
 };

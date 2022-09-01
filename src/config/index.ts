@@ -2,16 +2,17 @@ import { DefaultTimelineProps } from '../interfaces';
 
 export const defaultValues: DefaultTimelineProps = {
 	theme: {
-		yearColor: '#888',
+		yearColor: '#888888',
 		lineColor: '#c5c5c5',
 		dotColor: '#c5c5c5',
-		borderDotColor: '#fff',
-		titleColor: '#ccc',
-		subtitleColor: '#888',
-		textColor: '#ccc',
+		borderDotColor: '#ffffff',
+		titleColor: '#cccccc',
+		subtitleColor: '#888888',
+		textColor: '#cccccc',
 	},
 	lang: 'en',
 	dateFormat: 'only-number',
+	collapse: false,
 };
 
 export const mapText = {
