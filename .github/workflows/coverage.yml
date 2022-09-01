@@ -10,9 +10,9 @@ env:
 
 jobs:
   test:
-    name: Node ${{ matrix.node }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-
+    name: '🚀 Publish'
+    runs-on: ubuntu-latest
+    
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
@@ -36,13 +36,3 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           parallel: true
-
-  finish:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
-          parallel-finished: true
