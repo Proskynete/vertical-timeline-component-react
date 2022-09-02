@@ -8,7 +8,7 @@ body:
       label: Prerequisites
       description: Please take a couple of minutes to help me work faster.
       options:
-        - label: I have read the [contributing guidelines](https://github.com/Proskynete/vertical-timeline-component-react/blob/master/.github/CONTRIBUTING.md)
+        - label: I have read the [contributing guidelines](https://github.com/Proskynete/vertical-timeline-component-react/blob/master/CONTRIBUTING.md)
           required: true
   - type: textarea
     id: what-happened
