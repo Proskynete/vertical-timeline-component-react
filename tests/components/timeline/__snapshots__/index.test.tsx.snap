@@ -50,23 +50,19 @@ Object {
               <div
                 class="sc-iBkjds eUDZdj"
               >
-                <div
-                  class="sc-ftvSup bPbyVa"
+                <h3
+                  class="sc-papXJ khbMtd"
                 >
-                  <h3
-                    class="sc-jqUVSM eskbeQ"
+                  I'm a event title
+                </h3>
+                <div
+                  class="sc-jqUVSM fSgwrN"
+                >
+                  <p
+                    class="sc-kDDrLX efnvGd"
                   >
-                    I'm a event title
-                  </h3>
-                  <div
-                    class="sc-kDDrLX bFQhiG"
-                  >
-                    <p
-                      class="sc-iqcoie cAExns"
-                    >
-                      I'm a description
-                    </p>
-                  </div>
+                    I'm a description
+                  </p>
                 </div>
               </div>
             </article>
@@ -121,23 +117,19 @@ Object {
             <div
               class="sc-iBkjds eUDZdj"
             >
-              <div
-                class="sc-ftvSup bPbyVa"
+              <h3
+                class="sc-papXJ khbMtd"
               >
-                <h3
-                  class="sc-jqUVSM eskbeQ"
+                I'm a event title
+              </h3>
+              <div
+                class="sc-jqUVSM fSgwrN"
+              >
+                <p
+                  class="sc-kDDrLX efnvGd"
                 >
-                  I'm a event title
-                </h3>
-                <div
-                  class="sc-kDDrLX bFQhiG"
-                >
-                  <p
-                    class="sc-iqcoie cAExns"
-                  >
-                    I'm a description
-                  </p>
-                </div>
+                  I'm a description
+                </p>
               </div>
             </div>
           </article>

@@ -132,12 +132,6 @@ export const BodyInner = styled.div`
 	}
 `;
 
-export const ContentWrapper = styled.div`
-	&:last-of-type {
-		margin-top: 5px;
-	}
-`;
-
 interface IconProps {
 	readonly isShowing?: boolean;
 }

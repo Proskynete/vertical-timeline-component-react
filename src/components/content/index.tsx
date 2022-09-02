@@ -1,12 +1,6 @@
 import React, { useState } from 'react';
 import { useConfig } from '../../hooks/useConfig';
-import {
-	ContentWrapper,
-	Description,
-	DescriptionWrapper,
-	EventTitle,
-	Icon,
-} from '../../styles/main';
+import { Description, DescriptionWrapper, EventTitle, Icon } from '../../styles/main';
 
 interface ContentProps {
 	title: string;
@@ -24,7 +18,7 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 	};
 
 	return (
-		<ContentWrapper>
+		<>
 			<EventTitle
 				collapse={isCollapsed}
 				onClick={() => {
@@ -45,7 +39,7 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 					))}
 				</DescriptionWrapper>
 			)}
-		</ContentWrapper>
+		</>
 	);
 };
 

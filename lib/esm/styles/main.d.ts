@@ -13,7 +13,6 @@ interface TitleProps {
 }
 export declare const Title: import("styled-components").StyledComponent<"h2", any, TitleProps, never>;
 export declare const BodyInner: import("styled-components").StyledComponent<"div", any, {}, never>;
-export declare const ContentWrapper: import("styled-components").StyledComponent<"div", any, {}, never>;
 interface IconProps {
     readonly isShowing?: boolean;
 }
