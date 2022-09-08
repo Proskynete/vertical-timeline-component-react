@@ -1,6 +1,6 @@
 {
 	"name": "vertical-timeline-component-react",
-	"version": "4.1.1",
+	"version": "4.2.0",
 	"description": "A simple component for create a vertical timeline with React",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
