@@ -8,6 +8,7 @@ interface ContainerProps {
 	startDate: string | Date;
 	endDate?: string | Date;
 	today?: boolean;
+	withoutDay?: boolean;
 }
 
 const Container = ({
@@ -15,13 +16,14 @@ const Container = ({
 	startDate,
 	endDate,
 	today,
+	withoutDay,
 	children,
 }: PropsWithChildren<ContainerProps>) => {
 	const { config } = useConfig();
 
 	return (
 		<ContainerWrapper>
-			<YearContent startDate={startDate} endDate={endDate} today={today} />
+			<YearContent startDate={startDate} endDate={endDate} today={today} withoutDay={withoutDay} />
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>

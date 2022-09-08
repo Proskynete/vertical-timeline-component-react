@@ -10,13 +10,14 @@ const Timeline = ({
 	lang = defaultValues.lang,
 	dateFormat = defaultValues.dateFormat,
 	collapse = defaultValues.collapse,
+	withoutDay = defaultValues.withoutDay,
 	customStyles,
 	children,
 }: PropsWithChildren<TimelineProps>) => {
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
-				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles }}>
+				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles, withoutDay }}>
 					<ThemeProvider theme={theme}>{children}</ThemeProvider>
 				</ConfigProvider>
 			</TimelineWrapperInner>

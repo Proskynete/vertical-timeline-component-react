@@ -21,6 +21,7 @@ export interface TimelineProps {
     lang?: Languages;
     dateFormat?: DateFormat;
     collapse?: boolean;
+    withoutDay?: boolean;
     customStyles?: CustomStyles;
 }
 export interface DefaultTimelineProps {
@@ -29,5 +30,6 @@ export interface DefaultTimelineProps {
     dateFormat: DateFormat;
     collapse: boolean;
     customStyles?: CustomStyles;
+    withoutDay: boolean;
 }
 export {};

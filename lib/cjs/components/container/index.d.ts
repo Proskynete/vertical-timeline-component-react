@@ -4,6 +4,7 @@ interface ContainerProps {
     startDate: string | Date;
     endDate?: string | Date;
     today?: boolean;
+    withoutDay?: boolean;
 }
-declare const Container: ({ title, startDate, endDate, today, children, }: PropsWithChildren<ContainerProps>) => JSX.Element;
+declare const Container: ({ title, startDate, endDate, today, withoutDay, children, }: PropsWithChildren<ContainerProps>) => JSX.Element;
 export { Container };
