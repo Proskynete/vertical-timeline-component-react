@@ -1,23 +1,12 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
 import { getAccessibilityDate, transformDate } from '../../helpers/transform-date.helper';
 import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
+import { YearContentProps } from '../../interfaces';
 
-interface YearContentProps {
-	startDate: string | Date;
-	endDate?: string | Date;
-	today?: boolean;
-	withoutDay?: boolean;
-}
-
-const YearContent = ({
-	startDate,
-	endDate,
-	today = false,
-	withoutDay,
-}: PropsWithChildren<YearContentProps>) => {
+const YearContent = ({ startDate, endDate, today = false, withoutDay }: YearContentProps) => {
 	const { config } = useConfig();
 
 	const _today = today && (

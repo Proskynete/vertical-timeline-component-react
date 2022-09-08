@@ -1,25 +1,16 @@
-import React, { PropsWithChildren } from 'react';
+import React, { Children, ReactElement } from 'react';
 import { useConfig } from '../../hooks/useConfig';
+import { ContainerProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
+import { Content } from '../content';
 import YearContent from '../year-content';
 
-interface ContainerProps {
-	title: string;
-	startDate: string | Date;
-	endDate?: string | Date;
-	today?: boolean;
-	withoutDay?: boolean;
-}
-
-const Container = ({
-	title,
-	startDate,
-	endDate,
-	today,
-	withoutDay,
-	children,
-}: PropsWithChildren<ContainerProps>) => {
+const Container = ({ title, startDate, endDate, today, withoutDay, children }: ContainerProps) => {
 	const { config } = useConfig();
+
+	const elements = Children.map(children, (child) =>
+		(child as ReactElement).type === Content ? child : null,
+	)?.filter(Boolean);
 
 	return (
 		<ContainerWrapper>
@@ -27,7 +18,7 @@ const Container = ({
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>
-				<BodyInner>{children}</BodyInner>
+				<BodyInner>{elements}</BodyInner>
 			</BodyWrapper>
 		</ContainerWrapper>
 	);

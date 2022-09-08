@@ -1,9 +1,3 @@
-import { PropsWithChildren } from 'react';
-interface YearContentProps {
-    startDate: string | Date;
-    endDate?: string | Date;
-    today?: boolean;
-    withoutDay?: boolean;
-}
-declare const YearContent: ({ startDate, endDate, today, withoutDay, }: PropsWithChildren<YearContentProps>) => JSX.Element;
+import { YearContentProps } from '../../interfaces';
+declare const YearContent: ({ startDate, endDate, today, withoutDay }: YearContentProps) => JSX.Element;
 export default YearContent;

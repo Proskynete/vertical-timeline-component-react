@@ -1,9 +1,10 @@
-import React, { PropsWithChildren } from 'react';
+import React, { Children, ReactElement } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultValues } from '../../config';
 import { ConfigProvider } from '../../context/config.context';
 import { TimelineProps } from '../../interfaces';
 import { TimelineWrapper, TimelineWrapperInner } from '../../styles/main';
+import { Container } from '../container';
 
 const Timeline = ({
 	theme = defaultValues.theme,
@@ -13,12 +14,16 @@ const Timeline = ({
 	withoutDay = defaultValues.withoutDay,
 	customStyles,
 	children,
-}: PropsWithChildren<TimelineProps>) => {
+}: TimelineProps) => {
+	const elements = Children.map(children, (child) =>
+		(child as ReactElement).type === Container ? child : null,
+	)?.filter(Boolean);
+
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
 				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles, withoutDay }}>
-					<ThemeProvider theme={theme}>{children}</ThemeProvider>
+					<ThemeProvider theme={theme}>{elements}</ThemeProvider>
 				</ConfigProvider>
 			</TimelineWrapperInner>
 		</TimelineWrapper>
