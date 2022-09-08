@@ -1,16 +1,13 @@
-import React, { Children, ReactElement } from 'react';
+import React from 'react';
 import { useConfig } from '../../hooks/useConfig';
 import { ContainerProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
 import { Content } from '../content';
+import { Validate } from '../validate';
 import YearContent from '../year-content';
 
 const Container = ({ title, startDate, endDate, today, withoutDay, children }: ContainerProps) => {
 	const { config } = useConfig();
-
-	const elements = Children.map(children, (child) =>
-		(child as ReactElement).type === Content ? child : null,
-	)?.filter(Boolean);
 
 	return (
 		<ContainerWrapper>
@@ -18,7 +15,9 @@ const Container = ({ title, startDate, endDate, today, withoutDay, children }: C
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>
-				<BodyInner>{elements}</BodyInner>
+				<BodyInner>
+					<Validate componentToValidate={Content}>{children}</Validate>
+				</BodyInner>
 			</BodyWrapper>
 		</ContainerWrapper>
 	);

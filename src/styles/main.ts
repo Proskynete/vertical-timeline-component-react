@@ -175,3 +175,19 @@ export const Description = styled.p`
 	font-size: 0.875rem;
 	margin: 3px 0 0 0;
 `;
+
+export const TextErrorMessage = styled.p`
+	color: ${(props) => props.theme.textColor};
+	font-size: 0.875rem;
+	text-align: center;
+	width: 100%;
+
+	code {
+		background-color: ${(props) => props.theme.dotColor};
+		color: ${(props) => props.theme.subtitleColor};
+		display: inline-block;
+		font-size: 0.875rem;
+		padding: 3px 5px;
+		border-radius: 5px;
+	}
+`;
