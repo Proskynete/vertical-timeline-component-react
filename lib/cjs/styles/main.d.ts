@@ -23,4 +23,5 @@ interface EventTitleProps {
 export declare const EventTitle: import("styled-components").StyledComponent<"h3", any, EventTitleProps, never>;
 export declare const DescriptionWrapper: import("styled-components").StyledComponent<"div", any, {}, never>;
 export declare const Description: import("styled-components").StyledComponent<"p", any, {}, never>;
+export declare const TextErrorMessage: import("styled-components").StyledComponent<"p", any, {}, never>;
 export {};

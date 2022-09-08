@@ -152,14 +152,18 @@ interface EventTitleProps {
 
 export const EventTitle = styled.h3<EventTitleProps>`
 	align-content: center;
-	align-items: center;
+	align-items: flex-start;
 	color: ${(props) => props.theme.subtitleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	display: flex;
 	font-size: 0.875rem;
 	font-weight: bold;
 	margin: 0;
-	width: max-content;
+	max-width: 100%;
+
+	&:not(:first-child) {
+		margin-top: 8px;
+	}
 `;
 
 export const DescriptionWrapper = styled.div`
@@ -170,4 +174,20 @@ export const Description = styled.p`
 	color: ${(props) => props.theme.textColor};
 	font-size: 0.875rem;
 	margin: 3px 0 0 0;
+`;
+
+export const TextErrorMessage = styled.p`
+	color: ${(props) => props.theme.textColor};
+	font-size: 0.875rem;
+	text-align: center;
+	width: 100%;
+
+	code {
+		background-color: ${(props) => props.theme.dotColor};
+		color: ${(props) => props.theme.subtitleColor};
+		display: inline-block;
+		font-size: 0.875rem;
+		padding: 3px 5px;
+		border-radius: 5px;
+	}
 `;

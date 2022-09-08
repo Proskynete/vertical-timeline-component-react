@@ -1,31 +1,21 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { mapText } from '../../config';
 import { YearWrapper, YearSpan } from '../../styles/main';
 import { getAccessibilityDate, transformDate } from '../../helpers/transform-date.helper';
 import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
+import { YearContentProps } from '../../interfaces';
 
-interface YearContentProps {
-	startDate: string;
-	endDate?: string;
-	today?: boolean;
-}
-
-const YearContent = ({
-	startDate,
-	endDate,
-	today = false,
-}: PropsWithChildren<YearContentProps>) => {
-	const {
-		config: { lang, dateFormat, customStyles },
-	} = useConfig();
+const YearContent = ({ startDate, endDate, today = false, withoutDay }: YearContentProps) => {
+	const { config } = useConfig();
 
 	const _today = today && (
 		<time
 			aria-hidden={true}
 			dateTime={getAccessibilityDate({
-				date: new Date().toISOString(),
-				lang: lang,
+				date: new Date(),
+				lang: config.lang,
+				withoutDay: config.withoutDay || withoutDay,
 			})}
 		>
 			{new Date().getFullYear()}
@@ -34,37 +24,67 @@ const YearContent = ({
 
 	const _endDate = endDate && (
 		<>
-			<YearSpan aria-hidden={true}>{mapText[lang].to}</YearSpan>
-			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: endDate, lang: lang })}>
-				{transformDate({ date: endDate, lang: lang, type: dateFormat })}
+			<YearSpan aria-hidden={true}>{mapText[config.lang].to}</YearSpan>
+			<time
+				aria-hidden={true}
+				dateTime={getAccessibilityDate({
+					date: endDate,
+					lang: config.lang,
+					withoutDay: config.withoutDay || withoutDay,
+				})}
+			>
+				{transformDate({
+					date: endDate,
+					lang: config.lang,
+					type: config.dateFormat,
+					withoutDay: config.withoutDay || withoutDay,
+				})}
 			</time>
 		</>
 	);
 
 	const _startDate = (
 		<>
-			<YearSpan aria-hidden={true}>{mapText[lang].from}</YearSpan>
-			<time aria-hidden={true} dateTime={getAccessibilityDate({ date: startDate, lang: lang })}>
-				{transformDate({ date: startDate, lang: lang, type: dateFormat })}
+			<YearSpan aria-hidden={true}>{mapText[config.lang].from}</YearSpan>
+			<time
+				aria-hidden={true}
+				dateTime={getAccessibilityDate({
+					date: startDate,
+					lang: config.lang,
+					withoutDay: config.withoutDay || withoutDay,
+				})}
+			>
+				{transformDate({
+					date: startDate,
+					lang: config.lang,
+					type: config.dateFormat,
+					withoutDay: config.withoutDay || withoutDay,
+				})}
 			</time>
 		</>
 	);
 
 	return (
 		<YearWrapper
-			format={dateFormat}
-			lang={lang}
+			format={config.dateFormat}
+			lang={config.lang}
 			aria-label={getAriaText({
-				from: transformDate({ date: startDate, lang: lang, type: 'full' }),
-				to: transformDate({
-					date: endDate || new Date().toISOString(),
-					lang: lang,
+				from: transformDate({
+					date: startDate,
+					lang: config.lang,
 					type: 'full',
+					withoutDay: config.withoutDay || withoutDay,
+				}),
+				to: transformDate({
+					date: endDate || new Date(),
+					lang: config.lang,
+					type: 'full',
+					withoutDay: config.withoutDay || withoutDay,
 				}),
 				today,
-				lang,
+				lang: config.lang,
 			})}
-			style={customStyles?.date}
+			style={config.customStyles?.date}
 		>
 			{_today}
 			{_endDate}

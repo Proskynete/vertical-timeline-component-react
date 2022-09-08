@@ -1,7 +1,3 @@
-interface ContentProps {
-    title: string;
-    description: string[];
-    collapse?: boolean;
-}
+import { ContentProps } from '../../interfaces';
 declare const Content: ({ title, description, collapse }: ContentProps) => JSX.Element;
 export { Content };

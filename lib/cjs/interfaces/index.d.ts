@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactElement } from 'react';
 export interface Theme {
     yearColor: string;
     lineColor: string;
@@ -21,7 +21,9 @@ export interface TimelineProps {
     lang?: Languages;
     dateFormat?: DateFormat;
     collapse?: boolean;
+    withoutDay?: boolean;
     customStyles?: CustomStyles;
+    children: ReactElement<ContainerProps> | ReactElement<ContainerProps>[];
 }
 export interface DefaultTimelineProps {
     theme: Theme;
@@ -29,5 +31,25 @@ export interface DefaultTimelineProps {
     dateFormat: DateFormat;
     collapse: boolean;
     customStyles?: CustomStyles;
+    withoutDay: boolean;
+}
+export interface ContainerProps {
+    title: string;
+    startDate: string | Date;
+    endDate?: string | Date;
+    today?: boolean;
+    withoutDay?: boolean;
+    children: ReactElement<ContentProps> | ReactElement<ContentProps>[];
+}
+export interface ContentProps {
+    title: string;
+    description: string[];
+    collapse?: boolean;
+}
+export interface YearContentProps {
+    startDate: string | Date;
+    endDate?: string | Date;
+    today?: boolean;
+    withoutDay?: boolean;
 }
 export {};

@@ -7,8 +7,50 @@ on:
     branches: [master]
 
 jobs:
+  coverage:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Checkout git repository
+        uses: actions/checkout@v2
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - name: 🛠 Install dependencies
+        run: npm install
+      - name: ⚙️ Create coverage 
+        run: npm run test:coveralls
+        env:
+          COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
+      - name: 📨 Send report to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+
+  ci:
+    runs-on: ${{matrix.os}}
+    needs: coverage
+    strategy:
+      max-parallel: 24
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [14.x, 16.x]
+    steps:
+      - name: 📚 Checkout git repository
+        uses: actions/checkout@v2
+      - name: 🟢 Setup Node.js ${{matrix.node-version}}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{matrix.node-version}}
+      - name: 🛠 Install Node.js dependencies
+        run: npm install
+      - name: 🤖 Run tests
+        run: npm run test
+
   publish:
     name: '🚀 Publish'
+    needs: [coverage, ci]
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Checkout git repository

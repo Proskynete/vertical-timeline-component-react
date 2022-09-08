@@ -13,6 +13,7 @@ export const defaultValues: DefaultTimelineProps = {
 	lang: 'en',
 	dateFormat: 'only-number',
 	collapse: false,
+	withoutDay: false,
 };
 
 export const mapText = {

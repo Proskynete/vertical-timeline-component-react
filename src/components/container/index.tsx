@@ -1,31 +1,23 @@
-import React, { PropsWithChildren } from 'react';
+import React from 'react';
 import { useConfig } from '../../hooks/useConfig';
+import { ContainerProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
+import { Content } from '../content';
+import { Validate } from '../validate';
 import YearContent from '../year-content';
 
-interface ContainerProps {
-	title: string;
-	startDate: string;
-	endDate?: string;
-	today?: boolean;
-}
-
-const Container = ({
-	title,
-	startDate,
-	endDate,
-	today,
-	children,
-}: PropsWithChildren<ContainerProps>) => {
+const Container = ({ title, startDate, endDate, today, withoutDay, children }: ContainerProps) => {
 	const { config } = useConfig();
 
 	return (
 		<ContainerWrapper>
-			<YearContent startDate={startDate} endDate={endDate} today={today} />
+			<YearContent startDate={startDate} endDate={endDate} today={today} withoutDay={withoutDay} />
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>
-				<BodyInner>{children}</BodyInner>
+				<BodyInner>
+					<Validate componentToValidate={Content}>{children}</Validate>
+				</BodyInner>
 			</BodyWrapper>
 		</ContainerWrapper>
 	);
