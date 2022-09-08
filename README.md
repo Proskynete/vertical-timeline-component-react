@@ -62,7 +62,8 @@ This is the wrapper component that creates the vertical timeline.
 | theme      | object  | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
 | lang       | string  | false    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
 | dateFormat | string  | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
-| collapse   | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapse the description of Content component                          |
+| collapse  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapsing description of all Content components                          |
+| withoutDay  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Will hide the day of the dates of all Content components                          |
 
 `dateFormat`: The next table shows the different formats that can be used in the `dateFormat` prop and the result that will be displayed.
 
@@ -80,6 +81,12 @@ This is the wrapper component that creates the vertical timeline.
 
 This component is the container of the content of each year. It is required to have at least one `Container` component as a child of the `Timeline` component. It can have as many `Container` components as you want.
 
+- Childrens
+
+| Number of children | Required                                             | Value Allowed               |
+| ------------------ | ---------------------------------------------------- | --------------------------- |
+| Many               | At least the first `Content` component is required | Only `Content` components |
+
 - Props
 
 | Name      | Type    | Required | Values Allowed                    | default values | Description                                                                      |
@@ -88,6 +95,8 @@ This component is the container of the content of each year. It is required to h
 | startDate | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
 | endDate   | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
 | today     | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
+| collapse  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapsing description for this component only                        |
+| withoutDay  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Will hide the day of the dates for this component only                         |
 
 <p align="right"><a href="#top">🔝</a></p>
 
@@ -126,7 +135,7 @@ const customTheme = {
 class Main extends Component {
  render() {
   return (
-   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse>
+   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
     <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
      <Content
       title="Lorem Ipsum"
@@ -166,7 +175,7 @@ const Main = () => {
  };
 
  return (
-  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse>
+  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
     <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
      <Content
       title="Lorem Ipsum"
