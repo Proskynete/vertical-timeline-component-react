@@ -5,8 +5,8 @@ import YearContent from '../year-content';
 
 interface ContainerProps {
 	title: string;
-	startDate: string;
-	endDate?: string;
+	startDate: string | Date;
+	endDate?: string | Date;
 	today?: boolean;
 }
 

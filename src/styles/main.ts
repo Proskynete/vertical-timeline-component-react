@@ -152,14 +152,18 @@ interface EventTitleProps {
 
 export const EventTitle = styled.h3<EventTitleProps>`
 	align-content: center;
-	align-items: center;
+	align-items: flex-start;
 	color: ${(props) => props.theme.subtitleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	display: flex;
 	font-size: 0.875rem;
 	font-weight: bold;
 	margin: 0;
-	width: max-content;
+	max-width: 100%;
+
+	&:not(:first-child) {
+		margin-top: 8px;
+	}
 `;
 
 export const DescriptionWrapper = styled.div`

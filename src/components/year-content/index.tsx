@@ -6,8 +6,8 @@ import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
 
 interface YearContentProps {
-	startDate: string;
-	endDate?: string;
+	startDate: string | Date;
+	endDate?: string | Date;
 	today?: boolean;
 }
 
@@ -24,7 +24,7 @@ const YearContent = ({
 		<time
 			aria-hidden={true}
 			dateTime={getAccessibilityDate({
-				date: new Date().toISOString(),
+				date: new Date(),
 				lang: lang,
 			})}
 		>
@@ -57,7 +57,7 @@ const YearContent = ({
 			aria-label={getAriaText({
 				from: transformDate({ date: startDate, lang: lang, type: 'full' }),
 				to: transformDate({
-					date: endDate || new Date().toISOString(),
+					date: endDate || new Date(),
 					lang: lang,
 					type: 'full',
 				}),
