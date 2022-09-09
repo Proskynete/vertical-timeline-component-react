@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { useConfig } from '../../hooks/useConfig';
 import { ContainerProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
@@ -6,7 +6,14 @@ import { Content } from '../content';
 import { Validate } from '../validate';
 import YearContent from '../year-content';
 
-const Container = ({ title, startDate, endDate, today, withoutDay, children }: ContainerProps) => {
+const Container = ({
+	title,
+	startDate,
+	endDate,
+	today,
+	withoutDay,
+	children,
+}: PropsWithChildren<ContainerProps>) => {
 	const { config } = useConfig();
 
 	return (

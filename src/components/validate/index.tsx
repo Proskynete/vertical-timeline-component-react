@@ -6,13 +6,16 @@ interface ValidateProps {
 }
 
 const Validate = ({ children, componentToValidate }: PropsWithChildren<ValidateProps>) => {
-	const count = Children.count(children);
-	if (count === 0) return <ErrorMessage type="atLeast" component={componentToValidate.name} />;
-	if (count === 1 && (children as ReactElement).type !== componentToValidate)
-		return <ErrorMessage type="onlySupports" component={componentToValidate.name} />;
+	const count = children && Children.count(children);
+	if (count === 0 || !children)
+		return <ErrorMessage type="atLeast" component={componentToValidate.name} />;
 
 	const elements = Children.map(children, (element) =>
-		(element as ReactElement).type === componentToValidate ? element : null,
+		(element as ReactElement).type === componentToValidate ? (
+			element
+		) : (
+			<ErrorMessage type="onlySupports" component={componentToValidate.name} />
+		),
 	);
 
 	return <>{elements}</>;
