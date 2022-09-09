@@ -15,14 +15,14 @@ Object {
             class="sc-dkzDqf bqgjsq"
           >
             <div
-              aria-label="From Tuesday, January 01, 2019 To Thursday, September 08, 2022"
+              aria-label="From Tuesday, January 01, 2019 To Friday, September 09, 2022"
               class="sc-hKMtZM VwYTb"
               format="only-number"
               lang="en"
             >
               <time
                 aria-hidden="true"
-                datetime="9/8/2022"
+                datetime="9/9/2022"
               >
                 2022
               </time>
@@ -82,14 +82,14 @@ Object {
           class="sc-dkzDqf bqgjsq"
         >
           <div
-            aria-label="From Tuesday, January 01, 2019 To Thursday, September 08, 2022"
+            aria-label="From Tuesday, January 01, 2019 To Friday, September 09, 2022"
             class="sc-hKMtZM VwYTb"
             format="only-number"
             lang="en"
           >
             <time
               aria-hidden="true"
-              datetime="9/8/2022"
+              datetime="9/9/2022"
             >
               2022
             </time>
