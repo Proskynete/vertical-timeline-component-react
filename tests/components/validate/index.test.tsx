@@ -42,6 +42,9 @@ describe('Validate', () => {
 			</Validate>,
 		);
 
-		expect(screen.getByText(/ComponentToValidate/)).toBeInTheDocument();
+		expect(
+			screen.getByText(/This component only supports components as children/),
+		).toBeInTheDocument();
+		expect(screen.getByText('ComponentToValidate')).toBeInTheDocument();
 	});
 });

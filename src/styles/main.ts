@@ -71,7 +71,7 @@ export const YearSpan = styled.span`
 export const BodyWrapper = styled.article`
 	padding-bottom: 15px;
 	padding-left: 25px;
-	min-height: 65px;
+	min-height: 75px;
 	position: relative;
 
 	&:after,
@@ -162,7 +162,7 @@ export const EventTitle = styled.h3<EventTitleProps>`
 	max-width: 100%;
 
 	&:not(:first-child) {
-		margin-top: 8px;
+		margin-top: 5px;
 	}
 `;
 

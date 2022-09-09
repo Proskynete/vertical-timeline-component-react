@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { defaultValues } from '../../config';
 import { ConfigProvider } from '../../context/config.context';
@@ -15,7 +15,7 @@ const Timeline = ({
 	withoutDay = defaultValues.withoutDay,
 	customStyles,
 	children,
-}: TimelineProps) => {
+}: PropsWithChildren<TimelineProps>) => {
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
