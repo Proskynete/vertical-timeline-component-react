@@ -50,7 +50,7 @@ describe('Timeline', () => {
 				withoutDay
 				descriptionSymbol="-"
 			>
-				<Events title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
+				<Events title="I'm a title" startDate="2019/01/01" endDate="2020/01/01" defaultClosed>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
@@ -87,23 +87,26 @@ describe('Timeline', () => {
 		render(
 			<Timeline
 				customStyles={{
-					title: { color: 'red' },
-					event: { color: 'red' },
 					date: { color: 'red' },
 					description: { color: 'red' },
+					event: { color: 'red' },
+					subtitle: { color: 'red' },
+					title: { color: 'red' },
 				}}
 			>
-				<Events title="I'm a title" startDate="2019/01/01" active>
+				<Events title="I'm a title" subtitle="I'm a subtitle" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
 		);
 
 		const title = screen.getByText("I'm a title");
+		const subtitle = screen.getByText("I'm a subtitle");
 		const eventTitle = screen.getByText("I'm a event title");
 		const description = screen.getByText("I'm a description");
 
 		expect(title).toHaveStyle('color: red');
+		expect(subtitle).toHaveStyle('color: red');
 		expect(eventTitle).toHaveStyle('color: red');
 		expect(description).toHaveStyle('color: red');
 	});
