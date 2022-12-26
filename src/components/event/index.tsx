@@ -3,7 +3,7 @@ import { useConfig } from '../../hooks/useConfig';
 import { ContentProps } from '../../interfaces';
 import { Description, DescriptionWrapper, EventTitle, Icon } from '../../styles/main';
 
-const Event = ({ title, description, collapse, defaultClosed }: ContentProps) => {
+const Event = ({ collapse, defaultClosed, description, title }: ContentProps) => {
 	const { config } = useConfig();
 	const [show, setShow] = useState(!defaultClosed);
 	const isCollapsed = collapse || config.collapse;

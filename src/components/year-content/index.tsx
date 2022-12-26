@@ -6,7 +6,7 @@ import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
 import { YearContentProps } from '../../interfaces';
 
-const YearContent = ({ startDate, endDate, active = false, withoutDay }: YearContentProps) => {
+const YearContent = ({ active = false, endDate, startDate, withoutDay }: YearContentProps) => {
 	const { config } = useConfig();
 
 	const _active = active && (
@@ -81,7 +81,6 @@ const YearContent = ({ startDate, endDate, active = false, withoutDay }: YearCon
 					type: 'full',
 					withoutDay: config.withoutDay || withoutDay,
 				}),
-				active,
 				lang: config.lang,
 			})}
 			style={config.customStyles?.date}

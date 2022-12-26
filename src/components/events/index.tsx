@@ -7,14 +7,14 @@ import { Validate } from '../validate';
 import YearContent from '../year-content';
 
 const Events = ({
-	title,
-	subtitle,
-	startDate,
-	endDate,
 	active,
-	withoutDay,
-	defaultClosed = false,
 	children,
+	defaultClosed = false,
+	endDate,
+	startDate,
+	subtitle,
+	title,
+	withoutDay,
 }: PropsWithChildren<EventsProps>) => {
 	const { config } = useConfig();
 

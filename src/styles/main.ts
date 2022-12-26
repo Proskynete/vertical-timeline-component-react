@@ -64,14 +64,14 @@ export const YearWrapper = styled.div<YearContentProps>`
 
 export const YearSpan = styled.span`
 	font-size: 0.625rem;
-	margin: 3px 0 0 0;
+	margin: 3px 0 0;
 	padding: 0;
 `;
 
 export const BodyWrapper = styled.article`
+	min-height: 75px;
 	padding-bottom: 15px;
 	padding-left: 25px;
-	min-height: 75px;
 	position: relative;
 
 	&:after,
@@ -82,8 +82,8 @@ export const BodyWrapper = styled.article`
 		content: '';
 		height: 100%;
 		left: 10px;
-		top: 5px;
 		position: absolute;
+		top: 5px;
 		width: 2px;
 		z-index: 1;
 	}
@@ -188,7 +188,7 @@ interface DescriptionProps {
 export const Description = styled.li<DescriptionProps>`
 	color: ${(props) => props.theme.descriptionColor};
 	font-size: 0.875rem;
-	margin: 3px 0 0 0;
+	margin: 3px 0 0;
 
 	&:before {
 		content: '${(props) => props.symbol}';
@@ -204,10 +204,10 @@ export const TextErrorMessage = styled.p`
 
 	code {
 		background-color: ${(props) => props.theme.dotColor};
+		border-radius: 5px;
 		color: ${(props) => props.theme.eventColor};
 		display: inline-block;
 		font-size: 0.875rem;
 		padding: 3px 5px;
-		border-radius: 5px;
 	}
 `;
