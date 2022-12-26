@@ -1,6 +1,6 @@
+import { Event } from './components/event';
+import { Events } from './components/events';
+import { DateFormat, Languages, Theme, TimelineProps } from './interfaces';
 import { Timeline } from './components/timeline';
-import { Container } from './components/container';
-import { Content } from './components/content';
-import { Theme, DateFormat, Languages, TimelineProps } from './interfaces';
-export { Timeline, Container, Content };
-export type { Theme, DateFormat, Languages, TimelineProps };
+export { Timeline, Events, Event };
+export type { DateFormat, Languages, Theme, TimelineProps };

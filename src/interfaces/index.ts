@@ -1,61 +1,67 @@
 import { CSSProperties } from 'react';
 
-export interface Theme {
-	yearColor: string;
-	lineColor: string;
-	dotColor: string;
-	borderDotColor: string;
-	titleColor: string;
-	subtitleColor: string;
-	textColor: string;
-}
-
 export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
-
 export type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
+
+export interface Theme {
+	borderDotColor: string;
+	descriptionColor: string;
+	dotColor: string;
+	eventColor: string;
+	lineColor: string;
+	subtitleColor: string;
+	titleColor: string;
+	yearColor: string;
+}
 
 interface CustomStyles {
 	date?: CSSProperties;
-	title?: CSSProperties;
-	event?: CSSProperties;
 	description?: CSSProperties;
+	event?: CSSProperties;
+	subtitle?: CSSProperties;
+	title?: CSSProperties;
 }
 
 export interface TimelineProps {
-	theme?: Theme;
-	lang?: Languages;
-	dateFormat?: DateFormat;
 	collapse?: boolean;
-	withoutDay?: boolean;
 	customStyles?: CustomStyles;
+	dateFormat?: DateFormat;
+	descriptionSymbol?: string;
+	lang?: Languages;
+	theme?: Theme;
+	withoutDay?: boolean;
 }
 
 export interface DefaultTimelineProps {
-	theme: Theme;
-	lang: Languages;
-	dateFormat: DateFormat;
 	collapse: boolean;
 	customStyles?: CustomStyles;
+	dateFormat: DateFormat;
+	descriptionSymbol: string;
+	lang: Languages;
+	theme: Theme;
 	withoutDay: boolean;
 }
 
-export interface ContainerProps {
-	title: string;
-	startDate: string | Date;
+export interface EventsProps {
+	active?: boolean;
+	defaultClosed?: boolean;
 	endDate?: string | Date;
-	today?: boolean;
+	startDate: string | Date;
+	subtitle?: string;
+	title: string;
 	withoutDay?: boolean;
 }
 
 export interface ContentProps {
-	title: string;
-	description: string[];
 	collapse?: boolean;
+	defaultClosed?: boolean;
+	description: string[];
+	title: string;
 }
 
 export interface YearContentProps {
-	startDate: string | Date;
+	active?: boolean;
 	endDate?: string | Date;
-	today?: boolean;
+	startDate: string | Date;
 	withoutDay?: boolean;
 }

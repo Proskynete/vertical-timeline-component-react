@@ -6,11 +6,12 @@
  <p>A simple component to generate a responsive vertical timeline</p>
 </div>
 
-![Vertical Timeline Component React](<https://dsc.cloud/83db8c/Captura%20de%20Pantalla%202022-08-31%20a%20la(s)%2020.12.38.png> 'How to see vertical-timeline-component-react')
+![Vertical Timeline Component React](<https://dsc.cloud/83db8c/Screenshot%202022-12-26%20at%2016.27.00.png> 'How to see vertical-timeline-component-react')
 
 ## Status
 
-[![Coverage Status](https://coveralls.io/repos/github/Proskynete/vertical-timeline-component-react/badge.svg?branch=master)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=master) [![Version](https://img.shields.io/npm/v/vertical-timeline-component-react.svg)](https://www.npmjs.com/package/vertical-timeline-component-react) [![CI](https://github.com/Proskynete/vertical-timeline-component-react/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/Proskynete/vertical-timeline-component-react/actions/workflows/ci.yml) [![GitHub issues](https://img.shields.io/github/issues/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/issues) [![GitHub forks](https://img.shields.io/github/forks/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/network) [![GitHub stars](https://img.shields.io/github/stars/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/stargazers) [![bundlephobia](https://img.shields.io/bundlephobia/min/vertical-timeline-component-react)](https://bundlephobia.com/package/vertical-timeline-component-react) [![downloads](https://img.shields.io/npm/dm/vertical-timeline-component-react)](https://www.npmjs.com/package/vertical-timeline-component-react) [![GitHub license](https://img.shields.io/github/license/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react) [![Package Quality](https://packagequality.com/shield/vertical-timeline-component-react.svg)](https://packagequality.com/#?package=vertical-timeline-component-react) ![PRs welcome](https://img.shields.io/badge/PRs-welcome-green) [![CodeSandbox](https://img.shields.io/badge/-CodeSandbox-blue?style=flat&logo=CodeSandbox)](https://codesandbox.io/s/awesome-paper-16sgk?fontsize=14)
+[![Coveralls Status](https://img.shields.io/coverallsCoverage/github/Proskynete/vertical-timeline-component-react?logo=Coveralls)](https://coveralls.io/github/Proskynete/vertical-timeline-component-react?branch=master) [![CI](https://img.shields.io/github/actions/workflow/status/Proskynete/vertical-timeline-component-react/ci.yml?logo=GithubActions&logoColor=fff)](https://github.com/Proskynete/vertical-timeline-component-react/actions/workflows/ci.yml) [![npm version](https://img.shields.io/npm/v/vertical-timeline-component-react?logo=Npm&logoColor=fff)](https://www.npmjs.com/package/vertical-timeline-component-react) [![bundlephobia](https://img.shields.io/bundlephobia/min/vertical-timeline-component-react)](https://bundlephobia.com/package/vertical-timeline-component-react) [![downloads](https://img.shields.io/npm/dm/vertical-timeline-component-react)](https://www.npmjs.com/package/vertical-timeline-component-react) [![GitHub license](https://img.shields.io/github/license/Proskynete/vertical-timeline-component-react?logo=Github)](https://github.com/Proskynete/vertical-timeline-component-react)
+[![GitHub issues](https://img.shields.io/github/issues/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/issues) [![GitHub forks](https://img.shields.io/github/forks/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/network) [![GitHub stars](https://img.shields.io/github/stars/Proskynete/vertical-timeline-component-react)](https://github.com/Proskynete/vertical-timeline-component-react/stargazers) [![Package Quality](https://packagequality.com/shield/vertical-timeline-component-react.svg)](https://packagequality.com/#?package=vertical-timeline-component-react) [![PRs welcome](https://img.shields.io/badge/PRs-welcome-green)](#CONTRIBUTING.md) [![CodeSandbox](https://img.shields.io/badge/-CodeSandbox-blue?style=flat&logo=CodeSandbox)](https://codesandbox.io/s/awesome-paper-16sgk?fontsize=14)
 
 <br />
 <br />
@@ -25,8 +26,8 @@
       <a href="#api-documentation">API Documentation</a>
       <ul>
         <li><a href="#timeline">Timeline</a></li>
-        <li><a href="#container">Container</a></li>
-        <li><a href="#content">Content</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#event">Event</a></li>
       </ul>
     </li>
     <li><a href="#how-to-use">How to use it</a></li>
@@ -49,21 +50,21 @@ npm install --save vertical-timeline-component-react@latest
 
 This is the wrapper component that creates the vertical timeline.
 
-- Childrens
+- Children
 
-| Number of children | Required                                             | Value Allowed               |
-| ------------------ | ---------------------------------------------------- | --------------------------- |
-| Many               | At least the first `Container` component is required | Only `Container` components |
+| Number of children | Required                                          | Value Allowed            |
+| ------------------ | ------------------------------------------------- | ------------------------ |
+| Many               | At least the first `Events` component is required | Only `Events` components |
 
 - Props
 
-| name       | Type    | Required | Values Allowed                                   | default values                                                                                                                                                        | Description                                                                  |
-| ---------- | ------- | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| theme      | object  | false    | colors                                           | { yearColor: "#888888", lineColor: "#c5c5c5", dotColor: "#c5c5c5", borderDotColor: "#ffffff", titleColor: "#cccccc", subtitleColor: "#888888", textColor: "#cccccc" } | Set colors in all components                                                 |
-| lang       | string  | false    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                  | Change the language `from` and `to` texts and change the format in the dates |
-| dateFormat | string  | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                         | Change the presentation format of dates                                      |
-| collapse  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapsing description of all Content components                          |
-| withoutDay  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Will hide the day of the dates of all Content components                          |
+| name       | Type    | Required | Values Allowed                                   | default values                                                                                                                                                                                      | Description                                                                  |
+| ---------- | ------- | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| theme      | object  | false    | colors                                           | { borderDotColor: '#ffffff', descriptionColor: '#cccccc', dotColor: '#c5c5c5', eventColor: '#cccccc', lineColor: '#c5c5c5', subtitleColor: '#c5c5c5', titleColor: '#cccccc', yearColor: '#888888' } | Set colors in all components                                                 |
+| lang       | string  | false    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                                                | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | string  | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                                                       | Change the presentation format of dates                                      |
+| collapse   | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                                                             | Allow collapsing description of all Content components                       |
+| withoutDay | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                                                             | Will hide the day of the dates of all Content components                     |
 
 `dateFormat`: The next table shows the different formats that can be used in the `dateFormat` prop and the result that will be displayed.
 
@@ -77,32 +78,32 @@ This is the wrapper component that creates the vertical timeline.
 
 <p align="right"><a href="#top">🔝</a></p>
 
-<h3 id="container">Container</h3>
+<h3 id="events">Events</h3>
 
-This component is the container of the content of each year. It is required to have at least one `Container` component as a child of the `Timeline` component. It can have as many `Container` components as you want.
+This component is the container of the content of each year. It is required to have at least one `Events` component as a child of the `Timeline` component. It can have as many `Events` components as you want.
 
-- Childrens
+- Children
 
-| Number of children | Required                                             | Value Allowed               |
-| ------------------ | ---------------------------------------------------- | --------------------------- |
-| Many               | At least the first `Content` component is required | Only `Content` components |
+| Number of children | Required                                         | Value Allowed           |
+| ------------------ | ------------------------------------------------ | ----------------------- |
+| Many               | At least the first `Event` component is required | Only `Event` components |
 
 - Props
 
-| Name      | Type    | Required | Values Allowed                    | default values | Description                                                                      |
-| --------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
-| title     | string  | true     | any string                        | does not apply | The title of this block time                                                     |
-| startDate | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
-| endDate   | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
-| today     | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
-| collapse  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Allow collapsing description for this component only                        |
-| withoutDay  | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                               | Will hide the day of the dates for this component only                         |
+| Name          | Type    | Required | Values Allowed                    | default values | Description                                                                      |
+| ------------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
+| title         | string  | true     | any string                        | does not apply | The title of this block time                                                     |
+| startDate     | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
+| endDate       | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
+| active        | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
+| withoutDay    | boolean | false    | `true` or `false`                 | `false`        | Will hide the day of the dates for this component only                           |
+| defaultClosed | boolean | false    | `true` or `false`                 | `false`        | Will collapse the content of this component only                                 |
 
 <p align="right"><a href="#top">🔝</a></p>
 
-<h3 id="content">Content</h3>
+<h3 id="event">Event</h3>
 
-For each `Container` you need one or more `Content` component. This component will be the container of the one or more `Sections`.
+For each `Events` you need one or more `Event` component.
 
 - Props
 
@@ -120,31 +121,38 @@ The following snippet will show you how to use the library:
 **_Using class components:_**
 
 ```js
-import { Timeline, Container, Content } from 'vertical-timeline-component-react';
+import { Timeline, Events, Content } from 'vertical-timeline-component-react';
 
 const customTheme = {
- yearColor: '#405b73',
+ borderDotColor: '#ffffff',
+ descriptionColor: '#262626',
+ dotColor: '#d0cdc4',
+ eventColor: '#965500',
  lineColor: '#d0cdc4',
- dotColor: '#262626',
- borderDotColor: '#d0cdc4',
+ subtitleColor: '#7c7c7c',
  titleColor: '#405b73',
- subtitleColor: '#bf9765',
- textColor: '#262626',
+ yearColor: '#405b73',
 };
 
 class Main extends Component {
  render() {
   return (
    <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-    <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
-     <Content
+    <Events
+     title="What is lorem Ipsum?"
+     subtitle="It's a fake text"
+     startDate="2020/12/02"
+     defaultClosed
+     active
+    >
+     <Event
       title="Lorem Ipsum"
       description={[
        "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
        'Is simply dummy text of the printing and typesetting industry.',
       ]}
      />
-    </Container>
+    </Events>
    </Timeline>
   );
  }
@@ -154,49 +162,41 @@ class Main extends Component {
 **_Using function components:_**
 
 ```js
-import {
- Timeline,
- Container,
- YearContent,
- BodyContent,
- Section,
- Description,
-} from 'vertical-timeline-component-react';
+import { Timeline, Events } from 'vertical-timeline-component-react';
 
 const Main = () => {
  const customTheme = {
-  yearColor: '#405b73',
+  borderDotColor: '#ffffff',
+  descriptionColor: '#262626',
+  dotColor: '#d0cdc4',
+  eventColor: '#965500',
   lineColor: '#d0cdc4',
-  dotColor: '#262626',
-  borderDotColor: '#d0cdc4',
+  subtitleColor: '#7c7c7c',
   titleColor: '#405b73',
-  subtitleColor: '#bf9765',
-  textColor: '#262626',
+  yearColor: '#405b73',
  };
 
  return (
   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-    <Container title="What is lorem Ipsum?" startDate="2020/12/02" today>
-     <Content
-      title="Lorem Ipsum"
-      description={[
-       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-       'Is simply dummy text of the printing and typesetting industry.',
-      ]}
-     />
-    </Container>
-   </Timeline>
+   <Events
+    title="What is lorem Ipsum?"
+    subtitle="It's a fake text"
+    startDate="2020/12/02"
+    active
+    defaultClosed
+   >
+    <Event
+     title="Lorem Ipsum"
+     description={[
+      "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      'Is simply dummy text of the printing and typesetting industry.',
+     ]}
+    />
+   </Events>
+  </Timeline>
  );
 };
 ```
-
-<p align="right"><a href="#top">🔝</a></p>
-
-<h2 id="contributors">Contributors</h2>
-
-<a href="https://github.com/Proskynete/vertical-timeline-component-react/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Proskynete/vertical-timeline-component-react"/>
-</a>
 
 <p align="right"><a href="#top">🔝</a></p>
 

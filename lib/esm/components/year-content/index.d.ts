@@ -1,3 +1,3 @@
 import { YearContentProps } from '../../interfaces';
-declare const YearContent: ({ startDate, endDate, today, withoutDay }: YearContentProps) => JSX.Element;
+declare const YearContent: ({ active, endDate, startDate, withoutDay }: YearContentProps) => JSX.Element;
 export default YearContent;

@@ -1,25 +1,27 @@
 import { DefaultTimelineProps } from '../interfaces';
 
 export const defaultValues: DefaultTimelineProps = {
-	theme: {
-		yearColor: '#888888',
-		lineColor: '#c5c5c5',
-		dotColor: '#c5c5c5',
-		borderDotColor: '#ffffff',
-		titleColor: '#cccccc',
-		subtitleColor: '#888888',
-		textColor: '#cccccc',
-	},
-	lang: 'en',
-	dateFormat: 'only-number',
 	collapse: false,
+	dateFormat: 'only-number',
+	descriptionSymbol: '•',
+	lang: 'en',
+	theme: {
+		borderDotColor: '#ffffff',
+		descriptionColor: '#cccccc',
+		dotColor: '#c5c5c5',
+		eventColor: '#cccccc',
+		lineColor: '#c5c5c5',
+		subtitleColor: '#c5c5c5',
+		titleColor: '#cccccc',
+		yearColor: '#888888',
+	},
 	withoutDay: false,
 };
 
 export const mapText = {
+	de: { from: 'Von', to: 'Bis' },
 	en: { from: 'From', to: 'To' },
 	es: { from: 'Desde', to: 'Hasta' },
-	de: { from: 'Von', to: 'Bis' },
 	tr: { from: 'Başlangıç', to: 'Bitiş' },
 	zh: { from: '从', to: '到' },
 };
