@@ -2,16 +2,16 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
 import { Timeline } from '../../../src/components/timeline';
-import { Container } from '../../../src/components/container';
-import { Content } from '../../../src/components/content';
+import { Events } from '../../../src/components/events';
+import { Event } from '../../../src/components/event';
 
 describe('Timeline', () => {
 	test('should create a snapshot of timeline component', async () => {
 		const component = render(
 			<Timeline>
-				<Container title="I'm a title" startDate="2019/01/01" today>
-					<Content title="I'm a event title" description={["I'm a description"]} />
-				</Container>
+				<Events title="I'm a title" startDate="2019/01/01" today>
+					<Event title="I'm a event title" description={["I'm a description"]} />
+				</Events>
 			</Timeline>,
 		);
 
@@ -21,9 +21,9 @@ describe('Timeline', () => {
 	test('should render only one container but with endDate prop', () => {
 		render(
 			<Timeline collapse>
-				<Container title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
-					<Content title="I'm a event title" description={["I'm a description"]} />
-				</Container>
+				<Events title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
+					<Event title="I'm a event title" description={["I'm a description"]} />
+				</Events>
 			</Timeline>,
 		);
 	});
@@ -41,9 +41,9 @@ describe('Timeline', () => {
 
 		render(
 			<Timeline lang="es" theme={theme} dateFormat="with-weekday" collapse withoutDay>
-				<Container title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
-					<Content title="I'm a event title" description={["I'm a description"]} />
-				</Container>
+				<Events title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
+					<Event title="I'm a event title" description={["I'm a description"]} />
+				</Events>
 			</Timeline>,
 		);
 	});
@@ -51,9 +51,9 @@ describe('Timeline', () => {
 	test('should hide description when user has click on title event', async () => {
 		render(
 			<Timeline collapse>
-				<Container title="I'm a title" startDate="2019/01/01" today>
-					<Content title="I'm a event title" description={["I'm a description"]} />
-				</Container>
+				<Events title="I'm a title" startDate="2019/01/01" today>
+					<Event title="I'm a event title" description={["I'm a description"]} />
+				</Events>
 			</Timeline>,
 		);
 
@@ -64,6 +64,9 @@ describe('Timeline', () => {
 		expect(title).toBeInTheDocument();
 		expect(eventTitle).toBeInTheDocument();
 		expect(description).toBeInTheDocument();
+
+		await userEvent.click(eventTitle);
+		expect(eventTitle).toHaveStyle('cursor: pointer');
 
 		await userEvent.click(eventTitle);
 		expect(description).not.toBeInTheDocument();
@@ -79,9 +82,9 @@ describe('Timeline', () => {
 					description: { color: 'red' },
 				}}
 			>
-				<Container title="I'm a title" startDate="2019/01/01" today>
-					<Content title="I'm a event title" description={["I'm a description"]} />
-				</Container>
+				<Events title="I'm a title" startDate="2019/01/01" today>
+					<Event title="I'm a event title" description={["I'm a description"]} />
+				</Events>
 			</Timeline>,
 		);
 
