@@ -175,7 +175,9 @@ export const EventTitle = styled.h3<EventTitleProps>`
 	}
 `;
 
-export const DescriptionWrapper = styled.div`
+export const DescriptionWrapper = styled.ul`
+	list-style-type: none;
+	margin: 0;
 	padding-left: 10px;
 `;
 
@@ -183,8 +185,8 @@ interface DescriptionProps {
 	readonly symbol: string;
 }
 
-export const Description = styled.p<DescriptionProps>`
-	color: ${(props) => props.theme.textColor};
+export const Description = styled.li<DescriptionProps>`
+	color: ${(props) => props.theme.descriptionColor};
 	font-size: 0.875rem;
 	margin: 3px 0 0 0;
 
@@ -195,14 +197,14 @@ export const Description = styled.p<DescriptionProps>`
 `;
 
 export const TextErrorMessage = styled.p`
-	color: ${(props) => props.theme.textColor};
+	color: ${(props) => props.theme.descriptionColor};
 	font-size: 0.875rem;
 	text-align: center;
 	width: 100%;
 
 	code {
 		background-color: ${(props) => props.theme.dotColor};
-		color: ${(props) => props.theme.subtitleColor};
+		color: ${(props) => props.theme.eventColor};
 		display: inline-block;
 		font-size: 0.875rem;
 		padding: 3px 5px;
