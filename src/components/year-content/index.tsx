@@ -6,10 +6,10 @@ import { getAriaText } from '../../helpers/text.helper';
 import { useConfig } from '../../hooks/useConfig';
 import { YearContentProps } from '../../interfaces';
 
-const YearContent = ({ startDate, endDate, today = false, withoutDay }: YearContentProps) => {
+const YearContent = ({ startDate, endDate, active = false, withoutDay }: YearContentProps) => {
 	const { config } = useConfig();
 
-	const _today = today && (
+	const _active = active && (
 		<time
 			aria-hidden={true}
 			dateTime={getAccessibilityDate({
@@ -81,12 +81,12 @@ const YearContent = ({ startDate, endDate, today = false, withoutDay }: YearCont
 					type: 'full',
 					withoutDay: config.withoutDay || withoutDay,
 				}),
-				today,
+				active,
 				lang: config.lang,
 			})}
 			style={config.customStyles?.date}
 		>
-			{_today}
+			{_active}
 			{_endDate}
 			{_startDate}
 		</YearWrapper>

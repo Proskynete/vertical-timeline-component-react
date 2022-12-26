@@ -10,7 +10,7 @@ const Events = ({
 	title,
 	startDate,
 	endDate,
-	today,
+	active,
 	withoutDay,
 	children,
 }: PropsWithChildren<ContainerProps>) => {
@@ -18,7 +18,12 @@ const Events = ({
 
 	return (
 		<ContainerWrapper>
-			<YearContent startDate={startDate} endDate={endDate} today={today} withoutDay={withoutDay} />
+			<YearContent
+				startDate={startDate}
+				endDate={endDate}
+				active={active}
+				withoutDay={withoutDay}
+			/>
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>

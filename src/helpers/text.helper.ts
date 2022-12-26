@@ -6,7 +6,7 @@ export const clearString = (str: string) => str.replace(/-/g, ' ').replace(/_/g,
 export interface GetAriaTextParams {
 	from: string;
 	to: string;
-	today: boolean;
+	active: boolean;
 	lang: Languages;
 }
 

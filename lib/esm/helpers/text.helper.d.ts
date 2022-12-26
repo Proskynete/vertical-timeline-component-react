@@ -3,7 +3,7 @@ export declare const clearString: (str: string) => string;
 export interface GetAriaTextParams {
     from: string;
     to: string;
-    today: boolean;
+    active: boolean;
     lang: Languages;
 }
 export declare const getAriaText: ({ from, to, lang }: GetAriaTextParams) => string;

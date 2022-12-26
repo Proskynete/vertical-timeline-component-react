@@ -36,7 +36,7 @@ export interface ContainerProps {
     title: string;
     startDate: string | Date;
     endDate?: string | Date;
-    today?: boolean;
+    active?: boolean;
     withoutDay?: boolean;
 }
 export interface ContentProps {
@@ -47,7 +47,7 @@ export interface ContentProps {
 export interface YearContentProps {
     startDate: string | Date;
     endDate?: string | Date;
-    today?: boolean;
+    active?: boolean;
     withoutDay?: boolean;
 }
 export {};
