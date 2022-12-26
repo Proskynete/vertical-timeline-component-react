@@ -11,7 +11,7 @@ export const defaultValues: DefaultTimelineProps = {
 		dotColor: '#c5c5c5',
 		eventColor: '#cccccc',
 		lineColor: '#c5c5c5',
-		subtitleColor: '#888888',
+		subtitleColor: '#c5c5c5',
 		titleColor: '#cccccc',
 		yearColor: '#888888',
 	},
