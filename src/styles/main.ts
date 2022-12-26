@@ -120,6 +120,14 @@ export const Title = styled.h2<TitleProps>`
 	}
 `;
 
+export const Subtitle = styled.p`
+	color: ${(props) => props.theme.subtitleColor};
+	display: block;
+	font-size: 0.875rem;
+	margin: 0;
+	padding: 0;
+`;
+
 export const BodyInner = styled.div`
 	font-size: 1rem;
 	list-style-type: none;
@@ -153,13 +161,14 @@ interface EventTitleProps {
 export const EventTitle = styled.h3<EventTitleProps>`
 	align-content: center;
 	align-items: flex-start;
-	color: ${(props) => props.theme.subtitleColor};
+	color: ${(props) => props.theme.eventColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	display: flex;
 	font-size: 0.875rem;
 	font-weight: bold;
 	margin: 0;
 	max-width: 100%;
+	width: max-content;
 
 	&:not(:first-child) {
 		margin-top: 5px;

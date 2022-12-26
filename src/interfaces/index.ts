@@ -1,5 +1,8 @@
 import { CSSProperties } from 'react';
 
+export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
+export type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
+
 export interface Theme {
 	yearColor: string;
 	lineColor: string;
@@ -7,16 +10,14 @@ export interface Theme {
 	borderDotColor: string;
 	titleColor: string;
 	subtitleColor: string;
-	textColor: string;
+	eventColor: string;
+	descriptionColor: string;
 }
-
-export type DateFormat = 'only-number' | 'short' | 'with-weekday' | 'full';
-
-export type Languages = 'en' | 'es' | 'de' | 'tr' | 'zh';
 
 interface CustomStyles {
 	date?: CSSProperties;
 	title?: CSSProperties;
+	subtitle?: CSSProperties;
 	event?: CSSProperties;
 	description?: CSSProperties;
 }
@@ -41,6 +42,7 @@ export interface DefaultTimelineProps {
 
 export interface ContainerProps {
 	title: string;
+	subtitle?: string;
 	startDate: string | Date;
 	endDate?: string | Date;
 	active?: boolean;

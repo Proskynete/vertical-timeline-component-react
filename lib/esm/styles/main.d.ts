@@ -12,6 +12,7 @@ interface TitleProps {
     readonly collapse?: boolean;
 }
 export declare const Title: import("styled-components").StyledComponent<"h2", any, TitleProps, never>;
+export declare const Subtitle: import("styled-components").StyledComponent<"p", any, {}, never>;
 export declare const BodyInner: import("styled-components").StyledComponent<"div", any, {}, never>;
 interface IconProps {
     readonly isShowing?: boolean;

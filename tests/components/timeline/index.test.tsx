@@ -9,7 +9,7 @@ describe('Timeline', () => {
 	test('should create a snapshot of timeline component', async () => {
 		const component = render(
 			<Timeline>
-				<Events title="I'm a title" startDate="2019/01/01" today>
+				<Events title="I'm a title" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
@@ -51,7 +51,7 @@ describe('Timeline', () => {
 	test('should hide description when user has click on title event', async () => {
 		render(
 			<Timeline collapse>
-				<Events title="I'm a title" startDate="2019/01/01" today>
+				<Events title="I'm a title" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
@@ -82,7 +82,7 @@ describe('Timeline', () => {
 					description: { color: 'red' },
 				}}
 			>
-				<Events title="I'm a title" startDate="2019/01/01" today>
+				<Events title="I'm a title" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
