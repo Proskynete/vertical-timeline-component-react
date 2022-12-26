@@ -179,10 +179,19 @@ export const DescriptionWrapper = styled.div`
 	padding-left: 10px;
 `;
 
-export const Description = styled.p`
+interface DescriptionProps {
+	readonly symbol: string;
+}
+
+export const Description = styled.p<DescriptionProps>`
 	color: ${(props) => props.theme.textColor};
 	font-size: 0.875rem;
 	margin: 3px 0 0 0;
+
+	&:before {
+		content: '${(props) => props.symbol}';
+		margin-right: 5px;
+	}
 `;
 
 export const TextErrorMessage = styled.p`

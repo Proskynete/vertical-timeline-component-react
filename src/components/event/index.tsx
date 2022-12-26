@@ -28,7 +28,11 @@ const Event = ({ title, description, collapse }: ContentProps) => {
 			{show && (
 				<DescriptionWrapper>
 					{description.map((text, i) => (
-						<Description key={i} style={config.customStyles?.description}>
+						<Description
+							key={i}
+							symbol={config.descriptionSymbol}
+							style={config.customStyles?.description}
+						>
 							{text}
 						</Description>
 					))}

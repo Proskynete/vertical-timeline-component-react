@@ -13,13 +13,24 @@ const Timeline = ({
 	dateFormat = defaultValues.dateFormat,
 	collapse = defaultValues.collapse,
 	withoutDay = defaultValues.withoutDay,
+	descriptionSymbol = defaultValues.descriptionSymbol,
 	customStyles,
 	children,
 }: PropsWithChildren<TimelineProps>) => {
 	return (
 		<TimelineWrapper>
 			<TimelineWrapperInner>
-				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles, withoutDay }}>
+				<ConfigProvider
+					config={{
+						theme,
+						lang,
+						dateFormat,
+						collapse,
+						customStyles,
+						descriptionSymbol,
+						withoutDay,
+					}}
+				>
 					<ThemeProvider theme={theme}>
 						<Validate componentToValidate={Events}>{children}</Validate>
 					</ThemeProvider>

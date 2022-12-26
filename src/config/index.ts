@@ -14,6 +14,7 @@ export const defaultValues: DefaultTimelineProps = {
 	lang: 'en',
 	dateFormat: 'only-number',
 	collapse: false,
+	descriptionSymbol: '•',
 	withoutDay: false,
 };
 

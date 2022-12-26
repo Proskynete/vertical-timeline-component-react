@@ -28,6 +28,7 @@ export interface TimelineProps {
 	dateFormat?: DateFormat;
 	collapse?: boolean;
 	withoutDay?: boolean;
+	descriptionSymbol?: string;
 	customStyles?: CustomStyles;
 }
 
@@ -36,6 +37,7 @@ export interface DefaultTimelineProps {
 	lang: Languages;
 	dateFormat: DateFormat;
 	collapse: boolean;
+	descriptionSymbol: string;
 	customStyles?: CustomStyles;
 	withoutDay: boolean;
 }
