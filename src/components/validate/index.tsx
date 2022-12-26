@@ -1,18 +1,22 @@
-import React, { Children, JSXElementConstructor, PropsWithChildren, ReactElement } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ErrorMessage } from '../error-message';
 
-interface ValidateProps {
-	componentToValidate: JSXElementConstructor<any>;
-}
+type ValidateProps = {
+	componentToValidate: React.JSXElementConstructor<any>;
+} & { [key: string]: any };
 
-const Validate = ({ children, componentToValidate }: PropsWithChildren<ValidateProps>) => {
-	const count = children && Children.count(children);
+const Validate = ({
+	children,
+	componentToValidate,
+	...otherProps
+}: PropsWithChildren<ValidateProps>) => {
+	const count = children && React.Children.count(children);
 	if (count === 0 || !children)
 		return <ErrorMessage type="atLeast" component={componentToValidate.name} />;
 
-	const elements = Children.map(children, (element) =>
-		(element as ReactElement).type === componentToValidate ? (
-			element
+	const elements = React.Children.map(children, (element) =>
+		(element as React.ReactElement).type === componentToValidate ? (
+			React.cloneElement(element as React.ReactElement, otherProps)
 		) : (
 			<ErrorMessage type="onlySupports" component={componentToValidate.name} />
 		),

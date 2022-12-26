@@ -2,8 +2,8 @@ import React from 'react';
 import { TextErrorMessage } from '../../styles/main';
 
 interface ErrorMessageProps {
-	type: 'atLeast' | 'onlySupports';
 	component: string;
+	type: 'atLeast' | 'onlySupports';
 }
 
 const ErrorMessage = ({ type, component }: ErrorMessageProps) => {

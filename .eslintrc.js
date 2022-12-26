@@ -20,5 +20,6 @@ module.exports = {
 		'@typescript-eslint/no-explicit-any': 0,
 		'no-underscore-dangle': 0,
 		'@typescript-eslint/naming-convention': 0,
+		'jest/expect-expect': 0,
 	},
 };

@@ -3,9 +3,9 @@ import { useConfig } from '../../hooks/useConfig';
 import { ContentProps } from '../../interfaces';
 import { Description, DescriptionWrapper, EventTitle, Icon } from '../../styles/main';
 
-const Content = ({ title, description, collapse }: ContentProps) => {
+const Event = ({ collapse, defaultClosed, description, title }: ContentProps) => {
 	const { config } = useConfig();
-	const [show, setShow] = useState(true);
+	const [show, setShow] = useState(!defaultClosed);
 	const isCollapsed = collapse || config.collapse;
 
 	const handleSetShow = () => {
@@ -28,7 +28,11 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 			{show && (
 				<DescriptionWrapper>
 					{description.map((text, i) => (
-						<Description key={i} style={config.customStyles?.description}>
+						<Description
+							key={i}
+							symbol={config.descriptionSymbol}
+							style={config.customStyles?.description}
+						>
 							{text}
 						</Description>
 					))}
@@ -38,4 +42,4 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 	);
 };
 
-export { Content };
+export { Event };

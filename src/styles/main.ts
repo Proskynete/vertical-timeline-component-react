@@ -64,14 +64,14 @@ export const YearWrapper = styled.div<YearContentProps>`
 
 export const YearSpan = styled.span`
 	font-size: 0.625rem;
-	margin: 3px 0 0 0;
+	margin: 3px 0 0;
 	padding: 0;
 `;
 
 export const BodyWrapper = styled.article`
+	min-height: 75px;
 	padding-bottom: 15px;
 	padding-left: 25px;
-	min-height: 75px;
 	position: relative;
 
 	&:after,
@@ -82,8 +82,8 @@ export const BodyWrapper = styled.article`
 		content: '';
 		height: 100%;
 		left: 10px;
-		top: 5px;
 		position: absolute;
+		top: 5px;
 		width: 2px;
 		z-index: 1;
 	}
@@ -120,6 +120,14 @@ export const Title = styled.h2<TitleProps>`
 	}
 `;
 
+export const Subtitle = styled.p`
+	color: ${(props) => props.theme.subtitleColor};
+	display: block;
+	font-size: 0.875rem;
+	margin: 0;
+	padding: 0;
+`;
+
 export const BodyInner = styled.div`
 	font-size: 1rem;
 	list-style-type: none;
@@ -153,41 +161,53 @@ interface EventTitleProps {
 export const EventTitle = styled.h3<EventTitleProps>`
 	align-content: center;
 	align-items: flex-start;
-	color: ${(props) => props.theme.subtitleColor};
+	color: ${(props) => props.theme.eventColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
 	display: flex;
 	font-size: 0.875rem;
 	font-weight: bold;
 	margin: 0;
 	max-width: 100%;
+	width: max-content;
 
 	&:not(:first-child) {
 		margin-top: 5px;
 	}
 `;
 
-export const DescriptionWrapper = styled.div`
+export const DescriptionWrapper = styled.ul`
+	list-style-type: none;
+	margin: 0;
 	padding-left: 10px;
 `;
 
-export const Description = styled.p`
-	color: ${(props) => props.theme.textColor};
+interface DescriptionProps {
+	readonly symbol: string;
+}
+
+export const Description = styled.li<DescriptionProps>`
+	color: ${(props) => props.theme.descriptionColor};
 	font-size: 0.875rem;
-	margin: 3px 0 0 0;
+	margin: 3px 0 0;
+
+	&:before {
+		content: '${(props) => props.symbol}';
+		margin-right: 5px;
+	}
 `;
 
 export const TextErrorMessage = styled.p`
-	color: ${(props) => props.theme.textColor};
+	color: ${(props) => props.theme.descriptionColor};
 	font-size: 0.875rem;
 	text-align: center;
 	width: 100%;
 
 	code {
 		background-color: ${(props) => props.theme.dotColor};
-		color: ${(props) => props.theme.subtitleColor};
+		border-radius: 5px;
+		color: ${(props) => props.theme.eventColor};
 		display: inline-block;
 		font-size: 0.875rem;
 		padding: 3px 5px;
-		border-radius: 5px;
 	}
 `;

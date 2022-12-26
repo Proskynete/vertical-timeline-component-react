@@ -15,20 +15,20 @@ Object {
             class="sc-dkzDqf bqgjsq"
           >
             <div
-              aria-label="From Tuesday, January 01, 2019 To Friday, September 09, 2022"
+              aria-label="From Tuesday, January 01, 2019 To Monday, December 26, 2022"
               class="sc-hKMtZM VwYTb"
               format="only-number"
               lang="en"
             >
               <time
                 aria-hidden="true"
-                datetime="9/9/2022"
+                datetime="12/26/2022"
               >
                 2022
               </time>
               <span
                 aria-hidden="true"
-                class="sc-eCYdqJ ctJLYX"
+                class="sc-eCYdqJ iPvILv"
               >
                 From
               </span>
@@ -40,30 +40,35 @@ Object {
               </time>
             </div>
             <article
-              class="sc-jSMfEi htGDEx"
+              class="sc-jSMfEi cJrrOV"
             >
               <h2
                 class="sc-gKXOVf dFwsvn"
               >
                 I'm a title
               </h2>
+              <p
+                class="sc-iBkjds eiUhqS"
+              >
+                I'm a subtitle
+              </p>
               <div
-                class="sc-iBkjds eUDZdj"
+                class="sc-ftvSup ccSJqk"
               >
                 <h3
-                  class="sc-papXJ hnnERI"
+                  class="sc-jqUVSM gpKZtt"
                 >
                   I'm a event title
                 </h3>
-                <div
-                  class="sc-jqUVSM fSgwrN"
+                <ul
+                  class="sc-kDDrLX iCkhff"
                 >
-                  <p
-                    class="sc-kDDrLX efnvGd"
+                  <li
+                    class="sc-iqcoie cGqXKD"
                   >
                     I'm a description
-                  </p>
-                </div>
+                  </li>
+                </ul>
               </div>
             </article>
           </section>
@@ -82,20 +87,20 @@ Object {
           class="sc-dkzDqf bqgjsq"
         >
           <div
-            aria-label="From Tuesday, January 01, 2019 To Friday, September 09, 2022"
+            aria-label="From Tuesday, January 01, 2019 To Monday, December 26, 2022"
             class="sc-hKMtZM VwYTb"
             format="only-number"
             lang="en"
           >
             <time
               aria-hidden="true"
-              datetime="9/9/2022"
+              datetime="12/26/2022"
             >
               2022
             </time>
             <span
               aria-hidden="true"
-              class="sc-eCYdqJ ctJLYX"
+              class="sc-eCYdqJ iPvILv"
             >
               From
             </span>
@@ -107,30 +112,35 @@ Object {
             </time>
           </div>
           <article
-            class="sc-jSMfEi htGDEx"
+            class="sc-jSMfEi cJrrOV"
           >
             <h2
               class="sc-gKXOVf dFwsvn"
             >
               I'm a title
             </h2>
+            <p
+              class="sc-iBkjds eiUhqS"
+            >
+              I'm a subtitle
+            </p>
             <div
-              class="sc-iBkjds eUDZdj"
+              class="sc-ftvSup ccSJqk"
             >
               <h3
-                class="sc-papXJ hnnERI"
+                class="sc-jqUVSM gpKZtt"
               >
                 I'm a event title
               </h3>
-              <div
-                class="sc-jqUVSM fSgwrN"
+              <ul
+                class="sc-kDDrLX iCkhff"
               >
-                <p
-                  class="sc-kDDrLX efnvGd"
+                <li
+                  class="sc-iqcoie cGqXKD"
                 >
                   I'm a description
-                </p>
-              </div>
+                </li>
+              </ul>
             </div>
           </article>
         </section>
