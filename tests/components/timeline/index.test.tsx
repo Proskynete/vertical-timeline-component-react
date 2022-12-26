@@ -42,7 +42,14 @@ describe('Timeline', () => {
 		};
 
 		render(
-			<Timeline lang="es" theme={theme} dateFormat="with-weekday" collapse withoutDay>
+			<Timeline
+				lang="es"
+				theme={theme}
+				dateFormat="with-weekday"
+				collapse
+				withoutDay
+				descriptionSymbol="-"
+			>
 				<Events title="I'm a title" startDate="2019/01/01" endDate="2020/01/01">
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>

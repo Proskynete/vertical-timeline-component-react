@@ -60,15 +60,15 @@ Object {
                 >
                   I'm a event title
                 </h3>
-                <div
-                  class="sc-kDDrLX bFQhiG"
+                <ul
+                  class="sc-kDDrLX iCkhff"
                 >
-                  <p
-                    class="sc-iqcoie bIyfuL"
+                  <li
+                    class="sc-iqcoie gGTGD"
                   >
                     I'm a description
-                  </p>
-                </div>
+                  </li>
+                </ul>
               </div>
             </article>
           </section>
@@ -132,15 +132,15 @@ Object {
               >
                 I'm a event title
               </h3>
-              <div
-                class="sc-kDDrLX bFQhiG"
+              <ul
+                class="sc-kDDrLX iCkhff"
               >
-                <p
-                  class="sc-iqcoie bIyfuL"
+                <li
+                  class="sc-iqcoie gGTGD"
                 >
                   I'm a description
-                </p>
-              </div>
+                </li>
+              </ul>
             </div>
           </article>
         </section>
