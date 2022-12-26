@@ -2,11 +2,11 @@ import React, { PropsWithChildren } from 'react';
 import { useConfig } from '../../hooks/useConfig';
 import { ContainerProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, BodyInner } from '../../styles/main';
-import { Content } from '../content';
+import { Event } from '../event';
 import { Validate } from '../validate';
 import YearContent from '../year-content';
 
-const Container = ({
+const Events = ({
 	title,
 	startDate,
 	endDate,
@@ -23,11 +23,11 @@ const Container = ({
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>
 				<BodyInner>
-					<Validate componentToValidate={Content}>{children}</Validate>
+					<Validate componentToValidate={Event}>{children}</Validate>
 				</BodyInner>
 			</BodyWrapper>
 		</ContainerWrapper>
 	);
 };
 
-export { Container };
+export { Events };

@@ -3,7 +3,7 @@ import { useConfig } from '../../hooks/useConfig';
 import { ContentProps } from '../../interfaces';
 import { Description, DescriptionWrapper, EventTitle, Icon } from '../../styles/main';
 
-const Content = ({ title, description, collapse }: ContentProps) => {
+const Event = ({ title, description, collapse }: ContentProps) => {
 	const { config } = useConfig();
 	const [show, setShow] = useState(true);
 	const isCollapsed = collapse || config.collapse;
@@ -38,4 +38,4 @@ const Content = ({ title, description, collapse }: ContentProps) => {
 	);
 };
 
-export { Content };
+export { Event };

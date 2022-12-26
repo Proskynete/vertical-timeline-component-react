@@ -4,7 +4,7 @@ import { defaultValues } from '../../config';
 import { ConfigProvider } from '../../context/config.context';
 import { TimelineProps } from '../../interfaces';
 import { TimelineWrapper, TimelineWrapperInner } from '../../styles/main';
-import { Container } from '../container';
+import { Events } from '../events';
 import { Validate } from '../validate';
 
 const Timeline = ({
@@ -21,7 +21,7 @@ const Timeline = ({
 			<TimelineWrapperInner>
 				<ConfigProvider config={{ theme, lang, dateFormat, collapse, customStyles, withoutDay }}>
 					<ThemeProvider theme={theme}>
-						<Validate componentToValidate={Container}>{children}</Validate>
+						<Validate componentToValidate={Events}>{children}</Validate>
 					</ThemeProvider>
 				</ConfigProvider>
 			</TimelineWrapperInner>
