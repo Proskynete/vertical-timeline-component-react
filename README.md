@@ -6,7 +6,7 @@
  <p>A simple component to generate a responsive vertical timeline</p>
 </div>
 
-![Vertical Timeline Component React](<https://dsc.cloud/83db8c/Screenshot%202022-12-26%20at%2016.27.00.png> 'How to see vertical-timeline-component-react')
+![Vertical Timeline Component React](<https://dsc.cloud/83db8c/image.png> 'How to see vertical-timeline-component-react')
 
 ## Status
 

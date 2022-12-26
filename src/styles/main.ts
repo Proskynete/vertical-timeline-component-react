@@ -104,6 +104,7 @@ export const Title = styled.h2<TitleProps>`
 	font-size: 1rem;
 	font-weight: bold;
 	margin: 0;
+	width: max-content;
 
 	&:after {
 		background-color: ${(props) => props.theme.dotColor};
