@@ -47,19 +47,24 @@ Object {
               >
                 I'm a title
               </h2>
+              <p
+                class="sc-iBkjds icZsBo"
+              >
+                I'm a subtitle
+              </p>
               <div
-                class="sc-iBkjds eUDZdj"
+                class="sc-ftvSup ccSJqk"
               >
                 <h3
-                  class="sc-papXJ hnnERI"
+                  class="sc-jqUVSM gpKZtt"
                 >
                   I'm a event title
                 </h3>
                 <div
-                  class="sc-jqUVSM fSgwrN"
+                  class="sc-kDDrLX bFQhiG"
                 >
                   <p
-                    class="sc-kDDrLX efnvGd"
+                    class="sc-iqcoie bIyfuL"
                   >
                     I'm a description
                   </p>
@@ -114,19 +119,24 @@ Object {
             >
               I'm a title
             </h2>
+            <p
+              class="sc-iBkjds icZsBo"
+            >
+              I'm a subtitle
+            </p>
             <div
-              class="sc-iBkjds eUDZdj"
+              class="sc-ftvSup ccSJqk"
             >
               <h3
-                class="sc-papXJ hnnERI"
+                class="sc-jqUVSM gpKZtt"
               >
                 I'm a event title
               </h3>
               <div
-                class="sc-jqUVSM fSgwrN"
+                class="sc-kDDrLX bFQhiG"
               >
                 <p
-                  class="sc-kDDrLX efnvGd"
+                  class="sc-iqcoie bIyfuL"
                 >
                   I'm a description
                 </p>

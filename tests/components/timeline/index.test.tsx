@@ -4,12 +4,13 @@ import { render, screen } from '@testing-library/react';
 import { Timeline } from '../../../src/components/timeline';
 import { Events } from '../../../src/components/events';
 import { Event } from '../../../src/components/event';
+import { Theme } from '../../../src/interfaces';
 
 describe('Timeline', () => {
 	test('should create a snapshot of timeline component', async () => {
 		const component = render(
 			<Timeline>
-				<Events title="I'm a title" startDate="2019/01/01" active>
+				<Events title="I'm a title" subtitle="I'm a subtitle" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
@@ -29,14 +30,15 @@ describe('Timeline', () => {
 	});
 
 	test('should render timeline with all custom props', async () => {
-		const theme = {
+		const theme: Theme = {
 			yearColor: '#000000',
 			lineColor: '#000000',
 			dotColor: '#000000',
 			borderDotColor: '#000000',
 			titleColor: '#000000',
 			subtitleColor: '#000000',
-			textColor: '#000000',
+			eventColor: '#000000',
+			descriptionColor: '#000000',
 		};
 
 		render(
@@ -51,17 +53,19 @@ describe('Timeline', () => {
 	test('should hide description when user has click on title event', async () => {
 		render(
 			<Timeline collapse>
-				<Events title="I'm a title" startDate="2019/01/01" active>
+				<Events title="I'm a title" subtitle="I'm a subtitle" startDate="2019/01/01" active>
 					<Event title="I'm a event title" description={["I'm a description"]} />
 				</Events>
 			</Timeline>,
 		);
 
 		const title = screen.getByText("I'm a title");
+		const subtitle = screen.getByText("I'm a subtitle");
 		const eventTitle = screen.getByText("I'm a event title");
 		const description = screen.getByText("I'm a description");
 
 		expect(title).toBeInTheDocument();
+		expect(subtitle).toBeInTheDocument();
 		expect(eventTitle).toBeInTheDocument();
 		expect(description).toBeInTheDocument();
 
