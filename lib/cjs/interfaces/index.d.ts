@@ -36,17 +36,19 @@ export interface DefaultTimelineProps {
     customStyles?: CustomStyles;
     withoutDay: boolean;
 }
-export interface ContainerProps {
+export interface EventsProps {
     title: string;
     subtitle?: string;
     startDate: string | Date;
     endDate?: string | Date;
     active?: boolean;
+    defaultClosed?: boolean;
     withoutDay?: boolean;
 }
 export interface ContentProps {
     title: string;
     description: string[];
+    defaultClosed: boolean;
     collapse?: boolean;
 }
 export interface YearContentProps {

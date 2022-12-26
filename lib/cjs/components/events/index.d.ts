@@ -1,4 +1,4 @@
 import { PropsWithChildren } from 'react';
-import { ContainerProps } from '../../interfaces';
-declare const Events: ({ title, subtitle, startDate, endDate, active, withoutDay, children, }: PropsWithChildren<ContainerProps>) => JSX.Element;
+import { EventsProps } from '../../interfaces';
+declare const Events: ({ title, subtitle, startDate, endDate, active, withoutDay, defaultClosed, children, }: PropsWithChildren<EventsProps>) => JSX.Element;
 export { Events };

@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { useConfig } from '../../hooks/useConfig';
-import { ContainerProps } from '../../interfaces';
+import { EventsProps } from '../../interfaces';
 import { ContainerWrapper, BodyWrapper, Title, Subtitle, BodyInner } from '../../styles/main';
 import { Event } from '../event';
 import { Validate } from '../validate';
@@ -13,8 +13,9 @@ const Events = ({
 	endDate,
 	active,
 	withoutDay,
+	defaultClosed = false,
 	children,
-}: PropsWithChildren<ContainerProps>) => {
+}: PropsWithChildren<EventsProps>) => {
 	const { config } = useConfig();
 
 	return (
@@ -28,9 +29,12 @@ const Events = ({
 
 			<BodyWrapper>
 				<Title style={config.customStyles?.title}>{title}</Title>
-				{subtitle && <Subtitle>{subtitle}</Subtitle>}
+				{subtitle && <Subtitle style={config.customStyles?.subtitle}>{subtitle}</Subtitle>}
+
 				<BodyInner>
-					<Validate componentToValidate={Event}>{children}</Validate>
+					<Validate componentToValidate={Event} defaultClosed={defaultClosed}>
+						{children}
+					</Validate>
 				</BodyInner>
 			</BodyWrapper>
 		</ContainerWrapper>
