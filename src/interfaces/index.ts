@@ -53,7 +53,6 @@ export interface EventsProps {
 }
 
 export interface ContentProps {
-	collapse?: boolean;
 	defaultClosed?: boolean;
 	description: string[];
 	title: string;
