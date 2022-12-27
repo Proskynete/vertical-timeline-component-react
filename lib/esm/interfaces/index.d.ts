@@ -45,10 +45,10 @@ export interface EventsProps {
     title: string;
     withoutDay?: boolean;
 }
-export interface ContentProps {
+export interface EventProps {
     defaultClosed?: boolean;
     description: string[];
-    title: string;
+    title?: string;
 }
 export interface YearContentProps {
     active?: boolean;

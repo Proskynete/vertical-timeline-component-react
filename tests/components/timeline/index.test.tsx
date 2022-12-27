@@ -29,6 +29,16 @@ describe('Timeline', () => {
 		);
 	});
 
+	test('should render timeline without title prop in Event component', async () => {
+		render(
+			<Timeline collapse>
+				<Events title="I'm a title" startDate="2019/01/01">
+					<Event description={["I'm a description"]} />
+				</Events>
+			</Timeline>,
+		);
+	});
+
 	test('should render timeline with all custom props', async () => {
 		const theme: Theme = {
 			yearColor: '#000000',
