@@ -6,7 +6,7 @@
  <p>A simple component to generate a responsive vertical timeline</p>
 </div>
 
-![Vertical Timeline Component React](<https://dsc.cloud/83db8c/Screenshot%202022-12-26%20at%2016.27.00.png> 'How to see vertical-timeline-component-react')
+![Vertical Timeline Component React](https://dsc.cloud/83db8c/image.png 'How to see vertical-timeline-component-react')
 
 ## Status
 
@@ -124,38 +124,38 @@ The following snippet will show you how to use the library:
 import { Timeline, Events, Content } from 'vertical-timeline-component-react';
 
 const customTheme = {
- borderDotColor: '#ffffff',
- descriptionColor: '#262626',
- dotColor: '#d0cdc4',
- eventColor: '#965500',
- lineColor: '#d0cdc4',
- subtitleColor: '#7c7c7c',
- titleColor: '#405b73',
- yearColor: '#405b73',
+	borderDotColor: '#ffffff',
+	descriptionColor: '#262626',
+	dotColor: '#d0cdc4',
+	eventColor: '#965500',
+	lineColor: '#d0cdc4',
+	subtitleColor: '#7c7c7c',
+	titleColor: '#405b73',
+	yearColor: '#405b73',
 };
 
 class Main extends Component {
- render() {
-  return (
-   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-    <Events
-     title="What is lorem Ipsum?"
-     subtitle="It's a fake text"
-     startDate="2020/12/02"
-     defaultClosed
-     active
-    >
-     <Event
-      title="Lorem Ipsum"
-      description={[
-       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-       'Is simply dummy text of the printing and typesetting industry.',
-      ]}
-     />
-    </Events>
-   </Timeline>
-  );
- }
+	render() {
+		return (
+			<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+				<Events
+					title="What is lorem Ipsum?"
+					subtitle="It's a fake text"
+					startDate="2020/12/02"
+					defaultClosed
+					active
+				>
+					<Event
+						title="Lorem Ipsum"
+						description={[
+							"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+							'Is simply dummy text of the printing and typesetting industry.',
+						]}
+					/>
+				</Events>
+			</Timeline>
+		);
+	}
 }
 ```
 
@@ -165,36 +165,36 @@ class Main extends Component {
 import { Timeline, Events } from 'vertical-timeline-component-react';
 
 const Main = () => {
- const customTheme = {
-  borderDotColor: '#ffffff',
-  descriptionColor: '#262626',
-  dotColor: '#d0cdc4',
-  eventColor: '#965500',
-  lineColor: '#d0cdc4',
-  subtitleColor: '#7c7c7c',
-  titleColor: '#405b73',
-  yearColor: '#405b73',
- };
+	const customTheme = {
+		borderDotColor: '#ffffff',
+		descriptionColor: '#262626',
+		dotColor: '#d0cdc4',
+		eventColor: '#965500',
+		lineColor: '#d0cdc4',
+		subtitleColor: '#7c7c7c',
+		titleColor: '#405b73',
+		yearColor: '#405b73',
+	};
 
- return (
-  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-   <Events
-    title="What is lorem Ipsum?"
-    subtitle="It's a fake text"
-    startDate="2020/12/02"
-    active
-    defaultClosed
-   >
-    <Event
-     title="Lorem Ipsum"
-     description={[
-      "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-      'Is simply dummy text of the printing and typesetting industry.',
-     ]}
-    />
-   </Events>
-  </Timeline>
- );
+	return (
+		<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+			<Events
+				title="What is lorem Ipsum?"
+				subtitle="It's a fake text"
+				startDate="2020/12/02"
+				active
+				defaultClosed
+			>
+				<Event
+					title="Lorem Ipsum"
+					description={[
+						"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+						'Is simply dummy text of the printing and typesetting industry.',
+					]}
+				/>
+			</Events>
+		</Timeline>
+	);
 };
 ```
 

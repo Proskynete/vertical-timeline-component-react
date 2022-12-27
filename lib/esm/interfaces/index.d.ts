@@ -46,7 +46,6 @@ export interface EventsProps {
     withoutDay?: boolean;
 }
 export interface ContentProps {
-    collapse?: boolean;
     defaultClosed?: boolean;
     description: string[];
     title: string;

@@ -1,3 +1,3 @@
 import { ContentProps } from '../../interfaces';
-declare const Event: ({ collapse, defaultClosed, description, title }: ContentProps) => JSX.Element;
+declare const Event: ({ defaultClosed, description, title }: ContentProps) => JSX.Element;
 export { Event };
