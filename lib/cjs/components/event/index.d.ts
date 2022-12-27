@@ -1,3 +1,3 @@
-import { ContentProps } from '../../interfaces';
-declare const Event: ({ defaultClosed, description, title }: ContentProps) => JSX.Element;
+import { EventProps } from '../../interfaces';
+declare const Event: ({ defaultClosed, description, title }: EventProps) => JSX.Element;
 export { Event };
