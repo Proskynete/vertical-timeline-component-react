@@ -2,7 +2,6 @@ name: Feature request
 description: Suggest new or updated features to include the library.
 title: 'Suggest a new feature'
 labels: [feature]
-assignees: []
 body:
   - type: checkboxes
     attributes:

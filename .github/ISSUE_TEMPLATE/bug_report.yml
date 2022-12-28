@@ -17,13 +17,6 @@ body:
       description: Provide a summary of the issue and what you expected to happen, including specific steps to reproduce.
     validations:
       required: true
-  - type: textarea
-    id: reduced-test-case
-    attributes:
-      label: Reduced test cases
-      description: Include links [reduced test case](https://css-tricks.com/reduced-test-cases/) links or suggested fixes using CodePen ([v4 template](https://codepen.io/team/bootstrap/pen/yLabNQL) or [v5 template](https://codepen.io/team/bootstrap/pen/qBamdLj)).
-    validations:
-      required: true
   - type: dropdown
     id: os
     attributes:

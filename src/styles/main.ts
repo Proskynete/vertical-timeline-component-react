@@ -101,10 +101,10 @@ interface TitleProps {
 export const Title = styled.h2<TitleProps>`
 	color: ${(props) => props.theme.titleColor};
 	cursor: ${(props) => (props.collapse ? 'pointer' : 'default')};
+	display: inline-block;
 	font-size: 1rem;
 	font-weight: bold;
 	margin: 0;
-	width: max-content;
 
 	&:after {
 		background-color: ${(props) => props.theme.dotColor};
