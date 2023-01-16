@@ -31,7 +31,6 @@
       </ul>
     </li>
     <li><a href="#how-to-use">How to use it</a></li>
-    <li><a href="#contributors">Contributors</a></li>
   </ol>
 </details>
 
@@ -109,7 +108,7 @@ For each `Events` you need one or more `Event` component.
 
 | Name        | Type             | Required | Description                                                                        |
 | ----------- | ---------------- | -------- | ---------------------------------------------------------------------------------- |
-| title       | string           | false    | It's the title of one or many descriptions                                        |
+| title       | string           | false    | It's the title of one or many descriptions                                         |
 | description | Array of strings | true     | You can write anything you want, but remember that it is consistent with the title |
 
 > If the title is not defined (or empty), the description will always be displayed even when the defaultClosed prop is in the Events component
@@ -126,38 +125,38 @@ The following snippet will show you how to use the library:
 import { Timeline, Events, Content } from 'vertical-timeline-component-react';
 
 const customTheme = {
- borderDotColor: '#ffffff',
- descriptionColor: '#262626',
- dotColor: '#d0cdc4',
- eventColor: '#965500',
- lineColor: '#d0cdc4',
- subtitleColor: '#7c7c7c',
- titleColor: '#405b73',
- yearColor: '#405b73',
+	borderDotColor: '#ffffff',
+	descriptionColor: '#262626',
+	dotColor: '#d0cdc4',
+	eventColor: '#965500',
+	lineColor: '#d0cdc4',
+	subtitleColor: '#7c7c7c',
+	titleColor: '#405b73',
+	yearColor: '#405b73',
 };
 
 class Main extends Component {
- render() {
-  return (
-   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-    <Events
-     title="What is lorem Ipsum?"
-     subtitle="It's a fake text"
-     startDate="2020/12/02"
-     defaultClosed
-     active
-    >
-     <Event
-      title="Lorem Ipsum"
-      description={[
-       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-       'Is simply dummy text of the printing and typesetting industry.',
-      ]}
-     />
-    </Events>
-   </Timeline>
-  );
- }
+	render() {
+		return (
+			<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+				<Events
+					title="What is lorem Ipsum?"
+					subtitle="It's a fake text"
+					startDate="2020/12/02"
+					defaultClosed
+					active
+				>
+					<Event
+						title="Lorem Ipsum"
+						description={[
+							"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+							'Is simply dummy text of the printing and typesetting industry.',
+						]}
+					/>
+				</Events>
+			</Timeline>
+		);
+	}
 }
 ```
 
@@ -167,36 +166,36 @@ class Main extends Component {
 import { Timeline, Events } from 'vertical-timeline-component-react';
 
 const Main = () => {
- const customTheme = {
-  borderDotColor: '#ffffff',
-  descriptionColor: '#262626',
-  dotColor: '#d0cdc4',
-  eventColor: '#965500',
-  lineColor: '#d0cdc4',
-  subtitleColor: '#7c7c7c',
-  titleColor: '#405b73',
-  yearColor: '#405b73',
- };
+	const customTheme = {
+		borderDotColor: '#ffffff',
+		descriptionColor: '#262626',
+		dotColor: '#d0cdc4',
+		eventColor: '#965500',
+		lineColor: '#d0cdc4',
+		subtitleColor: '#7c7c7c',
+		titleColor: '#405b73',
+		yearColor: '#405b73',
+	};
 
- return (
-  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-   <Events
-    title="What is lorem Ipsum?"
-    subtitle="It's a fake text"
-    startDate="2020/12/02"
-    active
-    defaultClosed
-   >
-    <Event
-     title="Lorem Ipsum"
-     description={[
-      "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-      'Is simply dummy text of the printing and typesetting industry.',
-     ]}
-    />
-   </Events>
-  </Timeline>
- );
+	return (
+		<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+			<Events
+				title="What is lorem Ipsum?"
+				subtitle="It's a fake text"
+				startDate="2020/12/02"
+				active
+				defaultClosed
+			>
+				<Event
+					title="Lorem Ipsum"
+					description={[
+						"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+						'Is simply dummy text of the printing and typesetting industry.',
+					]}
+				/>
+			</Events>
+		</Timeline>
+	);
 };
 ```
 
