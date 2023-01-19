@@ -48,7 +48,7 @@ export interface EventsProps {
 	endDate?: string | Date;
 	startDate: string | Date;
 	subtitle?: string;
-	title: string;
+	title: string | JSX.Element | (() => JSX.Element);
 	withoutDay?: boolean;
 }
 

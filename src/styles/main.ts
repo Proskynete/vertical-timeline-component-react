@@ -119,6 +119,12 @@ export const Title = styled.h2<TitleProps>`
 		width: 6px;
 		z-index: 2;
 	}
+
+	a {
+		color: ${(props) => props.theme.titleColor};
+		cursor: pointer;
+		text-decoration: none;
+	}
 `;
 
 export const Subtitle = styled.p`

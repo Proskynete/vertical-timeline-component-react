@@ -18,6 +18,8 @@ const Events = ({
 }: PropsWithChildren<EventsProps>) => {
 	const { config } = useConfig();
 
+	console.log(typeof title);
+
 	return (
 		<ContainerWrapper>
 			<YearContent
@@ -28,7 +30,10 @@ const Events = ({
 			/>
 
 			<BodyWrapper>
-				<Title style={config.customStyles?.title}>{title}</Title>
+				<Title style={config.customStyles?.title}>
+					{typeof title === 'function' ? title() : title}
+				</Title>
+
 				{subtitle && <Subtitle style={config.customStyles?.subtitle}>{subtitle}</Subtitle>}
 
 				<BodyInner>
