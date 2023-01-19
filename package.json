@@ -16,16 +16,17 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "rm -rf lib && npm run build:esm && npm run build:cjs",
-		"build:esm": "tsc",
-		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
+		"prebuild": "rimraf lib coverage *.tgz",
+		"build": "npm run build:esm && npm run build:cjs",
+		"build:esm": "tsc -p",
+		"build:cjs": "tsc -p --module commonjs --outDir lib/cjs",
 		"lint": "eslint . --ext .ts ./src",
 		"lint:fix": "eslint . --ext .ts ./src --fix",
 		"test": "jest",
 		"test:update-snapshots": "jest --updateSnapshot",
 		"test:coverage": "jest --coverage",
 		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-		"prepare": "husky install"
+		"prepare": "npm run build"
 	},
 	"keywords": [
 		"React",
@@ -34,6 +35,19 @@
 		"Vertical Timeline",
 		"Vertical Timeline Component React"
 	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"pre-push": "npm run test:coverage"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"npm run lint:fix",
+			"git add",
+			"npm run build"
+		]
+	},
 	"peer_dependencies": {
 		"react": "^17.0.2 || ^18.0.0-0",
 		"react-dom": "^17.0.2 || ^18.0.0-0"
