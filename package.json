@@ -18,8 +18,8 @@
 	"scripts": {
 		"prebuild": "rimraf lib coverage *.tgz",
 		"build": "npm run build:esm && npm run build:cjs",
-		"build:esm": "tsc -p",
-		"build:cjs": "tsc -p --module commonjs --outDir lib/cjs",
+		"build:esm": "tsc",
+		"build:cjs": "tsc --module commonjs --outDir lib/cjs",
 		"lint": "eslint . --ext .ts ./src",
 		"lint:fix": "eslint . --ext .ts ./src --fix",
 		"test": "jest",
@@ -66,6 +66,7 @@
 		"@types/prettier": "^2.4.2",
 		"@types/react": "^18.0.18",
 		"@types/react-dom": "^18.0.6",
+		"@types/rimraf": "^3.0.2",
 		"@types/styled-components": "^5.1.26",
 		"@typescript-eslint/eslint-plugin": "^5.4.0",
 		"@typescript-eslint/parser": "^5.4.0",
