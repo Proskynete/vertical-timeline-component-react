@@ -59,11 +59,11 @@ This is the wrapper component that creates the vertical timeline.
 
 | name       | Type    | Required | Values Allowed                                   | default values                                                                                                                                                                                      | Description                                                                  |
 | ---------- | ------- | -------- | ------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| theme      | object  | false    | colors                                           | { borderDotColor: '#ffffff', descriptionColor: '#cccccc', dotColor: '#c5c5c5', eventColor: '#cccccc', lineColor: '#c5c5c5', subtitleColor: '#c5c5c5', titleColor: '#cccccc', yearColor: '#888888' } | Set colors in all components                                                 |
-| lang       | string  | false    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                                                | Change the language `from` and `to` texts and change the format in the dates |
-| dateFormat | string  | false    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                                                       | Change the presentation format of dates                                      |
-| collapse   | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                                                             | Allow collapsing description of all Content components                       |
-| withoutDay | boolean | false    | `true` or `false`                                | `false`                                                                                                                                                                                             | Will hide the day of the dates of all Content components                     |
+| theme      | `object`  | `false`    | `colors`                                           | { borderDotColor: '#ffffff', descriptionColor: '#cccccc', dotColor: '#c5c5c5', eventColor: '#cccccc', lineColor: '#c5c5c5', subtitleColor: '#c5c5c5', titleColor: '#cccccc', yearColor: '#888888' } | Set colors in all components                                                 |
+| lang       | `string`  | `false`    | `en`, `es`, `de`, `tr` or `zh`                   | `en`                                                                                                                                                                                                | Change the language `from` and `to` texts and change the format in the dates |
+| dateFormat | `string`  | `false`    | `only-number`, `short`, `with-weekday` or `full` | `only-number`                                                                                                                                                                                       | Change the presentation format of dates                                      |
+| collapse   | `boolean` | `false`    | `true` or `false`                                | `false`                                                                                                                                                                                             | Allow collapsing description of all Content components                       |
+| withoutDay | `boolean` | `false`    | `true` or `false`                                | `false`                                                                                                                                                                                             | Will hide the day of the dates of all Content components                     |
 
 `dateFormat`: The next table shows the different formats that can be used in the `dateFormat` prop and the result that will be displayed.
 
@@ -91,12 +91,12 @@ This component is the container of the content of each year. It is required to h
 
 | Name          | Type    | Required | Values Allowed                    | default values | Description                                                                      |
 | ------------- | ------- | -------- | --------------------------------- | -------------- | -------------------------------------------------------------------------------- |
-| title         | string  | true     | any string                        | does not apply | The title of this block time                                                     |
-| startDate     | string  | true     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
-| endDate       | string  | false    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
-| active        | boolean | false    | `true` or `false`                 | current year   | The value is the current year, it is recommended to use it in the last Container |
-| withoutDay    | boolean | false    | `true` or `false`                 | `false`        | Will hide the day of the dates for this component only                           |
-| defaultClosed | boolean | false    | `true` or `false`                 | `false`        | Will collapse the content of this component only                                 |
+| title         | `string`, `JSX.Element`  | `true`     | any string, or some component                       | does not apply | The title of this block time                                                     |
+| startDate     | `string`  | `true`     | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the start of the content or contents                                 |
+| endDate       | `string`  | `false`    | `YYYY/MM/DD` - `YYYY/MM` - `YYYY` | does not apply | The date of the end of the content or contents                                   |
+| active        | `boolean` | `false`    | `true` or `false`                 | `false`   | The value is the current year, it is recommended to use it in the last Container |
+| withoutDay    | `boolean` | `false`    | `true` or `false`                 | `false`        | Will hide the day of the dates for this component only                           |
+| defaultClosed | `boolean` | `false`    | `true` or `false`                 | `false`        | Will collapse the content of this component only                                 |
 
 <p align="right"><a href="#top">🔝</a></p>
 
@@ -108,8 +108,8 @@ For each `Events` you need one or more `Event` component.
 
 | Name        | Type             | Required | Description                                                                        |
 | ----------- | ---------------- | -------- | ---------------------------------------------------------------------------------- |
-| title       | string           | false    | It's the title of one or many descriptions                                         |
-| description | Array of strings | true     | You can write anything you want, but remember that it is consistent with the title |
+| title       | `string`           | `false`    | It's the title of one or many descriptions                                         |
+| description | `array` of `strings` | `true`     | You can write anything you want, but remember that it is consistent with the title |
 
 > If the title is not defined (or empty), the description will always be displayed even when the defaultClosed prop is in the Events component
 
@@ -125,38 +125,38 @@ The following snippet will show you how to use the library:
 import { Timeline, Events, Content } from 'vertical-timeline-component-react';
 
 const customTheme = {
-	borderDotColor: '#ffffff',
-	descriptionColor: '#262626',
-	dotColor: '#d0cdc4',
-	eventColor: '#965500',
-	lineColor: '#d0cdc4',
-	subtitleColor: '#7c7c7c',
-	titleColor: '#405b73',
-	yearColor: '#405b73',
+ borderDotColor: '#ffffff',
+ descriptionColor: '#262626',
+ dotColor: '#d0cdc4',
+ eventColor: '#965500',
+ lineColor: '#d0cdc4',
+ subtitleColor: '#7c7c7c',
+ titleColor: '#405b73',
+ yearColor: '#405b73',
 };
 
 class Main extends Component {
-	render() {
-		return (
-			<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-				<Events
-					title="What is lorem Ipsum?"
-					subtitle="It's a fake text"
-					startDate="2020/12/02"
-					defaultClosed
-					active
-				>
-					<Event
-						title="Lorem Ipsum"
-						description={[
-							"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-							'Is simply dummy text of the printing and typesetting industry.',
-						]}
-					/>
-				</Events>
-			</Timeline>
-		);
-	}
+ render() {
+  return (
+   <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+    <Events
+     title={<a href="#">What is lorem Ipsum?</div>}
+     subtitle="It's a fake text"
+     startDate="2020/12/02"
+     defaultClosed
+     active
+    >
+     <Event
+      title="Lorem Ipsum"
+      description={[
+       "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+       'Is simply dummy text of the printing and typesetting industry.',
+      ]}
+     />
+    </Events>
+   </Timeline>
+  );
+ }
 }
 ```
 
@@ -166,36 +166,36 @@ class Main extends Component {
 import { Timeline, Events } from 'vertical-timeline-component-react';
 
 const Main = () => {
-	const customTheme = {
-		borderDotColor: '#ffffff',
-		descriptionColor: '#262626',
-		dotColor: '#d0cdc4',
-		eventColor: '#965500',
-		lineColor: '#d0cdc4',
-		subtitleColor: '#7c7c7c',
-		titleColor: '#405b73',
-		yearColor: '#405b73',
-	};
+ const customTheme = {
+  borderDotColor: '#ffffff',
+  descriptionColor: '#262626',
+  dotColor: '#d0cdc4',
+  eventColor: '#965500',
+  lineColor: '#d0cdc4',
+  subtitleColor: '#7c7c7c',
+  titleColor: '#405b73',
+  yearColor: '#405b73',
+ };
 
-	return (
-		<Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
-			<Events
-				title="What is lorem Ipsum?"
-				subtitle="It's a fake text"
-				startDate="2020/12/02"
-				active
-				defaultClosed
-			>
-				<Event
-					title="Lorem Ipsum"
-					description={[
-						"Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
-						'Is simply dummy text of the printing and typesetting industry.',
-					]}
-				/>
-			</Events>
-		</Timeline>
-	);
+ return (
+  <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
+   <Events
+    title="What is lorem Ipsum?"
+    subtitle="It's a fake text"
+    startDate="2020/12/02"
+    active
+    defaultClosed
+   >
+    <Event
+     title="Lorem Ipsum"
+     description={[
+      "Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      'Is simply dummy text of the printing and typesetting industry.',
+     ]}
+    />
+   </Events>
+  </Timeline>
+ );
 };
 ```
 
