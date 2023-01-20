@@ -12,17 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📚 Checkout git repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - name: 🛠 Install dependencies
         run: npm install
+
       - name: ⚙️ Create coverage 
         run: npm run test:coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{secrets.COVERALLS_REPO_TOKEN}}
+          
       - name: 📨 Send report to Coveralls
         uses: coverallsapp/github-action@master
         with:
