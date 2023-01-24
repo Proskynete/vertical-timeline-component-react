@@ -122,7 +122,7 @@ The following snippet will show you how to use the library:
 **_Using class components:_**
 
 ```js
-import { Timeline, Events, Content } from 'vertical-timeline-component-react';
+import { Timeline, Events, Event } from 'vertical-timeline-component-react';
 
 const customTheme = {
  borderDotColor: '#ffffff',
@@ -163,7 +163,7 @@ class Main extends Component {
 **_Using function components:_**
 
 ```js
-import { Timeline, Events } from 'vertical-timeline-component-react';
+import { Timeline, Events, Event } from 'vertical-timeline-component-react';
 
 const Main = () => {
  const customTheme = {
