@@ -1,0 +1,63 @@
+# Tests
+e2e
+examples
+
+# sources are inlined
+src
+
+# Github Pages
+website
+
+# Developement scripts
+scripts
+
+# CI
+.github
+
+# Eslint
+.eslintignore
+.eslintrc.js
+commitlint.config.js
+.prettierignore
+.prettierrc
+
+# Internal jest config
+jest.config.js
+jest-base.js
+
+# Tsconfig
+tsconfig.build.json
+tsconfig.eslint.json
+tsconfig.json
+tsconfig.spec.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# others
+*.tgz
+.editorconfig
+.npmignore
+.npmrc
+.vscode
+.cache
+.gitattributes
+.gitignore
+icon.png
+.idea
+.husky
+renovate.json
+
+# ensure we do not omit the digest
+!.ts-jest-digest

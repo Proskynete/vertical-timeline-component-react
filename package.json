@@ -19,9 +19,9 @@
 		"lint": "eslint . --ext .ts ./src",
 		"lint:fix": "eslint . --ext .ts ./src --fix",
 		"test": "jest",
-		"test:update-snapshots": "jest --updateSnapshot",
-		"test:coverage": "jest --coverage",
-		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
+		"test:update-snapshots": "npm run test -- --updateSnapshot",
+		"test:coverage": "npm run test -- --coverage",
+		"test:coveralls": "npm run test:coverage && coveralls < coverage/lcov.info",
 		"prepare": "npm run build",
 		"postinstall": "husky install"
 	},

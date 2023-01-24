@@ -1,2 +1,4 @@
-node_modules
-lib
+node_modules/
+lib/
+test/**/__snapshots__/
+CHANGELOG.md
