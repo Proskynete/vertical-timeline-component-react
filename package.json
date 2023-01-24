@@ -9,11 +9,7 @@
 		"/lib"
 	],
 	"repository": "https://github.com/Proskynete/vertical-timeline-component-react",
-	"author": {
-		"name": "Eduardo Esteban Álvarez Castañeda",
-		"email": "soy@eduardoalvarez.dev",
-		"url": "https://eduardoalvarez.dev"
-	},
+	"bugs": "https://github.com/Proskynete/vertical-timeline-component-react/issues",
 	"license": "MIT",
 	"scripts": {
 		"prebuild": "rimraf lib coverage *.tgz",
@@ -27,27 +23,6 @@
 		"test:coverage": "jest --coverage",
 		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
 		"prepare": "npm run build"
-	},
-	"keywords": [
-		"React",
-		"React.js",
-		"TypeScript",
-		"Vertical Timeline",
-		"Vertical Timeline Component React"
-	],
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"post-commit": "git reset",
-			"pre-push": "npm run test:coverage"
-		}
-	},
-	"lint-staged": {
-		"*.{ts,tsx,js,jsx}": [
-			"npm run lint:fix",
-			"git add"
-		]
 	},
 	"peer_dependencies": {
 		"react": "^17.0.2 || ^18.0.0-0",
@@ -87,5 +62,31 @@
 		"ts-jest": "^28.0.8",
 		"ts-node": "^10.9.1",
 		"typescript": "^4.8.2"
+	},
+	"author": {
+		"name": "Eduardo Esteban Álvarez Castañeda",
+		"email": "soy@eduardoalvarez.dev",
+		"url": "https://eduardoalvarez.dev"
+	},
+	"keywords": [
+		"React",
+		"React.js",
+		"TypeScript",
+		"Vertical Timeline",
+		"Vertical Timeline Component React"
+	],
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged",
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"post-commit": "git reset",
+			"pre-push": "npm run test:coverage"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"npm run lint:fix",
+			"git add"
+		]
 	}
 }
