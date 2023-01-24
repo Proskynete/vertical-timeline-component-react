@@ -15,14 +15,14 @@ Object {
             class="sc-dkzDqf bqgjsq"
           >
             <div
-              aria-label="From Tuesday, January 01, 2019 To Monday, January 23, 2023"
+              aria-label="From Tuesday, January 01, 2019 To Tuesday, January 24, 2023"
               class="sc-hKMtZM VwYTb"
               format="only-number"
               lang="en"
             >
               <time
                 aria-hidden="true"
-                datetime="1/23/2023"
+                datetime="1/24/2023"
               >
                 2023
               </time>
@@ -87,14 +87,14 @@ Object {
           class="sc-dkzDqf bqgjsq"
         >
           <div
-            aria-label="From Tuesday, January 01, 2019 To Monday, January 23, 2023"
+            aria-label="From Tuesday, January 01, 2019 To Tuesday, January 24, 2023"
             class="sc-hKMtZM VwYTb"
             format="only-number"
             lang="en"
           >
             <time
               aria-hidden="true"
-              datetime="1/23/2023"
+              datetime="1/24/2023"
             >
               2023
             </time>
