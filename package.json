@@ -22,7 +22,8 @@
 		"test:update-snapshots": "jest --updateSnapshot",
 		"test:coverage": "jest --coverage",
 		"test:coveralls": "jest --coverage && coveralls < coverage/lcov.info",
-		"prepare": "npm run build"
+		"prepare": "npm run build",
+		"postinstall": "husky install"
 	},
 	"peer_dependencies": {
 		"react": "^17.0.2 || ^18.0.0-0",
