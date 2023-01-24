@@ -76,19 +76,5 @@
 		"TypeScript",
 		"Vertical Timeline",
 		"Vertical Timeline Component React"
-	],
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged",
-			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-			"post-commit": "git reset",
-			"pre-push": "npm run test:coverage"
-		}
-	},
-	"lint-staged": {
-		"*.{ts,tsx,js,jsx}": [
-			"npm run lint:fix",
-			"git add"
-		]
-	}
+	]
 }

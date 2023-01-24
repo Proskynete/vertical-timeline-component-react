@@ -7,6 +7,7 @@ interface ErrorMessageProps {
 }
 
 const ErrorMessage = ({ type, component }: ErrorMessageProps) => {
+	console.log('Error Message', type, component);
 	return (
 		<>
 			{type === 'atLeast' ? (
