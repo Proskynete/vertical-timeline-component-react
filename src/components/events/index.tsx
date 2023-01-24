@@ -18,8 +18,6 @@ const Events = ({
 }: PropsWithChildren<EventsProps>) => {
 	const { config } = useConfig();
 
-	console.log(typeof title);
-
 	return (
 		<ContainerWrapper>
 			<YearContent
