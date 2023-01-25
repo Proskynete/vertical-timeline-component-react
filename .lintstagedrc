@@ -1,10 +1,10 @@
 {
 	"*.{ts,tsx,js,jsx}": [
 		"npm run lint:fix",
-		"git add"
+		"git add ."
 	],
-	".md": [
+	"*.md": [
 		"markdownlint --fix",
-		"git add"
+		"git add ."
 	]
 }
