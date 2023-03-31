@@ -140,7 +140,7 @@ class Main extends Component {
   return (
    <Timeline lang="en" theme={customTheme} dateFormat="only-number" collapse withoutDay>
     <Events
-     title={<a href="#">What is lorem Ipsum?</div>}
+     title={<a href="#">What is lorem Ipsum?</a>}
      subtitle="It's a fake text"
      startDate="2020/12/02"
      defaultClosed
