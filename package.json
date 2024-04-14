@@ -1,6 +1,6 @@
 {
 	"name": "vertical-timeline-component-react",
-	"version": "4.4.1",
+	"version": "4.4.3",
 	"description": "A simple component for create a vertical timeline with React",
 	"main": "./lib/cjs/index.js",
 	"module": "./lib/esm/index.js",
@@ -63,6 +63,8 @@
 		"jest": "^28.1.3",
 		"jest-environment-jsdom": "^29.0.1",
 		"lint-staged": "^13.1.0",
+		"markdownlint": "^0.27.0",
+		"markdownlint-cli": "^0.33.0",
 		"prettier": "^2.5.0",
 		"ts-jest": "^28.0.8",
 		"ts-node": "^10.9.1",
