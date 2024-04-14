@@ -221,7 +221,7 @@ describe('transformDate helper', () => {
 			};
 
 			const result = transformDate(config);
-			expect(result).toBe('12/2020');
+			expect(result).toBe('12.2020');
 		});
 
 		test('type: short, withoutDay: false', () => {
@@ -548,7 +548,7 @@ describe('getAccessibilityDate helper', () => {
 		};
 
 		const result = getAccessibilityDate(config);
-		expect(result).toBe('12/2020');
+		expect(result).toBe('12.2020');
 	});
 
 	test('language: tr, withoutDay: false', () => {
